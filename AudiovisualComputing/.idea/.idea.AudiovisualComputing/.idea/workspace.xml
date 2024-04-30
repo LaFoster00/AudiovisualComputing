@@ -1,0 +1,887 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/.sample.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/AffordanceThemes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/AffordanceThemes/InteractionColorAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/AffordanceThemes/InteractionColorAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Audio/Button Pop.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Audio/Button Pop.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/DemoScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/DemoScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor/Scripts/StarterAssetsSampleProjectValidation.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor/Scripts/StarterAssetsSampleProjectValidation.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Editor/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.Editor.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Cylinder.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Cylinder.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Pyramid.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Pyramid.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Torus.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Torus.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Wedge.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/Primitive_Wedge.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/PushButton.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/PushButton.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/XRControllerLeft.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/XRControllerLeft.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/XRControllerRight.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Models/XRControllerRight.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb Sample.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb Sample.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb/Climbing Wall.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb/Climbing Wall.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb/Ladder.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Climb/Ladder.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Controllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Controllers/XR Controller Left.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Controllers/XR Controller Right.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables Sample.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables Sample.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Instant Pyramid.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Instant Pyramid.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Kinematic Torus.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Kinematic Torus.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Simple Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Simple Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Velocity Tracked Wedge.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interactable Velocity Tracked Wedge.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interaction Affordance.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactables/Interaction Affordance.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Direct Interactor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Gaze Interactor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Poke Interactor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Ray Interactor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Interactors/Teleport Interactor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Blocking Teleport Reticle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Directional Teleport Reticle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Snapping Teleport Anchor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Snapping Teleport Anchor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Teleport Anchor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Teleport Anchor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Teleport Area.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleport/Teleport Area.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleportation Environment.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/Teleportation Environment.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI Sample.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI Sample.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Dropdown.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Dropdown.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Interactive Controls.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Interactive Controls.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/MinMaxSlider.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/MinMaxSlider.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/ModalSingleButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/ModalSingleButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Scroll UI Sample.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/Scroll UI Sample.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/TextButton.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_2D/TextButton.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_3D.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_3D/Push Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/UI_3D/Push Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/XR Interaction Setup.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/XR Interaction Setup.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/XR Origin (XR Rig).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Prefabs/XR Origin (XR Rig).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/ActionBasedControllerManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/ActionBasedControllerManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/DynamicMoveProvider.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/DynamicMoveProvider.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/GazeInputManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/GazeInputManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/PokeStation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/PokeStation/IncrementUIText.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/PokeStation/IncrementUIText.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/XRPokeFollowAffordance.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Scripts/XRPokeFollowAffordance.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/Unity.XR.Interaction.Toolkit.Samples.StarterAssets.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Continuous Move.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Continuous Move.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Continuous Turn.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Continuous Turn.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Gaze Controller.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Gaze Controller.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Input Actions.inputactions" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Input Actions.inputactions.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left ActionBasedControllerManager.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left ActionBasedControllerManager.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left Controller.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left Controller.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left Grab Move.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Left Grab Move.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right ActionBasedControllerManager.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right ActionBasedControllerManager.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right Controller.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right Controller.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right Grab Move.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Right Grab Move.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Snap Turn.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default Snap Turn.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default XR UI Input Module.preset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Starter Assets/XRI Default XR UI Input Module.preset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/.sample.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignette.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignetteHemisphere.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignetteHemisphere.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignetteSG.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Samples/XR Interaction Toolkit/2.4.3/Tunneling Vignette/TunnelingVignetteSG.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene.unity" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene.unity.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene/Grid.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene/Grid.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene/Grid_Light_512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/BasicScene/Grid_Light_512x512.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/LightingData.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_dir.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_dir.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_light.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_light.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_shadowmask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/Lightmap-0_comp_shadowmask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-0.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-1.exr" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene/ReflectionProbe-1.exr.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Android Preset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Android Preset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/BasicScene.scenetemplate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/BasicScene.scenetemplate.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Performance URP Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Performance URP Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Quality URP Config.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Quality URP Config.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/SampleScene.scenetemplate" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/SampleScene.scenetemplate.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Standalone Preset.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/Standalone Preset.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/UniversalRenderPipelineGlobalSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Settings/Project Configuration/UniversalRenderPipelineGlobalSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Fonts/LiberationSans.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Drop Shadow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Fallback.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF - Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Fonts &amp; Materials/LiberationSans SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/LineBreaking Leading Characters.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Sprite Assets/EmojiOne.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/Style Sheets/Default Style Sheet.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Resources/TMP Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Custom-Atlas.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Masking.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile SSD.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_SDF.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMP_Sprite.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne Attribution.txt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.json.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Sprites/EmojiOne.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Audio.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Audio/Button_14_hover.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Audio/Button_14_hover.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Audio/Button_22_click.wav" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Audio/Button_22_click.wav.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Material XRay Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Material XRay Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF NoBackfaceCulling.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF NoBackfaceCulling.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Outline Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Outline Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Outline Thick Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF Overlay Outline Thick Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular SDF.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Fonts/Inter/Inter-Regular.ttf.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Graphics.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Graphics/Post Process Volume Profile.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Graphics/Post Process Volume Profile.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Graphics/Template Lighting Settings.lighting" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Graphics/Template Lighting Settings.lighting.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Base.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Base.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Blue Glow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Blue Glow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Glow Gradient.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Anchor Glow Gradient.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Blue Anchor Arrow.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/Blue Anchor Arrow.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/White_Mixed_AO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Anchor Materials/White_Mixed_AO.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/Controller.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/Controller.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/DefaultMaterial_AO.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/DefaultMaterial_AO.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/UniversalMaterialGrey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/UniversalMaterialGrey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/UniversalMaterialWhite.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/UniversalMaterialWhite.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/White.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Controller/White.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Arrows.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Arrows.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Chrome.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Chrome.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Albedo.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Albedo.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Metallic.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Metallic.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Normal.tif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Concrete_Normal.tif.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Dark Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Dark Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/FauxBackgroundBlur.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/FauxBackgroundBlur.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Frosted_Glass_Pattern_AlbedoTransparency.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Frosted_Glass_Pattern_AlbedoTransparency.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Glass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Glass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grey.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grey.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grid Dark Large.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grid Dark Large.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grid Dark Tight.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Grid Dark Tight.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Wall Cut.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Wall Cut.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Wall Default.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/Wall Default.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall2_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Environment/wall_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Angle Indicator.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Angle Indicator.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkLine.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkLine.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkOcclusionPass.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkOcclusionPass.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkOcclusionTexture.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/BlinkOcclusionTexture.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Blue Standard.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Blue Standard.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/FlatBlue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/FlatBlue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Standard White.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Locomotion/Standard White.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Particles.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Particles/ConfettiParticles.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Particles/ConfettiParticles.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Pointer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Pointer/Pointer Outline.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Pointer/Pointer Outline.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Cube_Fabric.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Cube_Fabric.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Green.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Green.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 3.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 3.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 4.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 4.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 5.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables 5.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables Bouncy.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables Bouncy.physicMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Interactables.physicMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Sticky.physicMaterial" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Sticky.physicMaterial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Torus.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/Torus.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/fabric_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Base_color.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Base_color.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Height.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Height.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Metallic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Metallic.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Normal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Normal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Normal_OpenGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Normal_OpenGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Roughness.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Primitive/torus_Roughness.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/Horizontal Skybox.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/Horizontal Skybox.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/Hub Skybox Blue 2.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/Hub Skybox Blue 2.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/skybox01_openGL.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/skybox01_openGL.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/skybox01_openGL.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/Skybox/skybox01_openGL.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/BezierLink.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/BezierLink.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Blue.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Blue.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Handle.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Handle.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Torus Cursor.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/Torus Cursor.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/VideoTexture.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/VideoTexture.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/torus_cursorShape.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Materials/UI/torus_cursorShape.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorArrow.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorArrow.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorBase.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorBase.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorFade.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorFade.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorFadeScale.anim" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Anchor/AnchorFadeScale.anim.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Blink.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Blink/BlinkVisual.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Blink/BlinkVisual.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Controllers.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Controllers/UniversalController.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Controllers/UniversalController.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Cursors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Cursors/cursor.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Cursors/cursor.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Arrows.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Arrows.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Blaster.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Blaster.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Template Environment.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Template Environment.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Torus Cut.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Torus Cut.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Totem1.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Totem1.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Totem2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Environment/Totem2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Marks.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Marks/Marks.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Marks/Marks.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Poke.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Poke/PokePointer.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Poke/PokePointer.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Cube.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Cube.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Cylinder.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Cylinder.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Sphere.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Sphere.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Tapered Cylinder.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Tapered Cylinder.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Torus.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/Primitives/Torus.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/UI/Spatial Panel Manipulator Model.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Models/UI/Spatial Panel Manipulator Model.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Affordance.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Affordance/Affordance Callout.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Affordance/Affordance Callout.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blaster.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blaster/Confetti.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blaster/Confetti.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blink.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blink/Blink Visuals.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Blink/Blink Visuals.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Left Controller.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Left Controller.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Right Controller.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Right Controller.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Universal Controller Materials Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Controller/Universal Controller Materials Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Cursors.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Cursors/Torus Cursor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Cursors/Torus Cursor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Setup.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Setup/Complete XR Origin Set Up Variant.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Setup/Complete XR Origin Set Up Variant.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Teleport.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Teleport/Teleport Anchor.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/Teleport/Teleport Anchor.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/TutorialPlayer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/TutorialPlayer/Tutorial Player.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/TutorialPlayer/Tutorial Player.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/Dropdown.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/Dropdown.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Button.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Button.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Dropdown.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Dropdown.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Slider.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Slider.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Toggle.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/List Item Toggle.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/Spatial Panel Scroll.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Prefabs/UI/Spatial Panel Scroll.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/AnchorVisuals.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/AnchorVisuals.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/BezierCurve.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/BezierCurve.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/BooleanToggleVisualsController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/BooleanToggleVisualsController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/Callout.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/Callout.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/CalloutGazeController.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/CalloutGazeController.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/DestroyObject.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/DestroyObject.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/LaunchProjectile.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/LaunchProjectile.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/RayAttachModifier.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/RayAttachModifier.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/Rotator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/Rotator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/StepManager.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/StepManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/VideoPlayerRenderTexture.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/VideoPlayerRenderTexture.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/VideoTimeScrubControl.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/VideoTimeScrubControl.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/XRKnob.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/XRKnob.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/XRPokeFollowAffordanceFill.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Scripts/XRPokeFollowAffordanceFill.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/FauxBlurURP.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/FauxBlurURP.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/Grid.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/Grid.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/InteractablePrimitive.shadergraph" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/InteractablePrimitive.shadergraph.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/TexturedFresnelStandard.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/TexturedFresnelStandard.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/TexturedStableFresnelCommon.cginc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Shaders/TexturedStableFresnelCommon.cginc.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 1.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 2.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 3.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 5.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/CoachingCards/Coaching Step 6.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Checkmark.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Checkmark.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Chevron.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Chevron.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Forward.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Forward.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Pause.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Pause.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Play.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Play.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Rotate Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Rotate Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Rotate Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Rotate Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Down.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Down.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Left.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Left.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Right.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Right.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Up.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Scroll Up.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Teleport.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/Icons/Teleport.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/CircleMask.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/CircleMask.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60 Outline 4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60 Outline 4.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60 Outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60 Outline.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60_Horizontal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60_Horizontal.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60_Vertical.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Circle_60x60_Vertical.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Joystick BG.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Joystick BG.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Joystick Segment.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Joystick Segment.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Bottom.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Bottom.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Outline.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Outline.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Top.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10 Top.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Sprites/UI/Round Radius 10.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/AnchorAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/AnchorAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/AudioAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/AudioAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/BlasterAudioAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/BlasterAudioAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/BlendShapeAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/BlendShapeAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/ColorAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/ColorAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/EdgeColorAffordanceTheme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Themes/EdgeColorAffordanceTheme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/Images.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/Images/1-welcome-screen-image.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/Images/1-welcome-screen-image.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/Images/project-header-vr.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/Images/project-header-vr.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/TutorialLayout.wlt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/TutorialLayout.wlt.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialContainer.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialContainer.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialProjectSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialProjectSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialStyle.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialStyle.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialWelcomePage.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Tutorial/VRTutorialWelcomePage.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Videos.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Videos/onboarding_video_final.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/VRTemplateAssets/Videos/onboarding_video_final.mp4.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Oculus Loader.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Oculus Loader.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader No Pre Init.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Loaders/Open XR Loader.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/Oculus Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/Oculus Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/Open XR Package Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OpenXR Editor Settings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/XRGeneralSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/XRGeneralSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/InteractionLayerSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/Resources/XRDeviceSimulatorSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/XRInteractionEditorSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XRI/Settings/XRInteractionEditorSettings.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/AudioManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/BurstAotSettings_Android.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/InputManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.learn.iet-framework/Settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.testtools.codecoverage/Settings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/Physics2DSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TimelineSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/XRPackageSettings.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/XRSettings.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/22/c9109330/AttRelEnvelope.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/23/3c2b580f/SampleToWaveProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/32/5e623283/WaveExtensionMethods.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/6d/d3daf304/OffsetSampleProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/71/c1ff0318/SimpleCompressor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/87/bad7508d/SignalGenerator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/9d/2f251f09/ISampleProvider.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/de/c4b1d826/IWavePlayer.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/e0/da9312a8/SampleToWaveProvider16.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/e2/4620d9ca/SimpleCompressorEffect.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/43/6b736bc6/AsioDriver.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/9e/61ca1951/AsioDriverExt.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/bc/d3c64c71/AsioOut.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/98b2aface95e4962a9052e7f1344672010fc00/90/b37d2493/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 1
+}]]></component>
+  <component name="ProjectId" id="2fp8H6cqtcZyQcztT2Ct7sPjHfS" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Attach to Unity Editor.Attach to Unity Editor.executor": "Debug",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\lasse\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\DecompilerCache",
+      "C:\\Users\\lasse\\AppData\\Roaming\\JetBrains\\Rider2023.3\\resharper-host\\SourcesCache",
+      "C:\\Users\\lasse\\AppData\\Local\\Symbols\\src"
+    ]
+  }
+}]]></component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Start Unity" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath E:\Git\AudiovisualComputing\AudiovisualComputing -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Git\AudiovisualComputing\AudiovisualComputing" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unit Tests (batch mode)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\2022.3.25f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath E:\Git\AudiovisualComputing\AudiovisualComputing -testResults Logs/results.xml -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="E:\Git\AudiovisualComputing\AudiovisualComputing" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="14736">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" value="14736" />
+      <option name="projectPathOnTarget" />
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="" />
+      <created>1714486568835</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1714486568835</updated>
+      <workItem from="1714486571708" duration="8131000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/32/5e623283/WaveExtensionMethods.cs</url>
+          <line>40</line>
+          <properties documentPath="C:\Users\lasse\AppData\Roaming\JetBrains\Rider2023.3\resharper-host\DecompilerCache\decompiler\1de6b66de24a4618bd8723db1cfe545d2de00\32\5e623283\WaveExtensionMethods.cs" initialLine="40" containingFunctionPresentation="Method 'Init'">
+            <startOffsets>
+              <option value="1574" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1575" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
