@@ -15,6 +15,7 @@ public class SampleProvider : ISampleProvider
     private float[] _workingBuffer;
     
     // The current starting sample
+    [SerializeField]
     private ulong _nSample = 0;
 
     public WaveFormat WaveFormat { get; private set; }
@@ -67,7 +68,7 @@ public class SampleProvider : ISampleProvider
             buffer[offset++] = _samples[sample];
         }
 
-        _nSample += (ulong)actualSampleCount;
+        _nSample += (ulong)actualSampleCount / (ulong)WaveFormat.Channels;
 
         return actualSampleCount;
     }

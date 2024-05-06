@@ -17,7 +17,6 @@ public class SinGenerator : Generator
     
     public override void Read(Span<float> buffer, ulong nSample)
     {
-        nSample = 0;
         int totalSample = 0;
         for (int sample = 0; sample < buffer.Length / AudioManager.Instance.WaveFormat.Channels; sample++)
         {
@@ -27,6 +26,5 @@ public class SinGenerator : Generator
                 buffer[totalSample++] = (float)value;
             }
         }
-        
     }
 }
