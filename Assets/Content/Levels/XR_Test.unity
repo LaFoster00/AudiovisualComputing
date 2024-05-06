@@ -409,6 +409,50 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!1 &904285586
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 904285587}
+  - component: {fileID: 904285588}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &904285587
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904285586}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.1297708, y: 2.5753095, z: -1.1995035}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &904285588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 904285586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8809a8f3d7851094998d19ade02ec3a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &923506925
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,7 +807,8 @@ PrefabInstance:
       propertyPath: m_InteractionManager
       value: 
       objectReference: {fileID: 1470380219}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6288602740239117457, guid: c8ae1c8c05b6fc440bf58a5c37372376, type: 3}
     m_RemovedGameObjects:
     - {fileID: 1019192240121551111, guid: c8ae1c8c05b6fc440bf58a5c37372376, type: 3}
     - {fileID: 3448492438527343902, guid: c8ae1c8c05b6fc440bf58a5c37372376, type: 3}
@@ -917,3 +962,4 @@ SceneRoots:
   - {fileID: 1397648616}
   - {fileID: 923506929}
   - {fileID: 825633348}
+  - {fileID: 904285587}
