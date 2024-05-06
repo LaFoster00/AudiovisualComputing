@@ -8648,6 +8648,7 @@ MonoBehaviour:
     - 0
     - 0
     - 0
+    _nSample: 0
     mixers: []
   references:
     version: 2
@@ -9063,6 +9064,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c670439365bbce40ac93eb966b3d977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _generator:
+    gain: 0.5
+    frequency: 50
 --- !u!4 &1680479228
 Transform:
   m_ObjectHideFlags: 0

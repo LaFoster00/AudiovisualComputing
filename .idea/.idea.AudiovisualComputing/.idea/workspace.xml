@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Generator/SinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Generator/SinGenerator.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Mixer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Mixer.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Mixer.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Mixer/AddMixer.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Mixer/AddMixer.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Testing/AudioTester.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Testing/AudioTester.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +152,7 @@
       <workItem from="1714486571708" duration="8131000" />
       <workItem from="1714986576898" duration="1889000" />
       <workItem from="1714990791976" duration="561000" />
-      <workItem from="1714991435742" duration="15752000" />
+      <workItem from="1714991435742" duration="16553000" />
     </task>
     <servers />
   </component>

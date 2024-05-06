@@ -20,20 +20,20 @@ public class SampleProvider : ISampleProvider
 
     public WaveFormat WaveFormat { get; private set; }
 
-    [SerializeReference] private List<Mixer> mixers = new();
+    [SerializeReference] private List<ChannelSend> mixers = new();
 
     public int NumMixers
     {
         get => mixers.Count;
     }
 
-    public void AddMixer(Mixer provider)
+    public void AddMixer(ChannelSend provider)
     {
         if (!mixers.Contains(provider))
             mixers.Add(provider);
     }
 
-    public void RemoveMixer(Mixer provider)
+    public void RemoveMixer(ChannelSend provider)
     {
         mixers.Remove(provider);
     }
