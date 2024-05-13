@@ -20,7 +20,7 @@ public class SampleProvider : ISampleProvider
 
     public WaveFormat WaveFormat { get; private set; }
 
-    [SerializeReference] private List<ChannelSend> mixers = new();
+    [SerializeField] private List<ChannelSend> mixers = new();
 
     public int NumMixers
     {

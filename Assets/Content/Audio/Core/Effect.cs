@@ -4,17 +4,17 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [System.Serializable]
-public abstract class Effect : IAudioProvider
+public abstract class Effect : AudioProvider
 {
     [SerializeField]
-    private IAudioProvider _target;
+    private AudioProvider _target;
     
-    public Effect(IAudioProvider target)
+    public Effect(AudioProvider target)
     {
         _target = target;
     }
 
-    public void Read(Span<float>  buffer, ulong nSample)
+    public override void Read(Span<float>  buffer, ulong nSample)
     {
         _target.Read(buffer, nSample);
         Process(buffer, nSample);

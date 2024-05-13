@@ -3,7 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using NAudio.Wave;
-using NAudio.Wave.SampleProviders;
 using UnityEngine;
 
 public class AudioManager : MonoBehaviour
@@ -11,13 +10,13 @@ public class AudioManager : MonoBehaviour
     private AsioOut _asioOut;
 
     [SerializeField]
-    public SampleProvider WaveProvider;
+    public SampleProvider SampleProvider;
 
     public static AudioManager Instance { get; private set; }
 
     public WaveFormat WaveFormat
     {
-        get => WaveProvider.WaveFormat;
+        get => SampleProvider.WaveFormat;
     }
 
     // Start is called before the first frame update
@@ -26,8 +25,7 @@ public class AudioManager : MonoBehaviour
         Instance = this;
         var driverNames = AsioOut.GetDriverNames();
         _asioOut = new AsioOut(driverNames.First(s => s.Contains("UMC")));
-        WaveProvider = new SampleProvider();
-        _asioOut.Init(WaveProvider);
+        _asioOut.Init(SampleProvider);
         _asioOut.Play();
     }
 

@@ -3,16 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[System.Serializable]
-public class ChannelSend
+public class ChannelSend : MonoBehaviour
 {
-    [SerializeReference]
-    private IAudioProvider _target;
+    [SerializeField]
+    private AudioProvider _target;
 
     [SerializeField]
-    private double _gain;
+    private double _gain = 1.0;
 
-    public ChannelSend(IAudioProvider target, double gain)
+    public ChannelSend(AudioProvider target, double gain)
     {
         _target = target;
         _gain = gain;

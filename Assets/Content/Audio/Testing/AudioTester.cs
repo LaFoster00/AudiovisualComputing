@@ -14,6 +14,6 @@ public class AudioTester : MonoBehaviour
     private void Start()
     {
         _send = new ChannelSend(_generator, 1);
-        AudioManager.Instance.WaveProvider.AddMixer(_send);
+        AudioManager.Instance.SampleProvider.AddMixer(_send);
     }
 }

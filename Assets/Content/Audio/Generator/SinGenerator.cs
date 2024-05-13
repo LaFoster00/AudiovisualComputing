@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
 
-[Serializable]
-public class SinGenerator : Generator
+public class SinGenerator : AudioProvider
 {
     [SerializeField] 
     public double gain;
