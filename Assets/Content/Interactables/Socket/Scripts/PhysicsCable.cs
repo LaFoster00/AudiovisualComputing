@@ -1,10 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using NAudio.CoreAudioApi;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 
+[RequireComponent(typeof(LineRenderer))]
 public class PhysicCable : MonoBehaviour
 {
     [Header("Look")] [SerializeField, Min(1), OnValueChanged("OnNumberOfPointsChanged")]
@@ -16,16 +19,19 @@ public class PhysicCable : MonoBehaviour
     private float springForce = 200;
 
     [Header("Object to set")] [SerializeField, Required, OnValueChanged("UpdatePoints")]
-    private GameObject start;
+    private CableConnector start;
 
     [SerializeField, Required, OnValueChanged("UpdatePoints")]
-    private GameObject end;
+    private CableConnector end;
 
     [SerializeField, Required, OnValueChanged("UpdatePoints")]
     private GameObject cableElement;
 
     private float _distanceBetweenPoints;
     private List<Transform> _points;
+    
+    [SerializeField, Required]
+    private LineRenderer _lineRenderer;
 
     [FormerlySerializedAs("_connections")] [SerializeField, OnValueChanged("ConnectionCountChanged")]
     private byte connections;
@@ -77,21 +83,20 @@ public class PhysicCable : MonoBehaviour
 
     private void OnSpringForceChanged()
     {
-        foreach (var springJoint in GetComponentsInChildren<SpringJoint>())
+        foreach (var joint in GetComponentsInChildren<SpringJoint>())
         {
-            springJoint.spring = springForce;
+            joint.spring = springForce;
         }
     }
 
     private void OnConnectedChanged()
     {
-        
     }
-    
+
     private void OnConnectionsChanged()
     {
         if (connections != 2) return;
-        
+
         CalculateDistanceBetweenPoints();
         foreach (var springJoint in GetComponentsInChildren<SpringJoint>())
         {
@@ -101,7 +106,26 @@ public class PhysicCable : MonoBehaviour
 
     private void CalculateDistanceBetweenPoints()
     {
-        _distanceBetweenPoints = (end.transform.position - start.transform.position).magnitude / (numberOfPoints + 1);
+        var endPosition = end.cableAnchor.transform.position;
+        var startPosition = start.cableAnchor.transform.position;
+        var distanceStartEnd = (startPosition - endPosition).magnitude;
+        _distanceBetweenPoints = distanceStartEnd / (numberOfPoints + 1);
+    }
+    
+    private void UpdateLineRenderer()
+    {
+        var joints = GetComponentsInChildren<SpringJoint>();
+        
+        Vector3[] positions = new Vector3[2 + joints.Length];
+        positions[0] = start.cableAnchor.transform.position;
+        for (int joint = 0; joint < joints.Length; joint++)
+        {
+            positions[joint + 1] = joints[joint].transform.position;
+        }
+
+        positions[^1] = end.cableAnchor.transform.position;
+        _lineRenderer.positionCount = positions.Length;
+        _lineRenderer.SetPositions(positions);
     }
 
     [Button("Reset points")]
@@ -113,7 +137,8 @@ public class PhysicCable : MonoBehaviour
             return;
         }
 
-        _distanceBetweenPoints = (end.transform.position - start.transform.position).magnitude / (numberOfPoints + 1);
+        CalculateDistanceBetweenPoints();
+
 
         // delete old
         int length = transform.childCount;
@@ -124,17 +149,17 @@ public class PhysicCable : MonoBehaviour
             }
 
         // set new
-        Vector3 lastPos = start.transform.position;
-        Rigidbody lastBody = start.GetOrCreateComponent<Rigidbody>();
+        Vector3 lastPos = start.cableAnchor.transform.position;
+        Rigidbody lastBody = start.gameObject.GetOrCreateComponent<Rigidbody>();
         for (int i = 0; i < numberOfPoints; i++)
         {
             // Get the next position for the based on the last position
-            Vector3 newPos = GenerateNextPointPosition(lastPos);
+            Vector3 newPos = GenerateNextPointPosition(lastPos, i == 0 ? 0.5f : 1.0f);
 
             // Apply the position to the new point
             GameObject cPoint = CreateNewPoint(i);
             cPoint.transform.position = newPos;
-            cPoint.transform.localScale = Vector3.one * size;
+            cPoint.transform.localScale = new Vector3(size, size, _distanceBetweenPoints);
             cPoint.transform.rotation = transform.rotation;
 
             SetSpring(cPoint.GetOrCreateComponent<SpringJoint>(), lastBody);
@@ -143,10 +168,15 @@ public class PhysicCable : MonoBehaviour
             lastPos = newPos;
         }
 
-        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.GetOrCreateComponent<Rigidbody>());
+        end.transform.position = GenerateNextPointPosition(lastPos, 0.5f) + end.transform.position - end.cableAnchor.transform.position;
+        end.transform.LookAt(end.transform.position + end.transform.position - start.cableAnchor.transform.position,
+            Vector3.up);
+        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.gameObject.GetOrCreateComponent<Rigidbody>());
 
-        Vector3 GenerateNextPointPosition(Vector3 lastPos) =>
-            lastPos + (end.transform.position - start.transform.position).normalized * _distanceBetweenPoints;
+        Vector3 GenerateNextPointPosition(Vector3 lastPos, float scalar = 1.0f) =>
+            lastPos + start.cableAnchor.transform.forward * -1 * scalar * _distanceBetweenPoints;
+        
+        UpdateLineRenderer();
     }
 
     [Button("Add point")]
@@ -221,7 +251,7 @@ public class PhysicCable : MonoBehaviour
     {
         _points = new List<Transform>
         {
-            start.transform,
+            start.cableAnchor.transform,
             cableElement.transform
         };
 
@@ -235,6 +265,11 @@ public class PhysicCable : MonoBehaviour
         }
 
         _points.Add(end.transform);
+    }
+
+    private void Update()
+    {
+        UpdateLineRenderer();
     }
 
     // Calculates the half way point between the start and end point
