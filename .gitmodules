@@ -1,0 +1,4 @@
+[submodule "Assets/USCSL"]
+	path = Assets/USCSL
+	url = https://github.com/LaFoster00/USCSL.git
+	branch = main
