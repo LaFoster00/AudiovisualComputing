@@ -1,52 +1,59 @@
 using System;
 using System.Collections.Generic;
 using NAudio.Wave;
+using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 // Supplies a maximum of 2048 samples per read, per channel
 [System.Serializable]
 public class SampleProvider : ISampleProvider
 {
-    [SerializeField]
+    [ReadOnly]
+    public int samplesCount;
+    
     private float[] _samples;
-    // For mixers, so that they can let the target generate a signal an then mix it in
-    [SerializeField]
+    // For sends, so that they can let the target generate a signal an then mix it in)
     private float[] _workingBuffer;
     
+    private Memory<float> _samplesMemory; 
+    private Memory<float> _workingBufferMemory;
+    public Span<float> Samples => _samplesMemory.Span;
+    public Span<float> WorkingBuffer => _workingBufferMemory.Span;
+
+
     // The current starting sample
     [SerializeField]
     private ulong _nSample = 0;
 
     public WaveFormat WaveFormat { get; private set; }
 
-    [SerializeField] private List<ChannelSend> mixers = new();
+    [FormerlySerializedAs("mixers")] [SerializeField] private List<ChannelSend> sends = new();
+    
 
     public int NumMixers
     {
-        get => mixers.Count;
+        get => sends.Count;
     }
 
     public void AddMixer(ChannelSend provider)
     {
-        if (!mixers.Contains(provider))
-            mixers.Add(provider);
+        if (!sends.Contains(provider))
+            sends.Add(provider);
     }
 
     public void RemoveMixer(ChannelSend provider)
     {
-        mixers.Remove(provider);
+        sends.Remove(provider);
     }
 
-    public SampleProvider() : this(44100, 2)
+    public void Init(int sampleRate = 44100, int channels = 2)
     {
-    }
-
-    public SampleProvider(int sampleRate, int channels)
-    {
+        samplesCount = sampleRate * AudioManager.Instance.desiredLatency / 1000;
         WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(sampleRate, channels);
-        _samples = new float[channels * 2048];
-        _workingBuffer = new float[channels * 2048];
+        _samples = new float[samplesCount];
+        _workingBuffer = new float[samplesCount];
     }
 
     public int Read(float[] buffer, int offset, int sampleCount)
@@ -55,11 +62,13 @@ public class SampleProvider : ISampleProvider
         Array.Clear(_samples, 0, actualSampleCount);
         Array.Clear(_workingBuffer, 0, actualSampleCount);
 
-        foreach (var mixer in mixers)
+        foreach (var send in sends)
         {
-            mixer.Read(
-                new Span<float>(_samples, 0, actualSampleCount),
-                new Span<float>(_workingBuffer, 0, actualSampleCount),
+            _samplesMemory = new Memory<float>(_samples, 0, actualSampleCount);
+            _workingBufferMemory = new Memory<float>(_workingBuffer, 0, actualSampleCount);
+            send.Read(
+                Samples,
+                WorkingBuffer,
                 _nSample);
         }
 
