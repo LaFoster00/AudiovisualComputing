@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7144644485246985902}
+  - component: {fileID: 9208954991911394702}
   m_Layer: 0
   m_Name: AudioCable
   m_TagString: Untagged
@@ -33,6 +34,26 @@ Transform:
   - {fileID: 4703484592121250083}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &9208954991911394702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4801683939624513149}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 671a3a822dbdf884b8883b81667d7ae8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  numberOfPoints: 4
+  size: 0.01
+  springForce: 1000
+  start: {fileID: 4396411598103196679}
+  end: {fileID: 3998576397361807269}
+  cableElement: {fileID: 6679105716882831197, guid: 6cdb813a162ce28458e11cc2708e5488,
+    type: 3}
+  connections: 0
 --- !u!1001 &2628961633116273790
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -51,6 +72,86 @@ PrefabInstance:
       propertyPath: otherPlug
       value: 
       objectReference: {fileID: 5722913505887962118}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9208954991911394702}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9208954991911394702}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddConnection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddConnection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PhysicCable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PhysicCable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8017302338021914367, guid: cb502c0083ea6db49b6e546d09165d55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -106,13 +207,19 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb502c0083ea6db49b6e546d09165d55, type: 3}
+--- !u!1 &4396411598103196679 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1835431953157818489, guid: cb502c0083ea6db49b6e546d09165d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 2628961633116273790}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4977922901881065380 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
     type: 3}
   m_PrefabInstance: {fileID: 2628961633116273790}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 4396411598103196679}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c13e80be6916b1e458b4636d70ec17d1, type: 3}
@@ -142,6 +249,86 @@ PrefabInstance:
       propertyPath: otherPlug
       value: 
       objectReference: {fileID: 4977922901881065380}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9208954991911394702}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 9208954991911394702}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddConnection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: AddConnection
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PhysicCable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: PhysicCable, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_IntArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugRemoved.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 7020777758190056410, guid: cb502c0083ea6db49b6e546d09165d55,
+        type: 3}
+      propertyPath: onPlugInserted.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 8017302338021914367, guid: cb502c0083ea6db49b6e546d09165d55,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -197,6 +384,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb502c0083ea6db49b6e546d09165d55, type: 3}
+--- !u!1 &3998576397361807269 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1835431953157818489, guid: cb502c0083ea6db49b6e546d09165d55,
+    type: 3}
+  m_PrefabInstance: {fileID: 3316073946085685212}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4703484592121250083 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8017302338021914367, guid: cb502c0083ea6db49b6e546d09165d55,
@@ -209,7 +402,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 3316073946085685212}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3998576397361807269}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c13e80be6916b1e458b4636d70ec17d1, type: 3}

@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -40,17 +42,12 @@ public class Plug : AudioProvider
         }
     }
 
-    public delegate void PluggedIndEvent(Socket args);
-
-    public event PluggedIndEvent OnPlugInserted;
-
-    public delegate void UnpluggedEvent(Socket args);
-
-    public event UnpluggedEvent OnPlugRemoved;
+    public UnityEvent<Socket> onPlugInserted;
+    public UnityEvent<Socket> onPlugRemoved;
 
     public void OnPluggedIn(Socket socket)
     {
-        OnPlugInserted?.Invoke(socket);
+        onPlugInserted?.Invoke(socket);
         if (socket.Direction == SocketDirection.Input)
         {
             if (otherPlug.plugMode == PlugMode.Target) return;
@@ -71,7 +68,7 @@ public class Plug : AudioProvider
 
     public void OnPluggedOut(Socket args)
     {
-        OnPlugRemoved?.Invoke(args);
+        onPlugRemoved?.Invoke(args);
         SocketTarget = null;
 
         plugMode = PlugMode.Undefined;
