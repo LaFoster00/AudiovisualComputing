@@ -28,12 +28,12 @@ public class PhysicCable : MonoBehaviour
     private GameObject cableElement;
 
     private float _distanceBetweenPoints;
-    private List<Transform> _points;
-    
-    [SerializeField, Required]
-    private LineRenderer _lineRenderer;
 
-    [FormerlySerializedAs("_connections")] [SerializeField, OnValueChanged("ConnectionCountChanged")]
+    [SerializeField] private List<Transform> points;
+
+    [SerializeField, Required] private LineRenderer lineRenderer;
+
+    [SerializeField, OnValueChanged("ConnectionCountChanged")]
     private byte connections;
 
     private byte Connections
@@ -68,7 +68,7 @@ public class PhysicCable : MonoBehaviour
 
     private const string CloneText = "ChainPart";
 
-    public IReadOnlyList<Transform> Points => _points;
+    public IReadOnlyList<Transform> Points => points;
 
     public void AddConnection(int count)
     {
@@ -111,21 +111,17 @@ public class PhysicCable : MonoBehaviour
         var distanceStartEnd = (startPosition - endPosition).magnitude;
         _distanceBetweenPoints = distanceStartEnd / (numberOfPoints + 1);
     }
-    
+
     private void UpdateLineRenderer()
     {
-        var joints = GetComponentsInChildren<SpringJoint>();
-        
-        Vector3[] positions = new Vector3[2 + joints.Length];
-        positions[0] = start.cableAnchor.transform.position;
-        for (int joint = 0; joint < joints.Length; joint++)
+        Vector3[] positions = new Vector3[points.Count];
+        for (int i = 0; i < points.Count; i++)
         {
-            positions[joint + 1] = joints[joint].transform.position;
+            positions[i] = points[i].position;
         }
 
-        positions[^1] = end.cableAnchor.transform.position;
-        _lineRenderer.positionCount = positions.Length;
-        _lineRenderer.SetPositions(positions);
+        lineRenderer.positionCount = positions.Length;
+        lineRenderer.SetPositions(positions);
     }
 
     [Button("Reset points")]
@@ -136,6 +132,10 @@ public class PhysicCable : MonoBehaviour
             Debug.LogWarning("Can't update because one of objects to set is null!");
             return;
         }
+
+        points.Clear();
+        points.Add(start.cableAnchor.transform);
+
 
         CalculateDistanceBetweenPoints();
 
@@ -162,20 +162,26 @@ public class PhysicCable : MonoBehaviour
             cPoint.transform.localScale = new Vector3(size, size, _distanceBetweenPoints);
             cPoint.transform.rotation = transform.rotation;
 
-            SetSpring(cPoint.GetOrCreateComponent<SpringJoint>(), lastBody);
+            SetSpring(cPoint.GetOrCreateComponent<SpringJoint>(), lastBody, i == 0 ? start.cableAnchor.transform.position : new Vector3());
 
             lastBody = cPoint.GetOrCreateComponent<Rigidbody>();
             lastPos = newPos;
+
+            points.Add(cPoint.transform);
         }
 
-        end.transform.position = GenerateNextPointPosition(lastPos, 0.5f) + end.transform.position - end.cableAnchor.transform.position;
+        points.Add(end.cableAnchor.transform);
+
+        end.transform.position = GenerateNextPointPosition(lastPos, 0.5f) + end.transform.position -
+                                 end.cableAnchor.transform.position;
         end.transform.LookAt(end.transform.position + end.transform.position - start.cableAnchor.transform.position,
             Vector3.up);
-        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.gameObject.GetOrCreateComponent<Rigidbody>());
+        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.gameObject.GetOrCreateComponent<Rigidbody>(),
+            end.cableAnchor.transform.localPosition);
 
         Vector3 GenerateNextPointPosition(Vector3 lastPos, float scalar = 1.0f) =>
             lastPos + start.cableAnchor.transform.forward * -1 * scalar * _distanceBetweenPoints;
-        
+
         UpdateLineRenderer();
     }
 
@@ -246,27 +252,6 @@ public class PhysicCable : MonoBehaviour
         numberOfPoints--;
     }
 
-
-    private void Start()
-    {
-        _points = new List<Transform>
-        {
-            start.cableAnchor.transform,
-            cableElement.transform
-        };
-
-        for (int i = 1; i < numberOfPoints; i++)
-        {
-            Transform point = GetPoint(i);
-            if (point == null)
-                Debug.LogWarning("Dont found point number " + i);
-            else
-                _points.Add(point);
-        }
-
-        _points.Add(end.transform);
-    }
-
     private void Update()
     {
         UpdateLineRenderer();
@@ -286,14 +271,14 @@ public class PhysicCable : MonoBehaviour
     private Transform GetPoint(int index) => transform.Find(PointName(index));
 
 
-    public void SetSpring(SpringJoint spring, Rigidbody connectedBody)
+    public void SetSpring(SpringJoint spring, Rigidbody connectedBody, Vector3 connectedAnchor = new())
     {
         spring.connectedBody = connectedBody;
         spring.spring = springForce;
         spring.damper = 0.2f;
         spring.autoConfigureConnectedAnchor = false;
         spring.anchor = Vector3.zero;
-        spring.connectedAnchor = Vector3.zero;
+        spring.connectedAnchor = connectedAnchor;
         spring.minDistance = _distanceBetweenPoints;
         spring.maxDistance = _distanceBetweenPoints;
     }
