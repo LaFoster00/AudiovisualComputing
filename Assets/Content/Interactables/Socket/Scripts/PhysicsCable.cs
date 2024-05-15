@@ -7,7 +7,6 @@ using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.Serialization;
 
-[RequireComponent(typeof(LineRenderer))]
 public class PhysicCable : MonoBehaviour
 {
     [Header("Look")] [SerializeField, Min(1), OnValueChanged("OnNumberOfPointsChanged")]
@@ -24,14 +23,16 @@ public class PhysicCable : MonoBehaviour
     [SerializeField, Required, OnValueChanged("UpdatePoints")]
     private CableConnector end;
 
+    [FormerlySerializedAs("cableElement")] [SerializeField, Required, OnValueChanged("UpdatePoints")]
+    private GameObject cablePoint;
+
     [SerializeField, Required, OnValueChanged("UpdatePoints")]
-    private GameObject cableElement;
+    private GameObject cableConnector;
 
     private float _distanceBetweenPoints;
 
     [SerializeField] private List<Transform> points;
-
-    [SerializeField, Required] private LineRenderer lineRenderer;
+    [SerializeField] private List<Transform> connectors;
 
     [SerializeField, OnValueChanged("ConnectionCountChanged")]
     private byte connections;
@@ -106,36 +107,25 @@ public class PhysicCable : MonoBehaviour
 
     private void CalculateDistanceBetweenPoints()
     {
-        var endPosition = end.cableAnchor.transform.position;
-        var startPosition = start.cableAnchor.transform.position;
+        var endPosition = end.CablePoint.transform.position;
+        var startPosition = start.CablePoint.transform.position;
         var distanceStartEnd = (startPosition - endPosition).magnitude;
         _distanceBetweenPoints = distanceStartEnd / (numberOfPoints + 1);
-    }
-
-    private void UpdateLineRenderer()
-    {
-        Vector3[] positions = new Vector3[points.Count];
-        for (int i = 0; i < points.Count; i++)
-        {
-            positions[i] = points[i].position;
-        }
-
-        lineRenderer.positionCount = positions.Length;
-        lineRenderer.SetPositions(positions);
     }
 
     [Button("Reset points")]
     private void UpdatePoints()
     {
-        if (!start || !end || !cableElement)
+        if (!start || !end || !cablePoint)
         {
             Debug.LogWarning("Can't update because one of objects to set is null!");
             return;
         }
-
+        
         points.Clear();
-        points.Add(start.cableAnchor.transform);
+        points.Add(start.CablePoint.transform);
 
+        connectors.Clear();
 
         CalculateDistanceBetweenPoints();
 
@@ -149,41 +139,56 @@ public class PhysicCable : MonoBehaviour
             }
 
         // set new
-        Vector3 lastPos = start.cableAnchor.transform.position;
+        Vector3 lastPos = start.CablePoint.transform.position;
         Rigidbody lastBody = start.gameObject.GetOrCreateComponent<Rigidbody>();
         for (int i = 0; i < numberOfPoints; i++)
         {
-            // Get the next position for the based on the last position
-            Vector3 newPos = GenerateNextPointPosition(lastPos, i == 0 ? 0.5f : 1.0f);
-
             // Apply the position to the new point
             GameObject cPoint = CreateNewPoint(i);
+            GameObject cConnector = CreateNewCon(i);
+
+            // Get the next position for the based on the last position
+            Vector3 newPos = GenerateNextPointPosition(lastPos);
             cPoint.transform.position = newPos;
-            cPoint.transform.localScale = new Vector3(size, size, _distanceBetweenPoints);
+            cPoint.transform.localScale = Vector3.one * size;
             cPoint.transform.rotation = transform.rotation;
 
-            SetSpring(cPoint.GetOrCreateComponent<SpringJoint>(), lastBody, i == 0 ? start.cableAnchor.transform.position : new Vector3());
+            SetSpring(cPoint.GetOrCreateComponent<SpringJoint>(), lastBody, i == 0 ? start.CablePointOffset : Vector3.zero);
 
             lastBody = cPoint.GetOrCreateComponent<Rigidbody>();
+            
+            cConnector.transform.position = GenerateConnectorPosition(lastPos, newPos);
+            cConnector.transform.localScale = GenerateConnectorSize(lastPos, newPos);
+            cConnector.transform.rotation = GenerateConnectorRotation(lastPos, newPos);
+            
             lastPos = newPos;
 
             points.Add(cPoint.transform);
+            connectors.Add(cConnector.transform);
         }
 
-        points.Add(end.cableAnchor.transform);
+        points.Add(end.CablePoint.transform);
 
-        end.transform.position = GenerateNextPointPosition(lastPos, 0.5f) + end.transform.position -
-                                 end.cableAnchor.transform.position;
-        end.transform.LookAt(end.transform.position + end.transform.position - start.cableAnchor.transform.position,
-            Vector3.up);
-        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.gameObject.GetOrCreateComponent<Rigidbody>(),
-            end.cableAnchor.transform.localPosition);
-
-        Vector3 GenerateNextPointPosition(Vector3 lastPos, float scalar = 1.0f) =>
-            lastPos + start.cableAnchor.transform.forward * -1 * scalar * _distanceBetweenPoints;
-
-        UpdateLineRenderer();
+        Vector3 endPos = GenerateNextPointPosition(lastPos);
+        end.transform.position = endPos - end.CablePointOffset;
+        SetSpring(lastBody.gameObject.AddComponent<SpringJoint>(), end.gameObject.GetOrCreateComponent<Rigidbody>(),  start.CablePointOffset);
+        
+        GameObject endConnector = CreateNewCon(numberOfPoints);
+        endConnector.transform.position = GenerateConnectorPosition(lastPos, endPos);
+        endConnector.transform.rotation = GenerateConnectorRotation(lastPos, endPos);
+        endConnector.transform.localScale = GenerateConnectorSize(lastPos, endPos);
+        connectors.Add(endConnector.transform);
     }
+
+    private Vector3 GenerateNextPointPosition(Vector3 lastPos) =>
+        lastPos + start.transform.forward * -1 * _distanceBetweenPoints;
+
+    private Vector3 GenerateConnectorPosition(Vector3 start, Vector3 end) => (start + end) / 2f;
+
+    private Vector3 GenerateConnectorSize(Vector3 start, Vector3 end) => new(size, size, (start - end).magnitude / 2f);
+
+    private Quaternion GenerateConnectorRotation(Vector3 start, Vector3 end) =>
+        Quaternion.LookRotation(end - start, Vector3.right);
 
     [Button("Add point")]
     private void AddPoint()
@@ -251,10 +256,27 @@ public class PhysicCable : MonoBehaviour
 
         numberOfPoints--;
     }
-
+    
     private void Update()
     {
-        UpdateLineRenderer();
+        Transform lastPoint = points[0];
+        for (int i = 0; i < connectors.Count; i++)
+        {
+            Transform nextPoint = points[i + 1];
+            Transform connector = connectors[i].transform;
+            connector.position = GenerateConnectorPosition(lastPoint.position, nextPoint.position);
+            if (lastPoint.position == nextPoint.position || nextPoint.position == connector.position)
+            {
+                connector.localScale = Vector3.zero;
+            }
+            else
+            {
+                connector.rotation = Quaternion.LookRotation(nextPoint.position - connector.position);
+                connector.localScale = GenerateConnectorSize(lastPoint.position, nextPoint.position);
+            }
+
+            lastPoint = nextPoint;
+        }
     }
 
     // Calculates the half way point between the start and end point
@@ -262,11 +284,9 @@ public class PhysicCable : MonoBehaviour
 
     // Calculates the half distance between two points
     private Vector3 GetSizeBetween(Vector3 start, Vector3 end) => new Vector3(size, size, (start - end).magnitude / 2f);
-
-    private Quaternion CountRoationOfCon(Vector3 start, Vector3 end) =>
-        Quaternion.LookRotation(end - start, Vector3.right);
-
+    
     private string PointName(int index) => $"{CloneText}_{index}_Point";
+    private string ConnectorName(int index) => $"{CloneText}_{index}_Conn";
 
     private Transform GetPoint(int index) => transform.Find(PointName(index));
 
@@ -285,8 +305,15 @@ public class PhysicCable : MonoBehaviour
 
     private GameObject CreateNewPoint(int index)
     {
-        GameObject temp = Instantiate(cableElement, transform);
+        GameObject temp = Instantiate(cablePoint, transform);
         temp.name = PointName(index);
+        return temp;
+    }
+
+    private GameObject CreateNewCon(int index)
+    {
+        GameObject temp = Instantiate(cableConnector, transform);
+        temp.name = ConnectorName(index);
         return temp;
     }
 }
