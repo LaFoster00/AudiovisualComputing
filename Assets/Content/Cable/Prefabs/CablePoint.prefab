@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 5540936937787754299}
   - component: {fileID: -3939582775196317336}
   - component: {fileID: 29512286156627353}
+  - component: {fileID: 8857298183585646315}
   m_Layer: 3
   m_Name: CablePoint
   m_TagString: Untagged
@@ -343,3 +344,16 @@ MonoBehaviour:
   m_StartingSingleGrabTransformers: []
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
+--- !u!114 &8857298183585646315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6679105716882831197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 133c05eb805683b42a8b15cf14b96574, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  friction: 0.516

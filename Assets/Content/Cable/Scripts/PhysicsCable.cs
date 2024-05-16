@@ -16,6 +16,9 @@ public class PhysicCable : MonoBehaviour
 
     [Header("Bahaviour")] [SerializeField, Min(1f), OnValueChanged("OnSpringForceChanged")]
     private float springForce = 200;
+    
+    [SerializeField, Min(0), OnValueChanged("OnSpringForceChanged")]
+    private float springDamper = 1;
 
     [Header("Object to set")] [SerializeField, Required, OnValueChanged("UpdatePoints")]
     private CableConnector start;
@@ -87,6 +90,7 @@ public class PhysicCable : MonoBehaviour
         foreach (var joint in GetComponentsInChildren<SpringJoint>())
         {
             joint.spring = springForce;
+            joint.damper = springDamper;
         }
     }
 
@@ -295,7 +299,7 @@ public class PhysicCable : MonoBehaviour
     {
         spring.connectedBody = connectedBody;
         spring.spring = springForce;
-        spring.damper = 0.2f;
+        spring.damper = springDamper;
         spring.autoConfigureConnectedAnchor = false;
         spring.anchor = Vector3.zero;
         spring.connectedAnchor = connectedAnchor;
