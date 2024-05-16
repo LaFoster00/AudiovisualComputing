@@ -315,6 +315,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8390615849034691172, guid: 7b91ad34fd855ad4e808b7e35d2a11b3,
+        type: 3}
+      propertyPath: m_InteractionManager
+      value: 
+      objectReference: {fileID: 4314486609677355996}
     m_RemovedComponents:
     - {fileID: 6701638831864771133, guid: 7b91ad34fd855ad4e808b7e35d2a11b3, type: 3}
     m_RemovedGameObjects:
