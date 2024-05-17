@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Generator.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Generator/SinGenerator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Generator/SinGenerator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CablePoint.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CablePoint.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/OutputSocket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/OutputSocket.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-    </list>
+    <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -204,7 +193,7 @@
       <workItem from="1715678352590" duration="2901000" />
       <workItem from="1715703420588" duration="12452000" />
       <workItem from="1715763154642" duration="3642000" />
-      <workItem from="1715866092098" duration="17397000" />
+      <workItem from="1715866092098" duration="17648000" />
     </task>
     <servers />
   </component>
