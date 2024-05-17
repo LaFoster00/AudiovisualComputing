@@ -59,6 +59,8 @@ public class Rotator : MonoBehaviour
         var localEulerAngles = linkedDial.localEulerAngles;
         localEulerAngles.y = StepToAngle(currentStep);
         linkedDial.localEulerAngles = localEulerAngles;
+        if (TryGetComponent(out IDial dial))
+            dial.DialChanged(1f/ActualSteps * currentStep);
     }
 
     private void GrabbedBy(SelectEnterEventArgs arg0)

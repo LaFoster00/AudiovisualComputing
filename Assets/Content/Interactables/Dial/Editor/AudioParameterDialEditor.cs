@@ -1,4 +1,5 @@
 using System.Linq;
+using NaughtyAttributes.Editor;
 using UnityEngine;
 using UnityEditor;
 
@@ -36,8 +37,9 @@ public class AudioParameterDialEditor : Editor
                 audioParameterDial.targetParameterIndex, audioParameterNames);
 
             audioParameterDial.targetParameter = audioParameters[audioParameterDial.targetParameterIndex];
-
+            EditorGUI.BeginDisabledGroup(true);
             EditorGUILayout.PropertyField(serializedObject.FindProperty(nameof(AudioParameterDial.targetParameter)), true);
+            EditorGUI.EndDisabledGroup();
         }
 
         if (GUI.changed)

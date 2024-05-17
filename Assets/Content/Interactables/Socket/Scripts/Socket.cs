@@ -1,4 +1,5 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.XR.Interaction.Toolkit;
 
@@ -11,10 +12,15 @@ public enum SocketDirection
 [RequireComponent(typeof(XRSocketInteractor))]
 public class Socket : AudioProvider
 {
-    [SerializeField]
+    [SerializeField, ShowIf("IsSocketInput")]
     private AudioProvider _target = null;
 
     [SerializeField] private SocketDirection _direction = SocketDirection.Input;
+    
+    private bool IsSocketInput()
+    {
+        return _direction == SocketDirection.Output;
+    }
     
     public SocketDirection Direction
     {
