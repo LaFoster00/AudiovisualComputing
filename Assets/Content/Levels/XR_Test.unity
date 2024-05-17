@@ -896,6 +896,9 @@ MonoBehaviour:
     maxValue: 200
     currentValue: 0
     currentNormalizedValue: 0
+    onValueChanged:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!1 &367509536
 GameObject:
   m_ObjectHideFlags: 0
@@ -6833,7 +6836,7 @@ PrefabInstance:
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: targetParameter
-      value: 6058913098214670346
+      value: 6058913098214670365
       objectReference: {fileID: 0}
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -6852,6 +6855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
+      propertyPath: managedReferences[6058913098214670365]
+      value: Assembly-CSharp AudioParameter
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
       propertyPath: managedReferences[6058913098214670344].name
       value: Frequency
       objectReference: {fileID: 0}
@@ -6863,6 +6871,11 @@ PrefabInstance:
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: managedReferences[6058913098214670346].name
+      value: Frequency
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670365].name
       value: Frequency
       objectReference: {fileID: 0}
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
@@ -6897,6 +6910,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
+      propertyPath: managedReferences[6058913098214670365].maxValue
+      value: 800
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670365].minValue
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
       propertyPath: managedReferences[6058913098214670344].currentValue
       value: 358
       objectReference: {fileID: 0}
@@ -6909,6 +6932,11 @@ PrefabInstance:
         type: 3}
       propertyPath: managedReferences[6058913098214670346].currentValue
       value: 358
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670365].currentValue
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -6928,6 +6956,26 @@ PrefabInstance:
     - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: managedReferences[6058913098214670346].currentNormalizedValue
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670365].currentNormalizedValue
+      value: 0.198
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670346].OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670346].onValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8295546472028390160, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: managedReferences[6058913098214670365].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8786386268708458674, guid: ee35a8dbf2cc6f747b6695035563a95e,

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 using USCSL;
 
@@ -23,6 +24,8 @@ public class AudioParameter
     [FormerlySerializedAs("normalizedValue")] [SerializeField, ReadOnly, AllowNesting]
     private float currentNormalizedValue = 0;
 
+    public UnityEvent<AudioParameter> onValueChanged;
+    
     private void CurrentValueChanged()
     {
         CurrentValue = currentValue;
@@ -35,6 +38,7 @@ public class AudioParameter
         {
             currentNormalizedValue = math.clamp(value.Map(minValue, maxValue, 0f, 1f), 0f, 1f);
             currentValue = math.clamp(value, minValue, maxValue);
+            onValueChanged?.Invoke(this);
         }
     }
 
@@ -46,6 +50,7 @@ public class AudioParameter
         {
             currentNormalizedValue = math.clamp(value, 0f, 1f);
             currentValue = math.clamp(value.Map(0f, 1f, minValue, maxValue), minValue, maxValue);
+            onValueChanged?.Invoke(this);
         }
     }
 }
