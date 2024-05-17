@@ -12,7 +12,7 @@ public class Gain : AudioProvider
         name = "Gain",
         minValue = 0,
         maxValue = 1,
-        CurrentValue = 0.2f
+        CurrentNormalizedValue = 0.2f
     };
     
     public override void Read(Span<float> buffer, ulong nSample)
@@ -20,7 +20,7 @@ public class Gain : AudioProvider
         source.Read(buffer, nSample);
         for (int sample = 0; sample < buffer.Length; sample++)
         {
-            buffer[sample] *= gain.CurrentValue;
+            buffer[sample] *= gain.CurrentNormalizedValue;
         }
     }
 }

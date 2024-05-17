@@ -10,6 +10,6 @@ public class AudioParameterDial : MonoBehaviour, IDial
 
     public void DialChanged(float dialValue)
     {
-        targetParameter.CurrentValue = dialValue;
+        targetParameter.CurrentNormalizedValue = dialValue;
     }
 }

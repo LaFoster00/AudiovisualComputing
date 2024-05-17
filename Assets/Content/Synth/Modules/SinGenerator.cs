@@ -8,7 +8,6 @@ public class SinGenerator : AudioProvider
         name = "Frequency",
         minValue = 40,
         maxValue = 200,
-        CurrentValue = 0.3f
     };
 
     public override void Read(Span<float> buffer, ulong nSample)
@@ -17,7 +16,7 @@ public class SinGenerator : AudioProvider
         for (int sample = 0; sample < buffer.Length / AudioManager.Instance.WaveFormat.Channels; sample++)
         {
             double value = Math.Sin(nSample++ *
-                                    (2.0 * Math.PI * frequency.CurrentValue /
+                                    (2.0 * Math.PI * frequency.CurrentNormalizedValue /
                                      AudioManager.Instance.WaveFormat.SampleRate));
             for (int channel = 0; channel < AudioManager.Instance.WaveFormat.Channels; channel++)
             {
