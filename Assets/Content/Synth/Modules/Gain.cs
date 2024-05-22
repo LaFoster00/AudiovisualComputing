@@ -6,13 +6,13 @@ using UnityEngine;
 public class Gain : AudioProvider
 {
     public AudioProvider source;
-    
-    public AudioParameter gain = new AudioParameter()
+
+    [SerializeReference] public AudioParameter gain = new()
     {
         name = "Gain",
         minValue = 0,
-        maxValue = 1,
-        CurrentNormalizedValue = 0.2f
+        maxValue = 4,
+        CurrentValue = 1
     };
     
     public override void Read(Span<float> buffer, ulong nSample)
@@ -20,7 +20,7 @@ public class Gain : AudioProvider
         source.Read(buffer, nSample);
         for (int sample = 0; sample < buffer.Length; sample++)
         {
-            buffer[sample] *= gain.CurrentNormalizedValue;
+            buffer[sample] *= gain.CurrentValue;
         }
     }
 }

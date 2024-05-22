@@ -33,13 +33,18 @@ public class AudioParameterDialEditor : Editor
                 .Select(info => (AudioParameter)info.GetValue(audioParameterDial.targetProvider))
                 .ToArray();
             var audioParameterNames = audioParameters.Select(parameter => parameter.name).ToArray();
-            audioParameterDial.targetParameterIndex = EditorGUILayout.Popup("Target Parameter",
-                audioParameterDial.targetParameterIndex, audioParameterNames);
+            var targetParameterIndexProp =
+                serializedObject.FindProperty(nameof(AudioParameterDial.targetParameterIndex));
+            targetParameterIndexProp.intValue = EditorGUILayout.Popup("Target Parameter",
+                targetParameterIndexProp.intValue, audioParameterNames);
 
-            audioParameterDial.targetParameter = audioParameters[audioParameterDial.targetParameterIndex];
+            var targetParameterProp = serializedObject.FindProperty(nameof(audioParameterDial.targetParameter));
+            targetParameterProp.managedReferenceValue = audioParameters[audioParameterDial.targetParameterIndex];
             EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.PropertyField(serializedObject.FindProperty(nameof(AudioParameterDial.targetParameter)), true);
+            EditorGUILayout.PropertyField(targetParameterProp, true);
             EditorGUI.EndDisabledGroup();
+            
+            serializedObject.ApplyModifiedProperties();
         }
 
         if (GUI.changed)

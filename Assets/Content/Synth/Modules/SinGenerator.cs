@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class SinGenerator : AudioProvider
 {
-    public AudioParameter frequency = new()
+    [SerializeReference] public AudioParameter frequency = new()
     {
         name = "Frequency",
         minValue = 40,
-        maxValue = 200,
+        maxValue = 200
     };
 
     public override void Read(Span<float> buffer, ulong nSample)
@@ -16,7 +16,7 @@ public class SinGenerator : AudioProvider
         for (int sample = 0; sample < buffer.Length / AudioManager.Instance.WaveFormat.Channels; sample++)
         {
             double value = Math.Sin(nSample++ *
-                                    (2.0 * Math.PI * frequency.CurrentNormalizedValue /
+                                    (2.0 * Math.PI * frequency.CurrentValue /
                                      AudioManager.Instance.WaveFormat.SampleRate));
             for (int channel = 0; channel < AudioManager.Instance.WaveFormat.Channels; channel++)
             {

@@ -174,7 +174,7 @@ MonoBehaviour:
   m_SnapToColliderVolume: 1
   m_ReinitializeDynamicAttachEverySingleGrab: 1
   m_AttachEaseInTime: 0
-  m_MovementType: 0
+  m_MovementType: 1
   m_VelocityDamping: 1
   m_VelocityScale: 1
   m_AngularVelocityDamping: 1
@@ -229,10 +229,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedDial: {fileID: 3492398842866044541}
+  knobType: 0
   minRotation: 0.1
   maxRotation: 0.9
   steps: 20
-  startPosition: 0.5
+  startPosition: 0
   currentStep: 2
   angleTolerance: 0.5
 --- !u!65 &5283625647951966305
