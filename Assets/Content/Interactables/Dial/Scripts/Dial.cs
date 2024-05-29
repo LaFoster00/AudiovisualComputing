@@ -45,12 +45,9 @@ public class Dial : XRBaseInteractable
 
     [SerializeField, ReadOnly] private int currentStep;
 
-    [SerializeField, Range(0f, 1f)] private float angleTolerance = 0.5f;
-
     private IXRSelectInteractor _interactor;
-    private Quaternion _initialHandRotation;
+    private Quaternion _currentHandRotation;
     private float _currentDialRotation;
-    private float _initialDialRotation;
 
     protected override void OnEnable()
     {
@@ -60,7 +57,7 @@ public class Dial : XRBaseInteractable
 
     private void OnRotationBoundChanged()
     {
-        RotateDial(startPosition);
+        SetDialRotation(startPosition);
     }
 
     protected override void OnSelectEntered(SelectEnterEventArgs args)
@@ -69,8 +66,7 @@ public class Dial : XRBaseInteractable
         _interactor = args.interactorObject;
         _interactor.transform.GetComponent<XRDirectInteractor>().hideControllerOnSelect = true;
 
-        _initialHandRotation = GetInteractorRotation();
-        _initialDialRotation = _currentDialRotation;
+        _currentHandRotation = GetInteractorRotation();
     }
 
     protected override void OnSelectExited(SelectExitEventArgs args)
@@ -84,31 +80,29 @@ public class Dial : XRBaseInteractable
     {
         if (_interactor != null)
         {
-            RotateDial();
+            UpdateDialRotation();
         }
     }
 
     private Quaternion GetInteractorRotation() => _interactor.transform.rotation;
 
-    private void RotateDial()
+    private void UpdateDialRotation()
     {
-        Quaternion currentHandRotation = GetInteractorRotation();
-        var deltaRotation = Quaternion.Inverse(_initialHandRotation) * currentHandRotation;
+        var deltaRotation = Quaternion.Inverse(_currentHandRotation) * GetInteractorRotation();
+        _currentHandRotation = GetInteractorRotation();
         var deltaAngle = deltaRotation.eulerAngles.z;
         if (deltaAngle > 180f)
         {
             deltaAngle -= 360f;
         }
         var normalizedDelta = deltaAngle / 360f;
-        var newRotation = _initialDialRotation - normalizedDelta;
+        var newRotation = _currentDialRotation - normalizedDelta;
 
-        RotateDial(newRotation);
+        SetDialRotation(newRotation);
     }
 
-    private void RotateDial(float normalizedRotation)
+    private void SetDialRotation(float normalizedRotation)
     {
-
-        
         _currentDialRotation = Mathf.Clamp01(normalizedRotation);
 
         float stepValue = 1f / (steps - 1);
@@ -126,11 +120,6 @@ public class Dial : XRBaseInteractable
         currentStep = newStep;
         if (TryGetComponent(out IDialUser dial))
             dial.DialChanged(MapValueToType(snappedRotation));
-    }
-
-    private float StepToAngle(int step)
-    {
-        return Mathf.Repeat(MinRotationDegrees + step * SnapRotationAmount - 180f, 360f);
     }
 
     private float MapValueToType(float value)
@@ -161,7 +150,4 @@ public class Dial : XRBaseInteractable
     }
 
     private int ActualSteps => Math.Max(steps - 1, 0);
-    private float MinRotationDegrees => Mathf.Repeat(minRotation * 359.9f, 360f);
-    private float MaxRotationDegrees => Mathf.Repeat(maxRotation * 359.9f, 360f);
-    private float SnapRotationAmount => ((maxRotation - minRotation) / ActualSteps) * 360f;
 }

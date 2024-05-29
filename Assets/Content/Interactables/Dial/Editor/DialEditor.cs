@@ -13,7 +13,6 @@ public class DialEditor : Editor
     private SerializedProperty _minRotation;
     private SerializedProperty _maxRotation;
     private SerializedProperty _steps;
-    private SerializedProperty _angleTolerance;
     private SerializedProperty _currentStep;
     private SerializedProperty _startPosition;
 
@@ -24,7 +23,6 @@ public class DialEditor : Editor
         _minRotation = serializedObject.FindProperty("minRotation");
         _maxRotation = serializedObject.FindProperty("maxRotation");
         _steps = serializedObject.FindProperty("steps");
-        _angleTolerance = serializedObject.FindProperty("angleTolerance");
         _currentStep = serializedObject.FindProperty("currentStep");
         _startPosition = serializedObject.FindProperty("startPosition");
     }
@@ -34,8 +32,7 @@ public class DialEditor : Editor
         NaughtyEditorGUI.PropertyField_Layout(_knobType, true);
         NaughtyEditorGUI.PropertyField_Layout(_minRotation, true);
         NaughtyEditorGUI.PropertyField_Layout(_maxRotation, true);
-        NaughtyEditorGUI.PropertyField_Layout(_steps, true);
-        NaughtyEditorGUI.PropertyField_Layout(_angleTolerance, true);
+        NaughtyEditorGUI.PropertyField_Layout(_steps, true); 
         EditorGUI.BeginDisabledGroup(true);
         NaughtyEditorGUI.PropertyField_Layout(_currentStep, true);
         EditorGUI.EndDisabledGroup();
