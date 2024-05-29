@@ -1611,6 +1611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   frequency: {fileID: 0}
+  portamentoTime: 0
 --- !u!1 &376710581
 GameObject:
   m_ObjectHideFlags: 0

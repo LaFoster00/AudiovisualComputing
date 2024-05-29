@@ -17,7 +17,7 @@ public class AudioParameter : MonoBehaviour
     [SerializeField, ReadOnly, AllowNesting]
     private float currentNormalizedValue = 0;
 
-    public UnityEvent<AudioParameter> onValueChanged;
+    public UnityEvent<AudioParameter> onValueChanged = new();
 
     private void CurrentValueChanged()
     {
