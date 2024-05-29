@@ -5,23 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Content/Audio/DSP.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Inspectors.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Inspectors/AudioParameterInspector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Inspectors/AudioParameterInspector.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/AudioParameterDialEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/AudioParameterDialEditor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Prefabs/Knob.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Prefabs/Knob.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Rotator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Rotator.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Fiter.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Fiter.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Gain.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Gain.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/SinGenerator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/SinGenerator.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Prefabs/TestSynth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Prefabs/TestSynth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,13 +69,20 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/bc/d3c64c71/AsioOut.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/98b2aface95e4962a9052e7f1344672010fc00/90/b37d2493/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/23/a257ef37/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/34/b42d5b56/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/58/c60bb24a/StackTrace.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/69/b7ee945e/Environment.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/74/92d3d4af/Array.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/76/08943a18/Activator.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/93/d0d58663/IEnumerator.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/b4/681efd9b/Math.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/e5/5cbf60ec/List`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b24682de1ce64b8a804018f42de151fb2bc00/2b/b0955415/ConnectorType.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b24682de1ce64b8a804018f42de151fb2bc00/f8/00f0a039/Connector.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/2d/7b5feb9f/ScriptableObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/44/eee73f20/Quaternion.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/53/2faf956a/Object.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/69/41627684/ManagedReferenceUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/84/0f9cea15/SerializeField.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/93/2c846087/RangeAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/9b/6467338b/PropertyAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -83,6 +91,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/c4/e9b2e917/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/cd/1c281ace/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/e3/0e0f72dd/Transform.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/c5ed782439084ef1bc2ad85eec89e9fe175a00/e7/38b131cb/SerializeReference.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f178471da6cb4e6b9dbad166e9b46bdde000/17/e42002cc/WaveOutEvent.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fef112fd0f15457e8e58500118cb5cea177e00/03/3886d285/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ff0066d0832b45c491908c2264292b6c2e00/6a/26911e30/Mixer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -120,6 +129,11 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.dbrizov.naughtyattributes@8a8fa5a965/Scripts/Editor/PropertyDrawers/PropertyDrawerBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.dbrizov.naughtyattributes@8a8fa5a965/Scripts/Editor/Utility/NaughtyEditorGUI.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.dbrizov.naughtyattributes@8a8fa5a965/Scripts/Editor/Utility/PropertyUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.dbrizov.naughtyattributes@8a8fa5a965/Scripts/Editor/Utility/ReflectionUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.mackysoft.serializereference-extensions@69f6e31cf1/Editor/ManagedReferenceUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.mackysoft.serializereference-extensions@69f6e31cf1/Editor/PropertyDrawerCache.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.mackysoft.serializereference-extensions@69f6e31cf1/Editor/SerializedPropertyExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.mackysoft.serializereference-extensions@69f6e31cf1/Editor/SubclassSelectorDrawer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.burst@1.8.13/Tests/Editor/LongTextAreaTests.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/UI/InputSystemUIInputModule.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.inputsystem@1.7.0/InputSystem/Plugins/UI/TrackedDeviceRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
@@ -148,14 +162,19 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactables/IXRSelectInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactables/XRBaseInteractable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactables/XRGrabInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactables/XRSimpleInteractable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactors/XRBaseControllerInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactors/XRBaseInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactors/XRPokeInteractor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Interactors/XRSocketInteractor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Transformers/IXRGrabTransformer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/Transformers/XRSocketGrabTransformer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Interaction/XRInteractionEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Locomotion/LocomotionSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/UI/XRUIInputModule.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Utilities/ComponentLocatorUtility.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Utilities/Interaction/XRInteractableUtility.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.xr.interaction.toolkit@2.5.4/Runtime/Utilities/SmallRegistrationList.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -175,7 +194,7 @@
     &quot;Attach to Unity Editor.Attach to Unity Editor.executor&quot;: &quot;Debug&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39754817&quot;,
+    &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39821428&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -221,10 +240,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33752">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29264">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="33752" />
+      <option name="pid" value="29264" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -251,7 +270,10 @@
       <workItem from="1715866092098" duration="17648000" />
       <workItem from="1715948101472" duration="693000" />
       <workItem from="1715948804865" duration="8498000" />
-      <workItem from="1716402958194" duration="12795000" />
+      <workItem from="1716402958194" duration="13057000" />
+      <workItem from="1716910634613" duration="18326000" />
+      <workItem from="1716991611812" duration="4000" />
+      <workItem from="1716991622840" duration="8899000" />
     </task>
     <servers />
   </component>

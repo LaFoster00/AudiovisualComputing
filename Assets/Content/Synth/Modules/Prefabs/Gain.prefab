@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2317095976230452047}
   - component: {fileID: 4009560996640333393}
+  - component: {fileID: 2336027715218522974}
   m_Layer: 0
   m_Name: Gain
   m_TagString: Untagged
@@ -48,22 +49,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   source: {fileID: 4791185384428997730}
-  gain:
-    rid: 6058913218867757115
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913218867757115
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Gain
-        minValue: 0
-        maxValue: 4
-        currentValue: 0
-        currentNormalizedValue: 0
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  gain: {fileID: 2336027715218522974}
+--- !u!114 &2336027715218522974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 502492941069616286}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Gain
+  minValue: 0
+  maxValue: 4
+  currentValue: 0.996997
+  currentNormalizedValue: 0.24924925
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &4025142412788139266
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -142,16 +148,6 @@ PrefabInstance:
       propertyPath: steps
       value: 1000
       objectReference: {fileID: 0}
-    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
-        type: 3}
-      propertyPath: currentStep
-      value: 249
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
-        type: 3}
-      propertyPath: startPosition
-      value: 0.25
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -186,23 +182,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 4009560996640333393}
-  targetParameter:
-    rid: 6058913218867757056
-  targetParameterIndex: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913218867757056
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Gain
-        minValue: 0
-        maxValue: 1
-        currentValue: 0.24924925
-        currentNormalizedValue: 0.24924925
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 0}
+  targetParameterName: 
 --- !u!1001 &7419757273666682951
 PrefabInstance:
   m_ObjectHideFlags: 0

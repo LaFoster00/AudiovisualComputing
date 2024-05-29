@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3817530070966942477}
   - component: {fileID: 3234031820054742110}
+  - component: {fileID: 6600844211287551366}
   m_Layer: 0
   m_Name: SinGenerator
   m_TagString: Untagged
@@ -46,22 +47,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a4dda44636027439b5f11d7556d623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  frequency:
-    rid: 6058913218867757081
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913218867757081
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Frequency
-        minValue: 40
-        maxValue: 200
-        currentValue: 44.48112
-        currentNormalizedValue: 0.028007003
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  frequency: {fileID: 6600844211287551366}
+--- !u!114 &6600844211287551366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927120467320398646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Frequency
+  minValue: 40
+  maxValue: 200
+  currentValue: 40
+  currentNormalizedValue: 0
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &5012750874942066488
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -125,6 +131,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4044798889393311244, guid: d748ab10d770e7f4084b1edf73fcdb3f,
+        type: 3}
+      propertyPath: _target
+      value: 
+      objectReference: {fileID: 3234031820054742110}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -217,12 +228,12 @@ PrefabInstance:
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: currentStep
-      value: 112
+      value: 849
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0.028125
+      value: 0.2125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -252,23 +263,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 3234031820054742110}
-  targetParameter:
-    rid: 6058913218867757108
-  targetParameterIndex: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913218867757108
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Frequency
-        minValue: 40
-        maxValue: 200
-        currentValue: 44.48112
-        currentNormalizedValue: 0.028007003
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 0}
+  targetParameterName: 
 --- !u!4 &9222805917617115631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 370085656367935009, guid: df1acf9b206cd6b4999f6cc71c217274,

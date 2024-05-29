@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+    "com.mackysoft.serializereference-extensions": "https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions",
     "com.unity.collections": "2.1.4",
     "com.unity.ide.rider": "3.0.28",
     "com.unity.ide.visualstudio": "2.0.22",

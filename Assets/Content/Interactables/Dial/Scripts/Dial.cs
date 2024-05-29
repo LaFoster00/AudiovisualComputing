@@ -23,124 +23,115 @@ public enum KnobType
     Exponential = 4
 }
 
-[RequireComponent(typeof(XRGrabInteractable))]
-public class Dial : MonoBehaviour
+[SelectionBase]
+[DisallowMultipleComponent]
+public class Dial : XRBaseInteractable
 {
-    
     [SerializeField] private Transform linkedDial;
 
     [SerializeField] private KnobType knobType = KnobType.Linear;
-    [SerializeField, Range(0f, 1f), OnValueChanged("OnRotationBoundChanged")] private float minRotation;
-    [SerializeField, Range(0f, 1f), OnValueChanged("OnRotationBoundChanged")] private float maxRotation;
-    [SerializeField, Min(2), OnValueChanged("OnRotationBoundChanged")] private int steps = 25;
+
+    [SerializeField, Range(0f, 1f), OnValueChanged("OnRotationBoundChanged")]
+    private float minRotation;
+
+    [SerializeField, Range(0f, 1f), OnValueChanged("OnRotationBoundChanged")]
+    private float maxRotation;
+
+    [SerializeField, Min(2), OnValueChanged("OnRotationBoundChanged")]
+    private int steps = 25;
+
     [SerializeField, Range(0f, 1f), OnValueChanged("OnRotationBoundChanged")]
     private float startPosition;
+
     [SerializeField, ReadOnly] private int currentStep;
-    
+
     [SerializeField, Range(0f, 1f)] private float angleTolerance = 0.5f;
 
     private IXRSelectInteractor _interactor;
-    
-    private Quaternion _startRotation;
-    private bool _requiresStartAngle = true;
-    private bool _shouldGetHandRotation = false;
-    private XRGrabInteractable GrabInteractable => GetComponent<XRGrabInteractable>();
-    private int ActualSteps => Math.Max(steps - 1, 0);
-    private float MinRotationDegrees => Mathf.Repeat(minRotation * 359.9f, 360f);
-    private float MaxRotationDegrees => Mathf.Repeat(maxRotation * 359.9f, 360f);
+    private Quaternion _initialHandRotation;
+    private float _currentDialRotation;
+    private float _initialDialRotation;
 
-    private float SnapRotationAmount => ((maxRotation - minRotation) / ActualSteps) * 360f;
-
-
-    private void OnEnable()
+    protected override void OnEnable()
     {
-        GrabInteractable.selectEntered.AddListener(GrabbedBy);
-        GrabInteractable.selectExited.AddListener(GrabEnd);
-        if (TryGetComponent(out IDialUser dial))
-            dial.DialChanged(MapValueToType(1f/ActualSteps * currentStep));
-    }
-
-    private void OnDisable()
-    {
-        GrabInteractable.selectEntered.RemoveListener(GrabbedBy);
-        GrabInteractable.selectExited.RemoveListener(GrabEnd);
+        base.OnEnable();
+        OnRotationBoundChanged();
     }
 
     private void OnRotationBoundChanged()
     {
-        currentStep = (int)(ActualSteps * startPosition);
-        var localEulerAngles = linkedDial.localEulerAngles;
-        localEulerAngles.y = StepToAngle(currentStep);
-        linkedDial.localEulerAngles = localEulerAngles;
-        if (TryGetComponent(out IDialUser dial))
-            dial.DialChanged(MapValueToType(1f/ActualSteps * currentStep));
+        RotateDial(startPosition);
     }
 
-    private void GrabbedBy(SelectEnterEventArgs arg0)
+    protected override void OnSelectEntered(SelectEnterEventArgs args)
     {
-        _interactor = GrabInteractable.GetOldestInteractorSelecting();
+        base.OnSelectEntered(args);
+        _interactor = args.interactorObject;
         _interactor.transform.GetComponent<XRDirectInteractor>().hideControllerOnSelect = true;
 
-        _shouldGetHandRotation = true;
-        _startRotation = Quaternion.identity;
+        _initialHandRotation = GetInteractorRotation();
+        _initialDialRotation = _currentDialRotation;
     }
 
-    private void GrabEnd(SelectExitEventArgs arg0)
+    protected override void OnSelectExited(SelectExitEventArgs args)
     {
-        _shouldGetHandRotation = false;
-        _requiresStartAngle = true;
+        base.OnSelectExited(args);
+        _interactor.transform.GetComponent<XRDirectInteractor>().hideControllerOnSelect = false;
+        _interactor = null;
     }
 
     private void Update()
     {
-        if (_shouldGetHandRotation)
+        if (_interactor != null)
         {
-            var rotationAngle = GetInteractorRotation();
-            GetRotationDistance(rotationAngle);
+            RotateDial();
         }
     }
 
-    private Quaternion GetInteractorRotation() => _interactor.transform.localRotation;
+    private Quaternion GetInteractorRotation() => _interactor.transform.rotation;
 
-    private void GetRotationDistance(Quaternion currentRotation)
+    private void RotateDial()
     {
-        if (!_requiresStartAngle)
+        Quaternion currentHandRotation = GetInteractorRotation();
+        var deltaRotation = Quaternion.Inverse(_initialHandRotation) * currentHandRotation;
+        var deltaAngle = deltaRotation.eulerAngles.z;
+        if (deltaAngle > 180f)
         {
-            var rotationDifference = Quaternion.Inverse(_startRotation) * currentRotation;
-            var zAxisRotationDifference = rotationDifference.eulerAngles.z;
-            if (!(zAxisRotationDifference > angleTolerance * SnapRotationAmount)) return;
-            if (zAxisRotationDifference > 180f)
-            {
-                zAxisRotationDifference -= 360;
-            }
+            deltaAngle -= 360f;
+        }
+        var normalizedDelta = deltaAngle / 360f;
+        var newRotation = _initialDialRotation - normalizedDelta;
 
-            var nSteps = (int)(zAxisRotationDifference / SnapRotationAmount);
-            RotateDial(nSteps);
-            _startRotation = currentRotation;
-        }
-        else
-        {
-            _requiresStartAngle = false;
-            _startRotation = currentRotation;
-        }
+        RotateDial(newRotation);
     }
 
-    private void RotateDial(int nSteps)
+    private void RotateDial(float normalizedRotation)
     {
-        currentStep = math.clamp(currentStep - nSteps, 0, ActualSteps);
+
+        
+        _currentDialRotation = Mathf.Clamp01(normalizedRotation);
+
+        float stepValue = 1f / (steps - 1);
+        float snappedRotation = Mathf.Round(_currentDialRotation / stepValue) * stepValue;
+        float angle = Mathf.Lerp(minRotation * 360f, maxRotation * 360f, snappedRotation);
+        angle -= 180f;
+        
         var localEulerAngles = linkedDial.localEulerAngles;
-        localEulerAngles.y = StepToAngle(currentStep);
+        localEulerAngles.y = angle;
         linkedDial.localEulerAngles = localEulerAngles;
+        
+        var newStep = (int)(normalizedRotation * ActualSteps);
+        if (newStep == currentStep)
+            return;
+        currentStep = newStep;
         if (TryGetComponent(out IDialUser dial))
-            dial.DialChanged(MapValueToType(1f/ActualSteps * currentStep));
+            dial.DialChanged(MapValueToType(snappedRotation));
     }
 
     private float StepToAngle(int step)
     {
         return Mathf.Repeat(MinRotationDegrees + step * SnapRotationAmount - 180f, 360f);
     }
-
-    private float CheckAngle(float currentAngle, float startAngle) => (360f - currentAngle) + startAngle;
 
     private float MapValueToType(float value)
     {
@@ -160,13 +151,17 @@ public class Dial : MonoBehaviour
         // Ensure the value is within the expected range
         if (value < 0 || value > 1)
             throw new ArgumentOutOfRangeException(nameof(value), "Value must be in the range [0, 1]");
-            
+
         // Map the linear value to the logarithmic scale
         var logMinValue = Math.Log(0.0001f, logBase);
         var logMaxValue = Math.Log(1.0f, logBase);
-            
+
         var logValue = logMinValue + value * (logMaxValue - logMinValue);
         return (float)Math.Pow(logBase, logValue);
     }
 
+    private int ActualSteps => Math.Max(steps - 1, 0);
+    private float MinRotationDegrees => Mathf.Repeat(minRotation * 359.9f, 360f);
+    private float MaxRotationDegrees => Mathf.Repeat(maxRotation * 359.9f, 360f);
+    private float SnapRotationAmount => ((maxRotation - minRotation) / ActualSteps) * 360f;
 }

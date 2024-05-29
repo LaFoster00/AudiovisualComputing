@@ -6,38 +6,11 @@ using UnityEngine;
 public class BiQuadFilterModule : AudioProvider
 {
     public AudioProvider target;
-
-    [SerializeReference] public AudioParameter filterType = new()
-    {
-        name = "FilterType",
-        minValue = 0,
-        maxValue = (int)BiQuadFilterType.LastFilter,
-        CurrentValue = 0
-    };
-
-    [SerializeReference] public AudioParameter frequency = new()
-    {
-        name = "Frequency",
-        minValue = 20,
-        maxValue = 20000,
-        CurrentValue = 200
-    };
-
-    [SerializeReference] public AudioParameter q = new()
-    {
-        name = "Q",
-        minValue = 0.1f,
-        maxValue = 10f,
-        CurrentValue = 1
-    };
-
-    [SerializeReference] public AudioParameter gain = new()
-    {
-        name = "Gain",
-        minValue = -12,
-        maxValue = 12,
-        CurrentValue = 0
-    };
+    
+    public AudioParameter filterType;
+    public AudioParameter frequency;
+    public AudioParameter q;
+    public AudioParameter gain;
 
     private BiQuadFilter[] _channelFilters;
 

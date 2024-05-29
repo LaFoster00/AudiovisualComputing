@@ -10,6 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 943268680559945729}
   - component: {fileID: 7000866115780753172}
+  - component: {fileID: 2776740892110637853}
+  - component: {fileID: 2836927889985110866}
+  - component: {fileID: 9126226278925055000}
+  - component: {fileID: 8570758857304965850}
   m_Layer: 0
   m_Name: Fiter
   m_TagString: Untagged
@@ -51,42 +55,90 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 5010180723444844985}
-  filterType:
-    name: FilterType
-    minValue: 0
-    maxValue: 8
-    currentValue: 1
-    currentNormalizedValue: 0.125
-    onValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-  frequency:
-    name: Frequency
-    minValue: 20
-    maxValue: 20000
-    currentValue: 200.33682
-    currentNormalizedValue: 0.009025867
-    onValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-  q:
-    name: Q
-    minValue: 0.1
-    maxValue: 10
-    currentValue: 1.0877719
-    currentNormalizedValue: 0.09977494
-    onValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
-  gain:
-    name: Gain
-    minValue: 0
-    maxValue: 12
-    currentValue: 0
-    currentNormalizedValue: 0
-    onValueChanged:
-      m_PersistentCalls:
-        m_Calls: []
+  filterType: {fileID: 2776740892110637853}
+  frequency: {fileID: 2836927889985110866}
+  q: {fileID: 9126226278925055000}
+  gain: {fileID: 8570758857304965850}
+--- !u!114 &2776740892110637853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585091638395544770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: FilterType
+  minValue: 0
+  maxValue: 8
+  currentValue: 0
+  currentNormalizedValue: 0
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2836927889985110866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585091638395544770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Frequency
+  minValue: 20
+  maxValue: 20000
+  currentValue: 199.86497
+  currentNormalizedValue: 0.009002251
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &9126226278925055000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585091638395544770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Q
+  minValue: 0.1
+  maxValue: 10
+  currentValue: 0.9986497
+  currentNormalizedValue: 0.090772696
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8570758857304965850
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8585091638395544770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Gain
+  minValue: -12
+  maxValue: 12
+  currentValue: 0
+  currentNormalizedValue: 0
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &179887427862343992
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167,13 +219,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
+      propertyPath: knobType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
+        type: 3}
       propertyPath: currentStep
-      value: 399
+      value: 363
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0.1
+      value: 0.09090909
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -209,23 +266,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter:
-    rid: 6058913217344176165
-  targetParameterIndex: 2
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913217344176165
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Q
-        minValue: 0.1
-        maxValue: 10
-        currentValue: 1.0877719
-        currentNormalizedValue: 0.09977494
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 0}
+  targetParameterName: 
 --- !u!1001 &2247236903074986549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -306,18 +348,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
-      propertyPath: knobType
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
-        type: 3}
       propertyPath: currentStep
-      value: 1955
+      value: 249
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0.489
+      value: 0.25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -347,23 +384,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter:
-    rid: 6058913217344176195
-  targetParameterIndex: 1
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913217344176195
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Frequency
-        minValue: 20
-        maxValue: 20000
-        currentValue: 200.33682
-        currentNormalizedValue: 0.009025867
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 0}
+  targetParameterName: 
 --- !u!4 &1877162112974443540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 370085656367935009, guid: df1acf9b206cd6b4999f6cc71c217274,
@@ -450,6 +472,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
+      propertyPath: knobType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
+        type: 3}
       propertyPath: currentStep
       value: 0
       objectReference: {fileID: 0}
@@ -492,23 +519,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter:
-    rid: 6058913217344176167
-  targetParameterIndex: 3
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913217344176167
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: Gain
-        minValue: 0
-        maxValue: 12
-        currentValue: 0
-        currentNormalizedValue: 0
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 0}
+  targetParameterName: 
 --- !u!1001 &4595180213883768729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -668,13 +680,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
-      propertyPath: currentStep
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
-        type: 3}
-      propertyPath: startPosition
-      value: 0.13
+      propertyPath: knobType
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -710,23 +717,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter:
-    rid: 6058913217344176196
-  targetParameterIndex: 0
-  references:
-    version: 2
-    RefIds:
-    - rid: 6058913217344176196
-      type: {class: AudioParameter, ns: , asm: Assembly-CSharp}
-      data:
-        name: FilterType
-        minValue: 0
-        maxValue: 8
-        currentValue: 1
-        currentNormalizedValue: 0.125
-        onValueChanged:
-          m_PersistentCalls:
-            m_Calls: []
+  targetParameter: {fileID: 2776740892110637853}
+  targetParameterName: FilterType
 --- !u!1001 &6990233716653655452
 PrefabInstance:
   m_ObjectHideFlags: 0

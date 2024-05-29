@@ -3,12 +3,7 @@ using UnityEngine;
 
 public class SinGenerator : AudioProvider
 {
-    [SerializeReference] public AudioParameter frequency = new()
-    {
-        name = "Frequency",
-        minValue = 40,
-        maxValue = 200
-    };
+    public AudioParameter frequency;
 
     public override void Read(Span<float> buffer, ulong nSample)
     {

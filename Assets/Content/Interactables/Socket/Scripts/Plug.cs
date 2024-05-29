@@ -66,14 +66,22 @@ public class Plug : AudioProvider
         }
     }
 
-    public void OnPluggedOut(Socket args)
+    public void OnPluggedOut(Socket socket)
     {
-        onPlugRemoved?.Invoke(args);
+        onPlugRemoved?.Invoke(socket);
         SocketTarget = null;
 
         plugMode = PlugMode.Undefined;
     }
 
+
+    private void OnEnable()
+    {
+        if (SocketTarget)
+        {
+            transform.GetComponent<Rigidbody>().MovePosition(SocketTarget.transform.position);
+        }
+    }
 
     public override void Read(Span<float> buffer, ulong nSample)
     {

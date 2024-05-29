@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,8 +6,8 @@ using UnityEngine;
 public class AudioParameterDial : MonoBehaviour, IDialUser
 {
     public AudioProvider targetProvider;
-    [SerializeReference] public AudioParameter targetParameter;
-    [SerializeField] public int targetParameterIndex;
+    public AudioParameter targetParameter;
+    public string targetParameterName;
 
     public void DialChanged(float dialValue)
     {

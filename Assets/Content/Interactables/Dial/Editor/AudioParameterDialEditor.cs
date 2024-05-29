@@ -1,4 +1,7 @@
+using System;
+using System.Collections.Generic;
 using System.Linq;
+using MackySoft.SerializeReferenceExtensions.Editor;
 using NaughtyAttributes.Editor;
 using UnityEngine;
 using UnityEditor;
@@ -17,39 +20,54 @@ public class AudioParameterDialEditor : Editor
         EditorGUI.EndDisabledGroup();
 
         AudioParameterDial audioParameterDial = (AudioParameterDial)target;
-        audioParameterDial.targetProvider = (AudioProvider)EditorGUILayout.ObjectField(
-            "Target Audio Provider",
-            audioParameterDial.targetProvider,
-            typeof(AudioProvider),
-            true);
+        EditorGUILayout.PropertyField(serializedObject.FindProperty(nameof(audioParameterDial.targetProvider)));
 
 
         if (audioParameterDial.targetProvider)
         {
-            var audioParameters = audioParameterDial.targetProvider
-                .GetType()
-                .GetFields()
-                .Where(info => info.FieldType == typeof(AudioParameter))
-                .Select(info => (AudioParameter)info.GetValue(audioParameterDial.targetProvider))
-                .ToArray();
-            var audioParameterNames = audioParameters.Select(parameter => parameter.name).ToArray();
-            var targetParameterIndexProp =
-                serializedObject.FindProperty(nameof(AudioParameterDial.targetParameterIndex));
-            targetParameterIndexProp.intValue = EditorGUILayout.Popup("Target Parameter",
-                targetParameterIndexProp.intValue, audioParameterNames);
+            var targetProvider = serializedObject.FindProperty(nameof(audioParameterDial.targetProvider));
+            var enumerator = new SerializedObject(targetProvider.objectReferenceValue).GetIterator();
+            enumerator.Next(true);
 
-            var targetParameterProp = serializedObject.FindProperty(nameof(audioParameterDial.targetParameter));
-            targetParameterProp.managedReferenceValue = audioParameters[audioParameterDial.targetParameterIndex];
-            EditorGUI.BeginDisabledGroup(true);
-            EditorGUILayout.PropertyField(targetParameterProp, true);
-            EditorGUI.EndDisabledGroup();
-            
-            serializedObject.ApplyModifiedProperties();
+            var audioParameters = new List<SerializedObject>();
+            while (enumerator.Next(false))
+            {
+                if (enumerator.propertyType == SerializedPropertyType.ObjectReference &&
+                    enumerator.objectReferenceValue != null &&
+                    enumerator.objectReferenceValue.GetType() == typeof(AudioParameter))
+                {
+                    audioParameters.Add(new SerializedObject(enumerator.objectReferenceValue));
+                }
+            }
+
+            if (audioParameters.Count != 0)
+            {
+                var audioParameterNames = audioParameters.Select(
+                    parameter => parameter.FindProperty(nameof(AudioParameter.parameterName)).stringValue).ToList();
+                var targetParameterName =
+                    serializedObject.FindProperty(nameof(AudioParameterDial.targetParameterName));
+                
+                var targetParameterIndex =
+                    audioParameterNames.FindIndex(parameterName => parameterName == targetParameterName.stringValue);
+                targetParameterIndex = targetParameterIndex == -1 ? 0 : targetParameterIndex;
+                
+                targetParameterIndex = EditorGUILayout.Popup("Target Parameter", targetParameterIndex,
+                    audioParameterNames.ToArray());
+                
+                targetParameterName.stringValue = audioParameterNames[targetParameterIndex];
+
+                var targetParameterProp = serializedObject.FindProperty(nameof(audioParameterDial.targetParameter));
+
+                if (targetParameterProp.objectReferenceValue !=
+                    audioParameters[targetParameterIndex].targetObject)
+                    targetParameterProp.objectReferenceValue =
+                        audioParameters[targetParameterIndex].targetObject;
+                EditorGUI.BeginDisabledGroup(true);
+                targetParameterProp.DrawDefaultInspector();
+                EditorGUI.EndDisabledGroup();
+            }
         }
 
-        if (GUI.changed)
-        {
-            EditorUtility.SetDirty(audioParameterDial);
-        }
+        serializedObject.ApplyModifiedProperties();
     }
 }

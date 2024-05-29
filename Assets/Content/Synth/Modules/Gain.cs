@@ -7,13 +7,7 @@ public class Gain : AudioProvider
 {
     public AudioProvider source;
 
-    [SerializeReference] public AudioParameter gain = new()
-    {
-        name = "Gain",
-        minValue = 0,
-        maxValue = 4,
-        CurrentValue = 1
-    };
+    public AudioParameter gain;
     
     public override void Read(Span<float> buffer, ulong nSample)
     {

@@ -5,15 +5,11 @@ using UnityEngine;
 using UnityEngine.Events;
 using USCSL;
 
-// Abstraction for audio parameters. Value range for setting is always 0 - 1. Will be scaled up later automatically.
-[Serializable]
-public class AudioParameter
+public class AudioParameter : MonoBehaviour
 {
-    [SerializeField]
-    public string name;
-
-    [SerializeField] public float minValue;
-    [SerializeField] public float maxValue;
+    public string parameterName;
+    public float minValue;
+    public float maxValue;
 
     [SerializeField, Clamp("minValue", "maxValue"), OnValueChanged("CurrentValueChanged"), ReadOnly, AllowNesting]
     private float currentValue;
