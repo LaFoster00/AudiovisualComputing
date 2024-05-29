@@ -5,50 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Effect.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Effect.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Generator.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Generator.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAduioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAduioProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/DSP/BiQuadFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/DSP/BiQuadFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.xml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,8 +17,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/02/5d80b40e/Decibels.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/22/c9109330/AttRelEnvelope.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1de6b66de24a4618bd8723db1cfe545d2de00/23/3c2b580f/SampleToWaveProvider.cs" root0="SKIP_HIGHLIGHTING" />
@@ -95,6 +51,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/43/6b736bc6/AsioDriver.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/9e/61ca1951/AsioDriverExt.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/bc/d3c64c71/AsioOut.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583901c819894ba8afebacbd79312940e6c00/71/649a089f/GeneralMidi.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/98b2aface95e4962a9052e7f1344672010fc00/90/b37d2493/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/23/a257ef37/Attribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/b11ba2a8fbf24f219f7cc98532a1130446ac00/34/b42d5b56/Object.cs" root0="SKIP_HIGHLIGHTING" />
@@ -136,6 +93,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/EulerRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/USCSL/EditorUtils/Attributes/ClampAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/USCSL/Extensions/Extensions_GameObject.cs" root0="FORCE_HIGHLIGHTING" />
@@ -305,7 +263,7 @@
       <workItem from="1716991611812" duration="4000" />
       <workItem from="1716991622840" duration="13381000" />
       <workItem from="1717005570453" duration="4000" />
-      <workItem from="1717005581711" duration="1583000" />
+      <workItem from="1717005581711" duration="2309000" />
     </task>
     <servers />
   </component>
