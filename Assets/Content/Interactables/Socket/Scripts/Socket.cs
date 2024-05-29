@@ -66,9 +66,9 @@ public class Socket : AudioProvider
         }
     }
     
-    public override void Read(Span<float> buffer, ulong nSample)
+    public override void Read(Span<float> buffer)
     {
         if (Target != null) 
-            Target.Read(buffer, nSample);
+            Target.Read(buffer);
     }
 }

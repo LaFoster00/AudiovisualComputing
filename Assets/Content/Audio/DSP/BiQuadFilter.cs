@@ -70,7 +70,7 @@ public class BiQuadFilter
     public void SetLowPassFilter(float cutoffFrequency, float q, bool clearSamples)
     {
         // H(s) = 1 / (s^2 + s/Q + 1)
-        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var alpha = math.sin(w0) / (2 * q);
 
@@ -93,7 +93,7 @@ public class BiQuadFilter
     public void SetPeakingEq(float centreFrequency, float q, float dbGain, bool clearSamples)
     {
         // H(s) = (s^2 + s*(A/Q) + 1) / (s^2 + s/(A*Q) + 1)
-        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var alpha = sinw0 / (2 * q);
@@ -114,7 +114,7 @@ public class BiQuadFilter
     public void SetHighPassFilter(float cutoffFrequency, float q, bool clearSamples)
     {
         // H(s) = s^2 / (s^2 + s/Q + 1)
-        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var alpha = math.sin(w0) / (2 * q);
 
@@ -134,7 +134,7 @@ public class BiQuadFilter
     public void SetBandPassFilterConstantSkirtGain(float centreFrequency, float q, bool clearSamples)
     {
         // H(s) = s / (s^2 + s/Q + 1)  (constant skirt gain, peak gain = Q)
-        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var alpha = sinw0 / (2 * q);
@@ -154,7 +154,7 @@ public class BiQuadFilter
     public void SetBandPassFilterConstantPeakGain(float centreFrequency, float q, bool clearSamples)
     {
         // H(s) = (s/Q) / (s^2 + s/Q + 1)      (constant 0 dB peak gain)
-        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var alpha = sinw0 / (2 * q);
@@ -174,7 +174,7 @@ public class BiQuadFilter
     public void SetNotchFilter(float centreFrequency, float q, bool clearSamples)
     {
         // H(s) = (s^2 + 1) / (s^2 + s/Q + 1)
-        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var alpha = sinw0 / (2 * q);
@@ -194,7 +194,7 @@ public class BiQuadFilter
     public void SetAllPassFilter(float centreFrequency, float q, bool clearSamples)
     {
         //H(s) = (s^2 - s/Q + 1) / (s^2 + s/Q + 1)
-        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * centreFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var alpha = sinw0 / (2 * q);
@@ -220,7 +220,7 @@ public class BiQuadFilter
     /// <param name="dbGain">Gain in decibels</param>
     public void SetLowShelf(float cutoffFrequency, float shelfSlope, float dbGain, bool clearSamples)
     {
-        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var a = math.pow(10, dbGain / 40); // TODO: should we square root this value?
@@ -246,7 +246,7 @@ public class BiQuadFilter
     /// <returns></returns>
     public void SetHighShelf(float cutoffFrequency, float shelfSlope, float dbGain, bool clearSamples)
     {
-        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.WaveFormat.SampleRate;
+        var w0 = 2 * math.PI * cutoffFrequency / AudioManager.Instance.AudioFormat.SampleRate;
         var cosw0 = math.cos(w0);
         var sinw0 = math.sin(w0);
         var a = math.pow(10, dbGain / 40); // TODO: should we square root this value?

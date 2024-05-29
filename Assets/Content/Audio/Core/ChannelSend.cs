@@ -12,13 +12,13 @@ public class ChannelSend : MonoBehaviour
     [FormerlySerializedAs("_gain")] [SerializeField]
     public double gain = 1.0;
 
-    public void Read(Span<float> targetBuffer, Span<float> workingBuffer, ulong nSample)
+    public void Read(Span<float> targetBuffer, Span<float> workingBuffer)
     {
-        target.Read(workingBuffer, nSample);
-        Send(targetBuffer, workingBuffer, nSample);
+        target.Read(workingBuffer);
+        Send(targetBuffer, workingBuffer);
     }
 
-    protected void Send(Span<float> targetBuffer, Span<float> workingBuffer, ulong nSample)
+    protected void Send(Span<float> targetBuffer, Span<float> workingBuffer)
     {
         for (var sample = 0; sample < targetBuffer.Length; sample++)
         {

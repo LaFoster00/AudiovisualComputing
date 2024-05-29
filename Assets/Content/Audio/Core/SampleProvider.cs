@@ -1,18 +1,23 @@
 using System;
 using System.Collections.Generic;
-using NAudio.Wave;
 using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-// Supplies a maximum of 2048 samples per read, per channel
-[System.Serializable]
-public class SampleProvider : ISampleProvider
+public class AudioFormat
 {
-    [ReadOnly]
-    public int samplesCount;
-    
+    /// <summary>number of channels</summary>
+    public short Channels;
+
+    /// <summary>sample rate</summary>
+    public int SampleRate;
+}
+
+// Supplies a maximum of 2048 samples per read, per channel
+[RequireComponent(typeof(AudioSource))]
+public class SampleProvider : MonoBehaviour
+{
     private float[] _samples;
     // For sends, so that they can let the target generate a signal an then mix it in)
     private float[] _workingBuffer;
@@ -23,14 +28,33 @@ public class SampleProvider : ISampleProvider
     public Span<float> WorkingBuffer => _workingBufferMemory.Span;
 
 
-    // The current starting sample
-    [SerializeField]
-    private ulong _nSample = 0;
+    [NonSerialized]
+    public AudioFormat audioFormat;
 
-    public WaveFormat WaveFormat { get; private set; }
+    [SerializeField] private List<ChannelSend> sends = new();
 
-    [FormerlySerializedAs("mixers")] [SerializeField] private List<ChannelSend> sends = new();
-    
+
+    private void Awake()
+    {
+        audioFormat = new AudioFormat
+        {
+            SampleRate = AudioSettings.outputSampleRate,
+            Channels = AudioSettings.speakerMode switch
+            {
+                AudioSpeakerMode.Mono => 1,
+                AudioSpeakerMode.Stereo => 2,
+                AudioSpeakerMode.Quad => 4,
+                AudioSpeakerMode.Surround => 5,
+                AudioSpeakerMode.Mode5point1 => 6,
+                AudioSpeakerMode.Mode7point1 => 7,
+                AudioSpeakerMode.Prologic => 2,
+                _ => throw new ArgumentOutOfRangeException()
+            }
+        };
+
+        _samples = new float[audioFormat.SampleRate];
+        _workingBuffer = new float[audioFormat.SampleRate];
+    }
 
     public int NumMixers
     {
@@ -48,17 +72,9 @@ public class SampleProvider : ISampleProvider
         sends.Remove(provider);
     }
 
-    public void Init(int sampleRate = 44100, int channels = 2)
+    private void OnAudioFilterRead(float[] data, int channels)
     {
-        samplesCount = sampleRate * AudioManager.Instance.desiredLatency / 1000;
-        WaveFormat = WaveFormat.CreateIeeeFloatWaveFormat(sampleRate, channels);
-        _samples = new float[samplesCount];
-        _workingBuffer = new float[samplesCount];
-    }
-
-    public int Read(float[] buffer, int offset, int sampleCount)
-    {
-        int actualSampleCount = math.min(_samples.Length, sampleCount);
+        int actualSampleCount = math.min(_samples.Length, data.Length);
         Array.Clear(_samples, 0, actualSampleCount);
         Array.Clear(_workingBuffer, 0, actualSampleCount);
 
@@ -68,17 +84,12 @@ public class SampleProvider : ISampleProvider
             _workingBufferMemory = new Memory<float>(_workingBuffer, 0, actualSampleCount);
             send.Read(
                 Samples,
-                WorkingBuffer,
-                _nSample);
+                WorkingBuffer);
         }
 
-        for (int sample = 0; sample < actualSampleCount; sample++)
+        for (var sample = 0; sample < actualSampleCount; sample++)
         {
-            buffer[offset++] = _samples[sample];
+            data[sample] = _samples[sample];
         }
-
-        _nSample += (ulong)actualSampleCount / (ulong)WaveFormat.Channels;
-
-        return actualSampleCount;
     }
 }

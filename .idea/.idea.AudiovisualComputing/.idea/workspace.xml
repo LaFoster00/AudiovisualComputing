@@ -6,11 +6,49 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Effect.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Effect.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Generator.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Generator.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAduioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAduioProvider.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/DSP/BiQuadFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/DSP/BiQuadFilter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/SinGenerator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/SinGenerator.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SinGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Asio.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Core.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Midi.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.Wasapi.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.WinMM.xml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.dll" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.dll.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Plugins/NAudio.xml.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -232,10 +270,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="29264">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="33660">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="29264" />
+      <option name="pid" value="33660" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -265,7 +303,9 @@
       <workItem from="1716402958194" duration="13057000" />
       <workItem from="1716910634613" duration="18326000" />
       <workItem from="1716991611812" duration="4000" />
-      <workItem from="1716991622840" duration="12688000" />
+      <workItem from="1716991622840" duration="13381000" />
+      <workItem from="1717005570453" duration="4000" />
+      <workItem from="1717005581711" duration="1583000" />
     </task>
     <servers />
   </component>

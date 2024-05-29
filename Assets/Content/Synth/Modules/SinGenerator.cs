@@ -1,5 +1,4 @@
 using System;
-using NAudio.Wave;
 using UnityEngine;
 
 public class SinGenerator : AudioProvider
@@ -15,12 +14,12 @@ public class SinGenerator : AudioProvider
     private double _phaseStepDelta;
     private bool _seekFreq;
 
-    private WaveFormat _waveFormat;
+    private AudioFormat _waveFormat;
     
 
     private void OnEnable()
     {
-        _waveFormat = AudioManager.Instance.WaveFormat;
+        _waveFormat = AudioManager.Instance.AudioFormat;
         if (_waveTable == null)
         {
             _waveTable = new float[_waveFormat.SampleRate];
@@ -45,7 +44,7 @@ public class SinGenerator : AudioProvider
         _seekFreq = true;
     }
 
-    public override void Read(Span<float> buffer, ulong nSample)
+    public override void Read(Span<float> buffer)
     {
         if (_seekFreq) // process frequency change only once per call to Read
         {

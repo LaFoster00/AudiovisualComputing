@@ -9,9 +9,9 @@ public class Gain : AudioProvider
 
     public AudioParameter gain;
     
-    public override void Read(Span<float> buffer, ulong nSample)
+    public override void Read(Span<float> buffer)
     {
-        source.Read(buffer, nSample);
+        source.Read(buffer);
         for (int sample = 0; sample < buffer.Length; sample++)
         {
             buffer[sample] *= gain.CurrentValue;

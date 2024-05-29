@@ -18,7 +18,7 @@ public class BiQuadFilterModule : AudioProvider
 
     private void OnEnable()
     {
-        _channelFilters = new BiQuadFilter[AudioManager.Instance.WaveFormat.Channels];
+        _channelFilters = new BiQuadFilter[AudioManager.Instance.AudioFormat.Channels];
         for (int channel = 0; channel < _channelFilters.Length; channel++)
         {
             _channelFilters[channel] = new BiQuadFilter();
@@ -89,12 +89,12 @@ public class BiQuadFilterModule : AudioProvider
         }
     }
 
-    public override void Read(Span<float> buffer, ulong nSample)
+    public override void Read(Span<float> buffer)
     {
-        target.Read(buffer, nSample);
+        target.Read(buffer);
         for (int n = 0; n < buffer.Length; n++)
         {
-            int ch = n % AudioManager.Instance.WaveFormat.Channels;
+            int ch = n % AudioManager.Instance.AudioFormat.Channels;
 
             buffer[n] = _channelFilters[ch].Transform(buffer[n]);
         }

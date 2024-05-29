@@ -83,15 +83,15 @@ public class Plug : AudioProvider
         }
     }
 
-    public override void Read(Span<float> buffer, ulong nSample)
+    public override void Read(Span<float> buffer)
     {
         if (plugMode == PlugMode.Target)
         {
-            otherPlug.Read(buffer, nSample);
+            otherPlug.Read(buffer);
         }
         else if (plugMode == PlugMode.Source)
         {
-            SocketTarget.Read(buffer, nSample);
+            SocketTarget.Read(buffer);
         }
     }
 }
