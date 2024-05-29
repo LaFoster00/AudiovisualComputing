@@ -13103,6 +13103,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: 0.028050946
       objectReference: {fileID: 0}
+    - target: {fileID: 233320296961251334, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 98.341866
+      objectReference: {fileID: 0}
+    - target: {fileID: 233320296961251334, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.0039210143
+      objectReference: {fileID: 0}
     - target: {fileID: 250685442530506664, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: targetParameter
@@ -13921,12 +13931,12 @@ PrefabInstance:
     - target: {fileID: 809123187766816540, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.3303715
+      value: 0.9675433
       objectReference: {fileID: 0}
     - target: {fileID: 809123187766816540, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.943851
+      value: -0.25270534
       objectReference: {fileID: 0}
     - target: {fileID: 1530231535877903806, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -13941,12 +13951,12 @@ PrefabInstance:
     - target: {fileID: 1615184675317916689, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.51602906
+      value: 0.9978027
       objectReference: {fileID: 0}
     - target: {fileID: 1615184675317916689, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.8565711
+      value: -0.06625562
       objectReference: {fileID: 0}
     - target: {fileID: 2087276834999501553, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -15348,6 +15358,16 @@ PrefabInstance:
       propertyPath: managedReferences[6058913349919310000].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5464779132066436136, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 1894
+      objectReference: {fileID: 0}
+    - target: {fileID: 5464779132066436136, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0.47368422
+      objectReference: {fileID: 0}
     - target: {fileID: 5512746320622648079, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: q.type
@@ -15963,6 +15983,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.41830027
       objectReference: {fileID: 0}
+    - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: knobType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 1593
+      objectReference: {fileID: 0}
+    - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0.3983984
+      objectReference: {fileID: 0}
     - target: {fileID: 6254135926358629969, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: frequency.maxValue
@@ -16032,6 +16067,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540632946454048588, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 0.999875
+      objectReference: {fileID: 0}
+    - target: {fileID: 6540632946454048588, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.47361842
       objectReference: {fileID: 0}
     - target: {fileID: 6867164025939691626, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}

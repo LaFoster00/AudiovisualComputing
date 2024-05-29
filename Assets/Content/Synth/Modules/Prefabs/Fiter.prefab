@@ -113,7 +113,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameterName: Q
   minValue: 0.1
-  maxValue: 10
+  maxValue: 2
   currentValue: 0.9986497
   currentNormalizedValue: 0.090772696
   onValueChanged:

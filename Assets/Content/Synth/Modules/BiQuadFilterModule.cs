@@ -14,7 +14,7 @@ public class BiQuadFilterModule : AudioProvider
 
     private BiQuadFilter[] _channelFilters;
 
-    private bool initialized = false;
+    private bool _initialized = false;
 
     private void OnEnable()
     {
@@ -42,44 +42,51 @@ public class BiQuadFilterModule : AudioProvider
 
     private void OnFilterSettingsChanged(AudioParameter parameter)
     {
-        var clearSamples = !initialized;
+        var clearSamples = !_initialized;
         foreach (var filter in _channelFilters)
         {
             switch ((BiQuadFilterType)Math.Round(filterType.CurrentValue))
             {
                 case BiQuadFilterType.LowPass:
                     filter.SetLowPassFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
+                    _initialized = true;
                     break;
                 case BiQuadFilterType.HighPass:
                     filter.SetHighPassFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
-                    break;
-                case BiQuadFilterType.LowShelf:
-                    filter.SetLowShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, clearSamples);
-                    break;
-                case BiQuadFilterType.HighShelf:
-                    filter.SetHighShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, clearSamples);
-                    break;
-                case BiQuadFilterType.Notch:
-                    filter.SetNotchFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
+                    _initialized = true;
                     break;
                 case BiQuadFilterType.Peaking:
                     filter.SetPeakingEq(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, clearSamples);
+                    _initialized = true;
+                    break;
+                case BiQuadFilterType.LowShelf:
+                    filter.SetLowShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, true);
+                    _initialized = false;
+                    break;
+                case BiQuadFilterType.HighShelf:
+                    filter.SetHighShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, true);
+                    _initialized = false;
+                    break;
+                case BiQuadFilterType.Notch:
+                    filter.SetNotchFilter(frequency.CurrentValue, q.CurrentValue, true);
+                    _initialized = false;
                     break;
                 case BiQuadFilterType.AllPass:
-                    filter.SetAllPassFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
+                    filter.SetAllPassFilter(frequency.CurrentValue, q.CurrentValue, true);
+                    _initialized = false;
                     break;
                 case BiQuadFilterType.BandpassPeakGain:
-                    filter.SetBandPassFilterConstantPeakGain(frequency.CurrentValue, q.CurrentValue, clearSamples);
+                    filter.SetBandPassFilterConstantPeakGain(frequency.CurrentValue, q.CurrentValue, true);
+                    _initialized = false;
                     break;
                 case BiQuadFilterType.BandpassSkirtGain:
-                    filter.SetBandPassFilterConstantSkirtGain(frequency.CurrentValue, q.CurrentValue, clearSamples);
+                    filter.SetBandPassFilterConstantSkirtGain(frequency.CurrentValue, q.CurrentValue, true);
+                    _initialized = false;
                     break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
         }
-
-        initialized = true;
     }
 
     public override void Read(Span<float> buffer, ulong nSample)

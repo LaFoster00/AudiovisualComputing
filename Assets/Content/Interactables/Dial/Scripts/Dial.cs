@@ -114,7 +114,7 @@ public class Dial : XRBaseInteractable
         localEulerAngles.y = angle;
         linkedDial.localEulerAngles = localEulerAngles;
         
-        var newStep = (int)(normalizedRotation * ActualSteps);
+        var newStep = (int)(snappedRotation * ActualSteps);
         if (newStep == currentStep)
             return;
         currentStep = newStep;
