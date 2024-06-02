@@ -5,26 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/MonoAndroid.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/MonoAndroid/Commons.Music.Midi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/MonoAndroid/Commons.Music.Midi.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/netstandard2.0.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/netstandard2.0/Commons.Music.Midi.deps.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/netstandard2.0/Commons.Music.Midi.deps.json.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/netstandard2.0/Commons.Music.Midi.dll" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Plugins/managed-midi/netstandard2.0/Commons.Music.Midi.dll.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Balanced.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-HighFidelity.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/URP-Performant.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/CommonBurstAotSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/PackageManagerSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/USCSL" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/USCSL" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,10 +229,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="35856">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="35856" />
+      <option name="pid" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -284,7 +265,7 @@
       <workItem from="1716991622840" duration="13381000" />
       <workItem from="1717005570453" duration="4000" />
       <workItem from="1717005581711" duration="2675000" />
-      <workItem from="1717009363043" duration="1291000" />
+      <workItem from="1717009363043" duration="1363000" />
     </task>
     <servers />
   </component>
