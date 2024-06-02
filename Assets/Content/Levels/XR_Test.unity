@@ -13209,12 +13209,12 @@ PrefabInstance:
     - target: {fileID: 233320296961251334, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentValue
-      value: 98.341866
+      value: 2753.9973
       objectReference: {fileID: 0}
     - target: {fileID: 233320296961251334, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentNormalizedValue
-      value: 0.0039210143
+      value: 0.13683671
       objectReference: {fileID: 0}
     - target: {fileID: 250685442530506664, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -14034,12 +14034,27 @@ PrefabInstance:
     - target: {fileID: 809123187766816540, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.9675433
+      value: 0.9965348
       objectReference: {fileID: 0}
     - target: {fileID: 809123187766816540, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.25270534
+      value: -0.083176844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435622435615931976, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: knobType
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435622435615931976, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 499
+      objectReference: {fileID: 0}
+    - target: {fileID: 1435622435615931976, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1530231535877903806, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -14231,6 +14246,16 @@ PrefabInstance:
       propertyPath: managedReferences[6058913349919310012].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2472958835150135152, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.9135454
+      objectReference: {fileID: 0}
+    - target: {fileID: 2472958835150135152, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.40673664
+      objectReference: {fileID: 0}
     - target: {fileID: 2573398269841301095, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
@@ -14244,12 +14269,12 @@ PrefabInstance:
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
-      value: 1499
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: startPosition
-      value: 0.375
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -15461,16 +15486,6 @@ PrefabInstance:
       propertyPath: managedReferences[6058913349919310000].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5464779132066436136, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: currentStep
-      value: 1263
-      objectReference: {fileID: 0}
-    - target: {fileID: 5464779132066436136, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: startPosition
-      value: 0.31578946
-      objectReference: {fileID: 0}
     - target: {fileID: 5512746320622648079, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: q.type
@@ -15954,12 +15969,12 @@ PrefabInstance:
     - target: {fileID: 5643248594632101489, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.80938655
+      value: 0.9999992
       objectReference: {fileID: 0}
     - target: {fileID: 5643248594632101489, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.5872763
+      value: 0.0012579438
       objectReference: {fileID: 0}
     - target: {fileID: 5643772338823662753, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16094,12 +16109,12 @@ PrefabInstance:
     - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
-      value: 1593
+      value: 1867
       objectReference: {fileID: 0}
     - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: startPosition
-      value: 0.3983984
+      value: 0.46696696
       objectReference: {fileID: 0}
     - target: {fileID: 6254135926358629969, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16181,20 +16196,40 @@ PrefabInstance:
       propertyPath: currentNormalizedValue
       value: 0.31582898
       objectReference: {fileID: 0}
+    - target: {fileID: 6720807736679470355, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6720807736679470355, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.6666667
+      objectReference: {fileID: 0}
     - target: {fileID: 6867164025939691626, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
       value: 1955
       objectReference: {fileID: 0}
+    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7606781989211407952, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentValue
-      value: 1.001001
+      value: 0.24065824
       objectReference: {fileID: 0}
     - target: {fileID: 7606781989211407952, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentNormalizedValue
-      value: 0.25025025
+      value: 0.24065824
       objectReference: {fileID: 0}
     - target: {fileID: 7628096928180059713, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16599,12 +16634,12 @@ PrefabInstance:
     - target: {fileID: 8786386268708458674, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9509081
+      value: 0.30901697
       objectReference: {fileID: 0}
     - target: {fileID: 8786386268708458674, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.30947348
+      value: -0.95105654
       objectReference: {fileID: 0}
     - target: {fileID: 8918194216232082492, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16630,6 +16665,16 @@ PrefabInstance:
         type: 3}
       propertyPath: managedReferences[6058913349919309982].currentNormalizedValue
       value: 0.5495495
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218081979281092425, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9218081979281092425, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0.53333336
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

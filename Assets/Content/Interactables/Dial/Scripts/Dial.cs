@@ -17,10 +17,7 @@ public interface IDialUser
 public enum KnobType
 {
     Linear = 0,
-    Logarithmic = 1,
-    Logarithmic2 = 2,
-    Logarithmic10 = 3,
-    Exponential = 4
+    Perceptual = 1
 }
 
 [SelectionBase]
@@ -127,26 +124,11 @@ public class Dial : XRBaseInteractable
         return knobType switch
         {
             KnobType.Linear => value,
-            KnobType.Logarithmic => MapToLogScale(value, math.E),
-            KnobType.Logarithmic2 => MapToLogScale(value, 2),
-            KnobType.Logarithmic10 => MapToLogScale(value, 10),
-            KnobType.Exponential => math.exp(value),
+            KnobType.Perceptual => value
+                .LinearSliderToMelSlider(0, 1, 20, 20000)
+                .Map(20, 20000, 0, 1),
             _ => throw new ArgumentOutOfRangeException()
         };
-    }
-
-    private float MapToLogScale(float value, float logBase)
-    {
-        // Ensure the value is within the expected range
-        if (value < 0 || value > 1)
-            throw new ArgumentOutOfRangeException(nameof(value), "Value must be in the range [0, 1]");
-
-        // Map the linear value to the logarithmic scale
-        var logMinValue = Math.Log(0.0001f, logBase);
-        var logMaxValue = Math.Log(1.0f, logBase);
-
-        var logValue = logMinValue + value * (logMaxValue - logMinValue);
-        return (float)Math.Pow(logBase, logValue);
     }
 
     private int ActualSteps => Math.Max(steps - 1, 0);

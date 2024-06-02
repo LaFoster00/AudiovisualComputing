@@ -6,7 +6,7 @@ using UnityEngine;
 public class AudioTester : MonoBehaviour
 {
     [SerializeField]
-    private SinGenerator _generator;
+    private Oscillator _generator;
     
     [SerializeField]
     private ChannelSend _send;

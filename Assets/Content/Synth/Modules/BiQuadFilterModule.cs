@@ -5,6 +5,7 @@ using System.Linq;
 using NWaves.Filters.Base;
 using NWaves.Filters.BiQuad;
 using UnityEngine;
+using USCSL;
 
 public enum BiQuadFilterType
 {
@@ -32,6 +33,8 @@ public class BiQuadFilterModule : AudioProvider
     private IEnumerator<double> _currentGain;
 
     private BiQuadFilter[] _channelFilters;
+
+    private readonly float _nextAfter05 = 0.4999f;
 
     private void OnEnable()
     {
@@ -74,28 +77,28 @@ public class BiQuadFilterModule : AudioProvider
         switch ((BiQuadFilterType)Math.Round(filterType.CurrentValue))
         {
             case BiQuadFilterType.LowPass:
-                SetFilter<LowPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                SetFilter<LowPassFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                 break;
             case BiQuadFilterType.HighPass:
-                SetFilter<HighPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                SetFilter<HighPassFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                 break;
             case BiQuadFilterType.BandPass:
-                SetFilter<BandPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                SetFilter<BandPassFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                 break;
             case BiQuadFilterType.Notch:
-                SetFilter<NotchFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                SetFilter<NotchFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                 break;
             case BiQuadFilterType.AllPass:
-                SetFilter<AllPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                SetFilter<AllPassFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                 break;
             case BiQuadFilterType.Peak:
-                SetFilter<PeakFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                SetFilter<PeakFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                 break;
             case BiQuadFilterType.LowShelf:
-                SetFilter<LowShelfFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                SetFilter<LowShelfFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                 break;
             case BiQuadFilterType.HighShelf:
-                SetFilter<HighShelfFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                SetFilter<HighShelfFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                 break;
             default:
                 throw new ArgumentOutOfRangeException();
@@ -109,28 +112,28 @@ public class BiQuadFilterModule : AudioProvider
             switch (channelFilter)
             {
                 case LowPassFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                     break;
                 case HighPassFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                     break;
                 case BandPassFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                     break;
                 case NotchFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                     break;
                 case AllPassFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);
                     break;
                 case PeakFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                     break;
                 case LowShelfFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                     break;
                 case HighShelfFilter filter:
-                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                    filter.Change(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue, gain.CurrentValue);
                     break;
             }
         }
