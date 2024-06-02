@@ -32,7 +32,7 @@ public class DialEditor : Editor
         NaughtyEditorGUI.PropertyField_Layout(_knobType, true);
         NaughtyEditorGUI.PropertyField_Layout(_minRotation, true);
         NaughtyEditorGUI.PropertyField_Layout(_maxRotation, true);
-        NaughtyEditorGUI.PropertyField_Layout(_steps, true); 
+        NaughtyEditorGUI.PropertyField_Layout(_steps, true);
         EditorGUI.BeginDisabledGroup(true);
         NaughtyEditorGUI.PropertyField_Layout(_currentStep, true);
         EditorGUI.EndDisabledGroup();
@@ -67,8 +67,6 @@ public class DialEditor : Editor
                     var maxValue =
                         targetParameter.FindProperty(nameof(audioParameterDial.targetParameter.maxValue));
                     // Only enable start position settings when not in the play in editor mode
-                    if (EditorApplication.isPlaying)
-                        EditorGUI.BeginDisabledGroup(true);
                     var position = EditorGUILayout.GetControlRect(true, EditorGUI.GetPropertyHeight(_startPosition));
                     var newStartPosition = EditorGUI.Slider(
                             position,
@@ -82,9 +80,6 @@ public class DialEditor : Editor
                     {
                         _startPosition.floatValue = newStartPosition;
                     }
-
-                    if (EditorApplication.isPlaying)
-                        EditorGUI.EndDisabledGroup();
 
                     if (GUI.changed)
                     {

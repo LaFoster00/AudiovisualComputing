@@ -73,7 +73,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameterName: FilterType
   minValue: 0
-  maxValue: 8
+  maxValue: 7
   currentValue: 0
   currentNormalizedValue: 0
   onValueChanged:
@@ -225,12 +225,12 @@ PrefabInstance:
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: currentStep
-      value: 363
+      value: 1263
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0.09090909
+      value: 0.31578946
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -672,11 +672,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.8090683
-      objectReference: {fileID: 0}
-    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
-        type: 3}
-      propertyPath: steps
-      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}

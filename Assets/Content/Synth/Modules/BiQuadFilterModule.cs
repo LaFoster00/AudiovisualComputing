@@ -1,35 +1,64 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using NWaves.Filters.Base;
+using NWaves.Filters.BiQuad;
 using UnityEngine;
+
+public enum BiQuadFilterType
+{
+    LowPass,
+    HighPass,
+    BandPass,
+    Notch,
+    AllPass,
+    Peak,
+    LowShelf,
+    HighShelf,
+}
 
 public class BiQuadFilterModule : AudioProvider
 {
     public AudioProvider target;
-    
+
     public AudioParameter filterType;
     public AudioParameter frequency;
     public AudioParameter q;
     public AudioParameter gain;
 
-    private BiQuadFilter[] _channelFilters;
+    private IEnumerator<double> _currentFrequency;
+    private IEnumerator<double> _currentQ;
+    private IEnumerator<double> _currentGain;
 
-    private bool _initialized = false;
+    private BiQuadFilter[] _channelFilters;
 
     private void OnEnable()
     {
         _channelFilters = new BiQuadFilter[AudioManager.Instance.AudioFormat.Channels];
-        for (int channel = 0; channel < _channelFilters.Length; channel++)
-        {
-            _channelFilters[channel] = new BiQuadFilter();
-        }
 
-        filterType.onValueChanged.AddListener(OnFilterSettingsChanged);
+        filterType.onValueChanged.AddListener(OnFilterTypeChanged);
         frequency.onValueChanged.AddListener(OnFilterSettingsChanged);
         q.onValueChanged.AddListener(OnFilterSettingsChanged);
         gain.onValueChanged.AddListener(OnFilterSettingsChanged);
 
-        OnFilterSettingsChanged(null);
+        OnFilterTypeChanged(null);
+    }
+
+    private void SetFilter<T>(params object[] args) where T : BiQuadFilter
+    {
+        var constructor = typeof(T).GetConstructor(args.Select(a => a.GetType()).ToArray());
+
+        if (constructor == null)
+        {
+            throw new ArgumentException(
+                $"No matching constructor found for type {typeof(T).Name} with the specified arguments.");
+        }
+
+        for (int channel = 0; channel < _channelFilters.Length; channel++)
+        {
+            _channelFilters[channel] = (T)constructor.Invoke(args);
+        }
     }
 
     private void OnDisable()
@@ -40,51 +69,69 @@ public class BiQuadFilterModule : AudioProvider
         gain.onValueChanged.RemoveListener(OnFilterSettingsChanged);
     }
 
+    private void OnFilterTypeChanged(AudioParameter arg0)
+    {
+        switch ((BiQuadFilterType)Math.Round(filterType.CurrentValue))
+        {
+            case BiQuadFilterType.LowPass:
+                SetFilter<LowPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                break;
+            case BiQuadFilterType.HighPass:
+                SetFilter<HighPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                break;
+            case BiQuadFilterType.BandPass:
+                SetFilter<BandPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                break;
+            case BiQuadFilterType.Notch:
+                SetFilter<NotchFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                break;
+            case BiQuadFilterType.AllPass:
+                SetFilter<AllPassFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
+                break;
+            case BiQuadFilterType.Peak:
+                SetFilter<PeakFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                break;
+            case BiQuadFilterType.LowShelf:
+                SetFilter<LowShelfFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                break;
+            case BiQuadFilterType.HighShelf:
+                SetFilter<HighShelfFilter>(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
+                break;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
     private void OnFilterSettingsChanged(AudioParameter parameter)
     {
-        var clearSamples = !_initialized;
-        foreach (var filter in _channelFilters)
+        foreach (var channelFilter in _channelFilters)
         {
-            switch ((BiQuadFilterType)Math.Round(filterType.CurrentValue))
+            switch (channelFilter)
             {
-                case BiQuadFilterType.LowPass:
-                    filter.SetLowPassFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
-                    _initialized = true;
+                case LowPassFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
                     break;
-                case BiQuadFilterType.HighPass:
-                    filter.SetHighPassFilter(frequency.CurrentValue, q.CurrentValue, clearSamples);
-                    _initialized = true;
+                case HighPassFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
                     break;
-                case BiQuadFilterType.Peaking:
-                    filter.SetPeakingEq(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, clearSamples);
-                    _initialized = true;
+                case BandPassFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
                     break;
-                case BiQuadFilterType.LowShelf:
-                    filter.SetLowShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, true);
-                    _initialized = false;
+                case NotchFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
                     break;
-                case BiQuadFilterType.HighShelf:
-                    filter.SetHighShelf(frequency.CurrentValue, q.CurrentValue, gain.CurrentValue, true);
-                    _initialized = false;
+                case AllPassFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue);
                     break;
-                case BiQuadFilterType.Notch:
-                    filter.SetNotchFilter(frequency.CurrentValue, q.CurrentValue, true);
-                    _initialized = false;
+                case PeakFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
                     break;
-                case BiQuadFilterType.AllPass:
-                    filter.SetAllPassFilter(frequency.CurrentValue, q.CurrentValue, true);
-                    _initialized = false;
+                case LowShelfFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
                     break;
-                case BiQuadFilterType.BandpassPeakGain:
-                    filter.SetBandPassFilterConstantPeakGain(frequency.CurrentValue, q.CurrentValue, true);
-                    _initialized = false;
+                case HighShelfFilter filter:
+                    filter.Change(frequency.CurrentNormalizedValue * .5f, q.CurrentValue, gain.CurrentValue);
                     break;
-                case BiQuadFilterType.BandpassSkirtGain:
-                    filter.SetBandPassFilterConstantSkirtGain(frequency.CurrentValue, q.CurrentValue, true);
-                    _initialized = false;
-                    break;
-                default:
-                    throw new ArgumentOutOfRangeException();
             }
         }
     }
@@ -92,11 +139,10 @@ public class BiQuadFilterModule : AudioProvider
     public override void Read(Span<float> buffer)
     {
         target.Read(buffer);
-        for (int n = 0; n < buffer.Length; n++)
+        for (var n = 0; n < buffer.Length; n++)
         {
-            int ch = n % AudioManager.Instance.AudioFormat.Channels;
-
-            buffer[n] = _channelFilters[ch].Transform(buffer[n]);
+            var ch = n % AudioManager.Instance.AudioFormat.Channels;
+            buffer[n] = _channelFilters[ch].Process(buffer[n]);
         }
     }
 

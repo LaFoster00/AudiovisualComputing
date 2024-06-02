@@ -169,10 +169,9 @@ MonoBehaviour:
   knobType: 0
   minRotation: 0.1
   maxRotation: 0.9
-  steps: 20
+  steps: 8
   startPosition: 0.25
   currentStep: 249
-  angleTolerance: 0.562
 --- !u!65 &5283625647951966305
 BoxCollider:
   m_ObjectHideFlags: 0
