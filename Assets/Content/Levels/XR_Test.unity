@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -13316,6 +13315,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -45
       objectReference: {fileID: 0}
+    - target: {fileID: 740764350908216023, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 740764350908216023, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 770567802685890791, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: targetParameter
@@ -14275,6 +14284,16 @@ PrefabInstance:
         type: 3}
       propertyPath: angleTolerance
       value: 0.424
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822258900466277158, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2822258900466277158, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.09954978
       objectReference: {fileID: 0}
     - target: {fileID: 3011492676234002475, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16191,30 +16210,10 @@ PrefabInstance:
       propertyPath: currentNormalizedValue
       value: 0.31582898
       objectReference: {fileID: 0}
-    - target: {fileID: 6720807736679470355, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: currentValue
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6720807736679470355, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: currentNormalizedValue
-      value: 0.6666667
-      objectReference: {fileID: 0}
     - target: {fileID: 6867164025939691626, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
       value: 1955
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: currentValue
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
-        type: 3}
-      propertyPath: currentNormalizedValue
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7606781989211407952, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
