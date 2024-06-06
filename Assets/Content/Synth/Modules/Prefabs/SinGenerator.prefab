@@ -13,6 +13,10 @@ GameObject:
   - component: {fileID: 7927132578576184338}
   - component: {fileID: 6600844211287551366}
   - component: {fileID: 6298383593152176095}
+  - component: {fileID: 1471942157562919463}
+  - component: {fileID: 4107414059386115030}
+  - component: {fileID: 5487987981465096414}
+  - component: {fileID: 3231130116002269399}
   m_Layer: 0
   m_Name: SinGenerator
   m_TagString: Untagged
@@ -54,6 +58,10 @@ MonoBehaviour:
   waveType: {fileID: 7927132578576184338}
   frequency: {fileID: 6600844211287551366}
   portamentoTime: {fileID: 6298383593152176095}
+  attack: {fileID: 1471942157562919463}
+  decay: {fileID: 4107414059386115030}
+  sustain: {fileID: 5487987981465096414}
+  release: {fileID: 3231130116002269399}
 --- !u!114 &7927132578576184338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -69,8 +77,8 @@ MonoBehaviour:
   parameterName: WaveType
   minValue: 0
   maxValue: 3
-  currentValue: 0
-  currentNormalizedValue: 0
+  currentValue: 2
+  currentNormalizedValue: 0.6666667
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -89,8 +97,8 @@ MonoBehaviour:
   parameterName: Frequency
   minValue: 40
   maxValue: 440
-  currentValue: 100.01501
-  currentNormalizedValue: 0.15003751
+  currentValue: 40
+  currentNormalizedValue: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -111,6 +119,86 @@ MonoBehaviour:
   maxValue: 1
   currentValue: 0.099925734
   currentNormalizedValue: 0.09902476
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &1471942157562919463
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927120467320398646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Attack
+  minValue: 0.001
+  maxValue: 2
+  currentValue: 0.001
+  currentNormalizedValue: 0
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &4107414059386115030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927120467320398646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Decay
+  minValue: 0
+  maxValue: 10
+  currentValue: 0
+  currentNormalizedValue: 0
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &5487987981465096414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927120467320398646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Sustain
+  minValue: 0
+  maxValue: 1
+  currentValue: 0.407
+  currentNormalizedValue: 0.407
+  onValueChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &3231130116002269399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1927120467320398646}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  parameterName: Release
+  minValue: 0
+  maxValue: 10
+  currentValue: 0
+  currentNormalizedValue: 0
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []

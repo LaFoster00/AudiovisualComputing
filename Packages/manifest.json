@@ -3,12 +3,14 @@
     {
       "name": "Keijiro",
       "url": "https://registry.npmjs.com",
-      "scopes": [ "jp.keijiro" ]
+      "scopes": [
+        "jp.keijiro"
+      ]
     }
   ],
   "dependencies": {
-    "jp.keijiro.minis": "1.0.10",
     "com.dbrizov.naughtyattributes": "https://github.com/dbrizov/NaughtyAttributes.git#upm",
+    "com.intothedev.savesystem": "https://github.com/IntoTheDev/Save-System-for-Unity.git",
     "com.mackysoft.serializereference-extensions": "https://github.com/mackysoft/Unity-SerializeReferenceExtensions.git?path=Assets/MackySoft/MackySoft.SerializeReferenceExtensions",
     "com.unity.collections": "2.1.4",
     "com.unity.ide.rider": "3.0.28",
@@ -19,11 +21,13 @@
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.8",
     "com.unity.timeline": "1.7.6",
+    "com.unity.toolchain.win-x86_64-linux-x86_64": "2.0.9",
     "com.unity.ugui": "1.0.0",
     "com.unity.visualeffectgraph": "14.0.11",
     "com.unity.xr.interaction.toolkit": "2.5.4",
     "com.unity.xr.oculus": "4.2.0",
     "com.unity.xr.openxr": "1.10.0",
+    "jp.keijiro.minis": "1.0.10",
     "com.unity.modules.ai": "1.0.0",
     "com.unity.modules.androidjni": "1.0.0",
     "com.unity.modules.animation": "1.0.0",
