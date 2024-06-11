@@ -15,6 +15,8 @@ public class Socket : AudioProvider
     [SerializeField, ShowIf("IsSocketInput")]
     private AudioProvider _target = null;
 
+    [SerializeField] private float defaultValue = 0;
+
     [SerializeField] private SocketDirection _direction = SocketDirection.Input;
     
     private bool IsSocketInput()
@@ -70,5 +72,10 @@ public class Socket : AudioProvider
     {
         if (Target != null) 
             Target.Read(buffer);
+        else
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = defaultValue;
+            }
     }
 }

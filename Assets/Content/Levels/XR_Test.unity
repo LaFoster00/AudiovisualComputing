@@ -4147,7 +4147,7 @@ AudioSource:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0
+      value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
@@ -13205,6 +13205,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: 0.028050946
       objectReference: {fileID: 0}
+    - target: {fileID: 231238483316941473, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.30901697
+      objectReference: {fileID: 0}
+    - target: {fileID: 231238483316941473, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.95105654
+      objectReference: {fileID: 0}
     - target: {fileID: 233320296961251334, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentValue
@@ -14050,6 +14060,16 @@ PrefabInstance:
       propertyPath: m_LocalRotation.y
       value: -0.51912856
       objectReference: {fileID: 0}
+    - target: {fileID: 1136766117892895747, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.99999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 1136766117892895747, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.000314253
+      objectReference: {fileID: 0}
     - target: {fileID: 1435622435615931976, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
@@ -14288,12 +14308,12 @@ PrefabInstance:
     - target: {fileID: 2822258900466277158, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentValue
-      value: 0.2
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 2822258900466277158, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentNormalizedValue
-      value: 0.09954978
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3011492676234002475, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -14374,6 +14394,11 @@ PrefabInstance:
         type: 3}
       propertyPath: managedReferences[6058913217344176174].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3024536351124734519, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_Name
+      value: Oscillator
       objectReference: {fileID: 0}
     - target: {fileID: 3061755423677253928, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16115,6 +16140,16 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0.41830027
       objectReference: {fileID: 0}
+    - target: {fileID: 5943089664042173498, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 1999
+      objectReference: {fileID: 0}
+    - target: {fileID: 5943089664042173498, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 6234696081803599653, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: knobType
@@ -16209,6 +16244,16 @@ PrefabInstance:
         type: 3}
       propertyPath: currentNormalizedValue
       value: 0.31582898
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811980729332961944, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentStep
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6811980729332961944, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: startPosition
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6867164025939691626, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16659,6 +16704,16 @@ PrefabInstance:
         type: 3}
       propertyPath: managedReferences[6058913349919309982].currentNormalizedValue
       value: 0.5495495
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182542693616103903, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 0.49987498
+      objectReference: {fileID: 0}
+    - target: {fileID: 9182542693616103903, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 0.49987498
       objectReference: {fileID: 0}
     - target: {fileID: 9218081979281092425, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}

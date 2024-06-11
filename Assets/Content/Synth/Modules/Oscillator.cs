@@ -15,7 +15,9 @@ public class Oscillator : AudioProvider
 {
     [Header("Wave Settings")] public AudioParameter waveType;
     public AudioParameter frequency;
+    public AudioProvider frequencyOffset;
     public AudioParameter portamentoTime;
+    public AudioProvider protamentoTimeOffset;
 
     [Header("Shaping")] public AudioParameter attack;
     public AudioParameter decay;
