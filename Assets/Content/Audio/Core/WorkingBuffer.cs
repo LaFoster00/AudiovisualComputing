@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using UnityEngine;
 
 public class WorkingBuffer : IDisposable
 {
@@ -25,8 +26,13 @@ public class WorkingBuffer : IDisposable
         }
     }
 
-    public static implicit operator Span<float>(WorkingBuffer b) =>
-        b._buffer.AsSpan(0, AudioManager.Instance.SampleProvider.CurrentDataLength);
+    public static implicit operator Span<float>(WorkingBuffer b)
+    {
+        if (b != null) return b._buffer.AsSpan(0, AudioManager.Instance.SampleProvider.CurrentDataLength);
+        
+        Debug.LogError("Working buffer is null. Cant cast to span.");
+        throw new NullReferenceException("Working buffer is null. Cant cast to span.");
+    }
 
     public void Dispose()
     {

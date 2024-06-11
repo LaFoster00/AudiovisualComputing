@@ -15,13 +15,18 @@ public class Socket : AudioProvider
     [SerializeField, ShowIf("IsSocketInput")]
     private AudioProvider _target = null;
 
-    [SerializeField] private float defaultValue = 0;
+    [SerializeField, HideIf("HasTarget")] private float defaultValue = 0;
 
     [SerializeField] private SocketDirection _direction = SocketDirection.Input;
     
     private bool IsSocketInput()
     {
         return _direction == SocketDirection.Output;
+    }
+
+    private bool HasTarget()
+    {
+        return _target != null;
     }
     
     public SocketDirection Direction

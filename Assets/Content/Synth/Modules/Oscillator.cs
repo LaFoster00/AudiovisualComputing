@@ -17,7 +17,8 @@ public class Oscillator : AudioProvider
     public AudioParameter frequency;
     public AudioProvider frequencyOffset;
 
-    [Header("Shaping")] public AudioParameter attack;
+    [Header("Shaping")] public AudioProvider gate;
+    public AudioParameter attack;
     public AudioParameter decay;
     public AudioParameter sustain;
     public AudioParameter release;
@@ -32,6 +33,8 @@ public class Oscillator : AudioProvider
     private AudioFormat _waveFormat;
 
     private WorkingBuffer _frequencyOffsetSamples;
+    private WorkingBuffer _gateBuffer;
+    private float _previousGate;
 
 
     [Button("Populate AudioParameters")]
@@ -83,6 +86,7 @@ public class Oscillator : AudioProvider
         #region SetupBuffersAndHelpers
 
         _frequencyOffsetSamples = new WorkingBuffer();
+        _gateBuffer = new WorkingBuffer();
 
         #endregion
 
@@ -158,11 +162,12 @@ public class Oscillator : AudioProvider
     public override void Read(Span<float> buffer)
     {
         frequencyOffset.Read(_frequencyOffsetSamples);
-
+        gate.Read(_gateBuffer);
+        
         for (int n = 0; n < buffer.Length; n += _waveFormat.Channels)
         {
             ReadWave(buffer, n);
-            ApplyEnvelope(buffer, n);
+            ApplyEnvelope(buffer, _gateBuffer, n);
 
             UpdateWaveTableIndex(_frequencyOffsetSamples, n);
         }
@@ -177,18 +182,18 @@ public class Oscillator : AudioProvider
         _phase = (_phase + _currentPhaseStep) % _waveTable.Length;
     }
 
-    private void ApplyEnvelope(Span<float> buffer, int n)
+    private void ApplyEnvelope(Span<float> buffer, Span<float> gateBuffer, int n)
     {
-        switch (_adsrEnvelope.CurrentStage)
+        if (gateBuffer[n] >= 0.5f && _previousGate <= 0.5f)
         {
-            case ADSREnvelope.EnvelopeStage.Idle:
-                _adsrEnvelope.NoteOn();
-                break;
-            case ADSREnvelope.EnvelopeStage.Sustain:
-            case ADSREnvelope.EnvelopeStage.Release:
-                _adsrEnvelope.NoteOff();
-                break;
+            _adsrEnvelope.NoteOn();
         }
+        else if (_gateBuffer[n] <= 0.5f && _previousGate >= 0.5f)
+        {
+            _adsrEnvelope.NoteOff();
+        }
+
+        _previousGate = gateBuffer[n];
 
         var envelopeSample = _adsrEnvelope.NextSample();
         for (int ch = 0; ch < _waveFormat.Channels; ch++)

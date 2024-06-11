@@ -181,6 +181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _target: {fileID: 0}
+  defaultValue: 0
   _direction: 0
 --- !u!1 &2925580366170246579
 GameObject:

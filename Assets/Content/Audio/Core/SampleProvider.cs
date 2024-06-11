@@ -98,6 +98,9 @@ public class SampleProvider : MonoBehaviour
 
     private void OnAudioFilterRead(float[] data, int channels)
     {
+        if (!AudioManager.Instance)
+            return;
+        
         CurrentDataLength = data.Length;
         for (int i = 0; i < CurrentDataLength; i++)
         {
