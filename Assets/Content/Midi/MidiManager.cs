@@ -22,6 +22,7 @@ public class MidiManager : MonoBehaviour
             Destroy(this);
             
         _instance = this;
+        _instance.transform.SetParent(null);
         DontDestroyOnLoad(_instance);
         InputSystem.onDeviceChange += OnInputSystemOnDeviceChange;
     }

@@ -6,15 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/WorkingBuffer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/WorkingBuffer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Socket.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Socket.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Oscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Oscillator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Oscillator.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Oscillator.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Prefabs/TestSynth.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Prefabs/TestSynth.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/MidiManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/MidiManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToGate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToGate.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/MidiToCV.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/MidiToCV.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +49,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39c25c7743074133aa8a65861b64bb6020a00/94/39c5d71d/AnchoredJoint2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39c25c7743074133aa8a65861b64bb6020a00/ac/3b8059e1/Joint2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39c25c7743074133aa8a65861b64bb6020a00/ae/43a5ea33/DistanceJoint2D.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/19/0a9010b9/Editor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/13/87d8c4f9/IDisposable.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/97/2ce2aa98/Span`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/467a840a914a47078e4ae9b0b1e8779e46ac00/af/4d56de44/String.cs" root0="SKIP_HIGHLIGHTING" />
@@ -69,6 +68,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/9e/61ca1951/AsioDriverExt.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4d1885a542644f918e8e6afcffd103498600/bc/d3c64c71/AsioOut.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4e2cc7f930c647b08facdd031052ba4617a660/9c/5267e793/Enumerable.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/4f238bfdac3a4ba5a34a076f8a4e9d6c3c00/61/ba17cfd0/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/583901c819894ba8afebacbd79312940e6c00/71/649a089f/GeneralMidi.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/b0/8c5aaaad/IEnumerable`1.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5a41d6b7189842eca409fd0b1c3e3dcf17bf78/de/a9a887f5/IEnumerator`1.cs" root0="SKIP_HIGHLIGHTING" />
@@ -93,6 +93,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b7c48e912014c9591b05a527c3446a54ee00/f3/7fb46a28/BiQuadFilter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b7c48e912014c9591b05a527c3446a54ee00/f4/30496093/SignalBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/04/ebb6c556/UnityEvent`1.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/0c/8b3b1826/SetupCoroutine.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/48/36d35a66/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/62/f3ae605d/Behaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/779cc116a5954f1c9b92496e62345641175c00/6e/19a9c11e/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
@@ -141,8 +142,8 @@
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/EulerRotator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Content/Midi/MidiTestewr.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToFrequencyOffset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/USCSL/EditorUtils/Attributes/ClampAttribute.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/USCSL/Extensions/Extensions_GameObject.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.dbrizov.naughtyattributes@8a8fa5a965/Scripts/Core/DrawerAttributes/AllowNestingAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -284,10 +285,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="32940">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="37248">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="32940" />
+      <option name="pid" value="37248" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -353,32 +354,6 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToGate.cs</url>
-          <line>127</line>
-          <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Synth\Modules\MidiToGate.cs" initialLine="127" containingFunctionPresentation="Method 'Read'">
-            <startOffsets>
-              <option value="3344" />
-            </startOffsets>
-            <endOffsets>
-              <option value="3345" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Content/Audio/DSP/ADSREnvelope.cs</url>
-          <line>75</line>
-          <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Audio\DSP\ADSREnvelope.cs" initialLine="75" containingFunctionPresentation="Method 'NextSample'">
-            <startOffsets>
-              <option value="2048" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2083" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="36" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

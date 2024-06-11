@@ -19,24 +19,23 @@ public class AudioFormat
 [RequireComponent(typeof(AudioSource))]
 public class SampleProvider : MonoBehaviour
 {
+    public event Action OnDataRead;
+    
+    [NonSerialized]
+    public AudioFormat AudioFormat;
+    
+    [SerializeField] private List<ChannelSend> sends = new();
+    
+    [ShowNonSerializedField]
     private int _bufferLength;
 
+    [ShowNativeProperty]
     public int CurrentDataLength { get; private set; }
     
     private float[] _samples;
-    
-    private Memory<float> _samplesMemory; 
     // Should be used when generating data independent from the main audio buffer 
     private List<float[]> _freeWorkingBuffers;
     
-    public Span<float> Samples => _samplesMemory.Span;
-
-
-    [NonSerialized]
-    public AudioFormat AudioFormat;
-
-    [SerializeField] private List<ChannelSend> sends = new();
-
     public float[] GetFreeWorkingBuffer()
     {
         var buffer = _freeWorkingBuffers.LastOrDefault();
@@ -102,6 +101,9 @@ public class SampleProvider : MonoBehaviour
             return;
         
         CurrentDataLength = data.Length;
+        
+        OnDataRead?.Invoke();
+        
         for (int i = 0; i < CurrentDataLength; i++)
         {
             _samples[i] = 0;
@@ -109,8 +111,7 @@ public class SampleProvider : MonoBehaviour
 
         foreach (var send in sends)
         {
-            _samplesMemory = new Memory<float>(_samples, 0, CurrentDataLength);
-            send.Read(Samples);
+            send.Read(_samples.AsSpan(0,  CurrentDataLength));
         }
 
         for (var sample = 0; sample < CurrentDataLength; sample++)
