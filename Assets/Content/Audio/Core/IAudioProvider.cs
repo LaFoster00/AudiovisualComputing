@@ -5,5 +5,6 @@ using UnityEngine;
 
 public interface IAudioProvider
 {
+    public bool CanRead();
     public void Read(Span<float> buffer);
 }

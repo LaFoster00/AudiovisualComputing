@@ -1,9 +1,6 @@
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
@@ -83,15 +80,31 @@ public class Plug : AudioProvider
         }
     }
 
+    public override bool CanRead()
+    {
+        switch (plugMode)
+        {
+            case PlugMode.Target:
+                return otherPlug.CanRead();
+            case PlugMode.Source:
+                return SocketTarget.CanRead();
+            case PlugMode.Undefined:
+                return false;
+            default:
+                throw new ArgumentOutOfRangeException();
+        }
+    }
+
     public override void Read(Span<float> buffer)
     {
-        if (plugMode == PlugMode.Target)
+        switch (plugMode)
         {
-            otherPlug.Read(buffer);
-        }
-        else if (plugMode == PlugMode.Source)
-        {
-            SocketTarget.Read(buffer);
+            case PlugMode.Target:
+                otherPlug.Read(buffer);
+                break;
+            case PlugMode.Source:
+                SocketTarget.Read(buffer);
+                break;
         }
     }
 }

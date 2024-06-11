@@ -3,6 +3,33 @@ using Unity.Mathematics;
 
 public static class Utils
 {
+    public static readonly int C4NoteNumber = 60;
+    
+    public static readonly float NoteOffsetDefault = 0.5f;
+    // The value needed to offset a frequency by 1 note using the NoteOffset function
+    public static readonly float TotalNotes = 128;
+    public static readonly float NoteOffsetFactor = (1 / TotalNotes);
+   
+
+    public static int GetNoteOffsetFromC4(this int midiNoteNumber)
+    {
+        return midiNoteNumber - C4NoteNumber;
+    }
+
+    // Midi note starting at C4(60) to note offset with NoteOffsetFactor scaling
+    public static float GetFrequencyOffsetFromMidiNote(this int midiNoteNumber)
+    {
+        return NoteOffsetDefault + midiNoteNumber.GetNoteOffsetFromC4() * NoteOffsetFactor;
+    }
+
+    // Frequency offset default = 0.5f, 0.05 per octave
+    public static float NoteOffset(this float frequencyOffset) => (frequencyOffset - NoteOffsetDefault) * TotalNotes;
+
+    // Note offset in 1.0f per note, root note (0) is assumed to be A4 (440hz)
+    public static float FinalFrequency(this float frequency, float noteOffset) =>
+        frequency * math.pow(2, (noteOffset - 9f) / 12f);
+    
+
     public static double HertzToMel(this double hertz)
     {
         return 2595 * math.log10(1 + hertz / 700.0);
@@ -139,7 +166,7 @@ public static class Utils
     {
         return (float)LinearToLog((double)linearValue, (double)logBase);
     }
-    
+
     // Converts a logarithmic value (0 to 1) back to a linear value (0 to 1)
     public static double LogarithmicToLinear(double logValue, double logBase = 10)
     {
@@ -147,18 +174,18 @@ public static class Utils
         {
             throw new ArgumentOutOfRangeException(nameof(logValue), "Value must be in the range [0, 1]");
         }
-        
+
         // Scale log value to a range suitable for exponential transformation
-        double minLog = Math.Log10(1);  // log(1) = 0
-        double maxLog = Math.Log10(logBase);  // log(10) = 1 for base 10
-        
+        double minLog = Math.Log10(1); // log(1) = 0
+        double maxLog = Math.Log10(logBase); // log(10) = 1 for base 10
+
         // Apply exponential transformation
         double linearValue = (Math.Pow(10, logValue * (maxLog - minLog) + minLog) - 1) / (logBase - 1);
-        
+
         // Normalize to the range 0 to 1
         return linearValue;
     }
-    
+
     // Converts a logarithmic value (0 to 1) back to a linear value (0 to 1)
     public static float LogarithmicToLinear(this float logValue, float logBase = 10)
     {

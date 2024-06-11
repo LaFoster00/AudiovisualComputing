@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InputSocket
       objectReference: {fileID: 0}
+    - target: {fileID: 2542474221867884279, guid: 15ce2eeed248bde46b7f48a91334ad87,
+        type: 3}
+      propertyPath: defaultValue
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 4262139925793088058, guid: 15ce2eeed248bde46b7f48a91334ad87,
         type: 3}
       propertyPath: m_LocalPosition.x

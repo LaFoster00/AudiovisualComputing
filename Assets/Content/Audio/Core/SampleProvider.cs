@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using NaughtyAttributes;
 using Unity.Mathematics;
 using UnityEngine;
@@ -18,14 +19,14 @@ public class AudioFormat
 [RequireComponent(typeof(AudioSource))]
 public class SampleProvider : MonoBehaviour
 {
+    private int _bufferLength;
+    
     private float[] _samples;
-    // For sends, so that they can let the target generate a signal an then mix it in)
-    private float[] _workingBuffer;
+    // Should be used when generating data independent from the main audio buffer 
+    private List<float[]> _freeWorkingBuffers;
     
     private Memory<float> _samplesMemory; 
-    private Memory<float> _workingBufferMemory;
     public Span<float> Samples => _samplesMemory.Span;
-    public Span<float> WorkingBuffer => _workingBufferMemory.Span;
 
 
     [NonSerialized]
@@ -33,6 +34,22 @@ public class SampleProvider : MonoBehaviour
 
     [SerializeField] private List<ChannelSend> sends = new();
 
+
+    public float[] GetFreeWorkingBuffer()
+    {
+        var buffer = _freeWorkingBuffers.LastOrDefault();
+        return buffer ?? new float[_bufferLength];
+    }
+
+    public void ReturnWorkingBuffer(float[] buffer)
+    {
+        if (buffer == null)
+        {
+            return;
+        }
+        Array.Clear(buffer, 0, buffer.Length);
+        _freeWorkingBuffers.Add(buffer);
+    } 
 
     private void Awake()
     {
@@ -51,9 +68,14 @@ public class SampleProvider : MonoBehaviour
                 _ => throw new ArgumentOutOfRangeException()
             }
         };
-
-        _samples = new float[audioFormat.SampleRate];
-        _workingBuffer = new float[audioFormat.SampleRate];
+        
+        AudioSettings.GetDSPBufferSize(out _bufferLength, out int numBuffers);
+        _samples = new float[_bufferLength];
+        _freeWorkingBuffers = new List<float[]>(32);
+        for (int i = 0; i < _freeWorkingBuffers.Count; i++)
+        {
+            _freeWorkingBuffers[i] = new float[_bufferLength];
+        }
     }
 
     public int NumMixers
@@ -76,15 +98,14 @@ public class SampleProvider : MonoBehaviour
     {
         int actualSampleCount = math.min(_samples.Length, data.Length);
         Array.Clear(_samples, 0, actualSampleCount);
-        Array.Clear(_workingBuffer, 0, actualSampleCount);
 
         foreach (var send in sends)
         {
+            var workingBuffer = GetFreeWorkingBuffer();
             _samplesMemory = new Memory<float>(_samples, 0, actualSampleCount);
-            _workingBufferMemory = new Memory<float>(_workingBuffer, 0, actualSampleCount);
             send.Read(
                 Samples,
-                WorkingBuffer);
+                workingBuffer);
         }
 
         for (var sample = 0; sample < actualSampleCount; sample++)

@@ -139,6 +139,11 @@ public class BiQuadFilterModule : AudioProvider
         }
     }
 
+    public override bool CanRead()
+    {
+        return true;
+    }
+
     public override void Read(Span<float> buffer)
     {
         target.Read(buffer);

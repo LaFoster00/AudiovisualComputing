@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 public enum SocketDirection
@@ -12,25 +13,29 @@ public enum SocketDirection
 [RequireComponent(typeof(XRSocketInteractor))]
 public class Socket : AudioProvider
 {
-    [SerializeField, ShowIf("IsSocketInput")]
-    private AudioProvider _target = null;
+    [FormerlySerializedAs("_target")] [SerializeField, ShowIf("IsSocketOutput")]
+    private AudioProvider target = null;
 
-    [SerializeField] private SocketDirection _direction = SocketDirection.Input;
+    [SerializeField]
+    private float defaultValue;
+
+    [FormerlySerializedAs("_direction")] [SerializeField] private SocketDirection direction = SocketDirection.Input;
+
     
-    private bool IsSocketInput()
+    private bool IsSocketOutput()
     {
-        return _direction == SocketDirection.Output;
+        return direction == SocketDirection.Output;
     }
     
     public SocketDirection Direction
     {
-        get => _direction;
+        get => direction;
     }
 
     public AudioProvider Target
     {
-        get => _target; 
-        set => _target = value;
+        get => target; 
+        set => target = value;
     }
 
     private XRSocketInteractor _xrSocketInteractor;
@@ -65,10 +70,22 @@ public class Socket : AudioProvider
             plug.OnPluggedIn(this);
         }
     }
-    
+
+    public override bool CanRead()
+    {
+        return target && target.CanRead();
+    }
+
     public override void Read(Span<float> buffer)
     {
-        if (Target != null) 
+        if (CanRead())
             Target.Read(buffer);
+        else
+        {
+            for (int i = 0; i < buffer.Length; i++)
+            {
+                buffer[i] = defaultValue;
+            }
+        }
     }
 }

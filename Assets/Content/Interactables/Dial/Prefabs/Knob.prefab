@@ -170,8 +170,8 @@ MonoBehaviour:
   minRotation: 0.1
   maxRotation: 0.9
   steps: 8
-  startPosition: 0.25
-  currentStep: 249
+  startPosition: 1
+  currentStep: 3999
 --- !u!65 &5283625647951966305
 BoxCollider:
   m_ObjectHideFlags: 0
