@@ -413,10 +413,20 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6454597503860925128}
     m_Modifications:
+    - target: {fileID: 363614337007341747, guid: 398b7a76b2e62154aa645d637cdb4000,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.088
+      objectReference: {fileID: 0}
     - target: {fileID: 1927120467320398646, guid: 398b7a76b2e62154aa645d637cdb4000,
         type: 3}
       propertyPath: m_Name
       value: SinGenerator
+      objectReference: {fileID: 0}
+    - target: {fileID: 2613152287543336493, guid: 398b7a76b2e62154aa645d637cdb4000,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.088
       objectReference: {fileID: 0}
     - target: {fileID: 3234031820054742110, guid: 398b7a76b2e62154aa645d637cdb4000,
         type: 3}
@@ -547,6 +557,11 @@ PrefabInstance:
         type: 3}
       propertyPath: managedReferences[6058913349919310162].onValueChanged.m_PersistentCalls.m_Calls.Array.size
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9222805917617115631, guid: 398b7a76b2e62154aa645d637cdb4000,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.088
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
