@@ -14,7 +14,7 @@ public class AudioManager : MonoBehaviour
 
     public AudioFormat AudioFormat
     {
-        get => SampleProvider.audioFormat;
+        get => SampleProvider.AudioFormat;
     }
 
     // Start is called before the first frame update

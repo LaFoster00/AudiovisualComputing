@@ -31,6 +31,8 @@ public class Oscillator : AudioProvider
 
     private AudioFormat _waveFormat;
 
+    private WorkingBuffer _frequencyOffsetSamples;
+
 
     [Button("Populate AudioParameters")]
     private void PopulateAudioParameters()
@@ -149,6 +151,7 @@ public class Oscillator : AudioProvider
 
     public override void Read(Span<float> buffer)
     {
+        
         for (int n = 0; n < buffer.Length; n += _waveFormat.Channels)
         {
             ReadWave(buffer, n);
@@ -162,15 +165,22 @@ public class Oscillator : AudioProvider
     {
         _currentPhaseStep = _waveTable.Length * ((frequency.CurrentValue) / _waveFormat.SampleRate);
         _phase = (_phase + _currentPhaseStep) % _waveTable.Length;
+        
+        
     }
 
     private void ApplyEnvelope(Span<float> buffer, int n)
     {
-        if (_adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Idle)
-            _adsrEnvelope.NoteOn();
-        else if (_adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Sustain ||
-                 _adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Release)
-            _adsrEnvelope.NoteOff();
+        switch (_adsrEnvelope.CurrentStage)
+        {
+            case ADSREnvelope.EnvelopeStage.Idle:
+                _adsrEnvelope.NoteOn();
+                break;
+            case ADSREnvelope.EnvelopeStage.Sustain:
+            case ADSREnvelope.EnvelopeStage.Release:
+                _adsrEnvelope.NoteOff();
+                break;
+        }
 
         var envelopeSample = _adsrEnvelope.NextSample();
         for (int ch = 0; ch < _waveFormat.Channels; ch++)
