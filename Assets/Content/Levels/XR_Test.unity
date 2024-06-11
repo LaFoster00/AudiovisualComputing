@@ -12734,6 +12734,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2032916854 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6720807736679470355, guid: ee35a8dbf2cc6f747b6695035563a95e,
+    type: 3}
+  m_PrefabInstance: {fileID: 1827071350677865517}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbfd88ddc363ba4f8e7cdae6cf3ae74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2059807456
 GameObject:
   m_ObjectHideFlags: 0
@@ -14293,12 +14305,12 @@ PrefabInstance:
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentStep
-      value: 0
+      value: 3999
       objectReference: {fileID: 0}
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: startPosition
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2617437524163813515, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16260,6 +16272,16 @@ PrefabInstance:
       propertyPath: currentStep
       value: 1955
       objectReference: {fileID: 0}
+    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentValue
+      value: 440
+      objectReference: {fileID: 0}
+    - target: {fileID: 7556238381415615623, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: currentNormalizedValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7606781989211407952, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: currentValue
@@ -16678,7 +16700,7 @@ PrefabInstance:
     - target: {fileID: 8786386268708458674, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.95105654
+      value: 0.95105654
       objectReference: {fileID: 0}
     - target: {fileID: 8918194216232082492, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16694,6 +16716,16 @@ PrefabInstance:
         type: 3}
       propertyPath: startPosition
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 9100513605301842879, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: targetParameter
+      value: 
+      objectReference: {fileID: 2032916854}
+    - target: {fileID: 9100513605301842879, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: targetParameterName
+      value: WaveType
       objectReference: {fileID: 0}
     - target: {fileID: 9106095127538588511, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
@@ -16739,6 +16771,8 @@ PrefabInstance:
     - {fileID: 3852695490195724310, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
     - {fileID: 372794440138912196, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
     - {fileID: 6525003831793543385, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
+    - {fileID: 4397712186943744776, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
+    - {fileID: 8437796975419597749, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee35a8dbf2cc6f747b6695035563a95e, type: 3}
