@@ -97,15 +97,15 @@ public class SampleProvider : MonoBehaviour
     private void OnAudioFilterRead(float[] data, int channels)
     {
         int actualSampleCount = math.min(_samples.Length, data.Length);
-        Array.Clear(_samples, 0, actualSampleCount);
-
+        for (int i = 0; i < actualSampleCount; i++)
+        {
+            _samples[i] = 0;
+        }
+        _samplesMemory = new Memory<float>(_samples, 0, actualSampleCount);
+        
         foreach (var send in sends)
         {
-            var workingBuffer = GetFreeWorkingBuffer();
-            _samplesMemory = new Memory<float>(_samples, 0, actualSampleCount);
-            send.Read(
-                Samples,
-                workingBuffer);
+            send.Read(Samples);
         }
 
         for (var sample = 0; sample < actualSampleCount; sample++)

@@ -48,6 +48,7 @@ public class Oscillator : AudioProvider
 
     private WorkingBuffer frequencyOffsetSamples;
     private WorkingBuffer portamentoTimeOffsetSamples;
+    private bool _seekFreq;
 
     public float FinalPortamentoTime(float portamentoTimeOffset) =>
         math.clamp(portamentoTime.CurrentValue + portamentoTimeOffset,  0f.NextAfter(1), 1);
@@ -103,16 +104,18 @@ public class Oscillator : AudioProvider
     private void OnEnable()
     {
         _waveFormat = AudioManager.Instance.AudioFormat;
-        frequencyOffsetSamples = new();
-        portamentoTimeOffsetSamples = new WorkingBuffer();
-        
+
+        _seekFreq = true;
+
         #region InitializeWaveTable
 
+        frequency.onValueChanged.AddListener(OnFrequencyChanged);
         waveType.onValueChanged.AddListener(OnWaveTypeChanged);
 
         _pinkNoise = (PinkNoiseBuilder)new PinkNoiseBuilder()
             .SampledAt(_waveFormat.SampleRate);
         OnWaveTypeChanged(null);
+        OnFrequencyChanged(null);
 
         #endregion
 
@@ -122,7 +125,7 @@ public class Oscillator : AudioProvider
         decay.onValueChanged.AddListener(OnEnvelopeChanged);
         sustain.onValueChanged.AddListener(OnEnvelopeChanged);
         release.onValueChanged.AddListener(OnEnvelopeChanged);
-
+        
         _adsrEnvelope = new ADSREnvelope(
             _waveFormat.SampleRate);
         OnEnvelopeChanged(null);
@@ -172,7 +175,13 @@ public class Oscillator : AudioProvider
 
     private void OnDisable()
     {
+        frequency.onValueChanged.RemoveListener(OnFrequencyChanged);
         waveType.onValueChanged.RemoveListener(OnWaveTypeChanged);
+    }
+
+    private void OnFrequencyChanged(AudioParameter parameter)
+    {
+        _seekFreq = true;
     }
 
     public override bool CanRead()
@@ -182,37 +191,32 @@ public class Oscillator : AudioProvider
 
     public override void Read(Span<float> buffer)
     {
-        // Read the offset buffers
-        //frequencyOffset.Read(frequencyOffsetSamples);
-        //portamentoTimeOffset.Read(portamentoTimeOffsetSamples);
+        if (_seekFreq) // process frequency change only once per call to Read
+        {
+            _targetPhaseStep = _waveTable.Length * ((frequency.CurrentValue) / _waveFormat.SampleRate);
 
-        _targetPhaseStep = _waveTable.Length *
-                           (frequency.CurrentValue /
-                            _waveFormat.SampleRate);
+            _phaseStepDelta = (_targetPhaseStep - _currentPhaseStep) /
+                              (_waveFormat.SampleRate * portamentoTime.CurrentValue);
+            _seekFreq = false;
+        }
 
-        _phaseStepDelta = (_targetPhaseStep - _currentPhaseStep) /
-                          (_waveFormat.SampleRate * FinalPortamentoTime(0f));
-        
         for (int n = 0; n < buffer.Length; n += _waveFormat.Channels)
         {
             ReadWave(buffer, n);
-            //ApplyEnvelope(buffer, n);
+            ApplyEnvelope(buffer, n);
+
             UpdateWaveTableIndex();
         }
     }
 
     private void ApplyEnvelope(Span<float> buffer, int n)
     {
-        switch (_adsrEnvelope.CurrentStage)
-        {
-            case ADSREnvelope.EnvelopeStage.Idle:
-                _adsrEnvelope.NoteOn();
-                break;
-            case ADSREnvelope.EnvelopeStage.Sustain or ADSREnvelope.EnvelopeStage.Release:
-                _adsrEnvelope.NoteOff();
-                break;
-        }
-
+        if (_adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Idle)
+            _adsrEnvelope.NoteOn();
+        else if (_adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Sustain || 
+                 _adsrEnvelope.CurrentStage == ADSREnvelope.EnvelopeStage.Release)
+            _adsrEnvelope.NoteOff();
+        
         var envelopeSample = _adsrEnvelope.NextSample();
         for (int ch = 0; ch < _waveFormat.Channels; ch++)
         {
@@ -225,15 +229,13 @@ public class Oscillator : AudioProvider
         _phase += _currentPhaseStep;
         if (_phase > _waveTable.Length)
             _phase -= _waveTable.Length;
-        if (!(Math.Abs(_currentPhaseStep - _targetPhaseStep) > 0.0001f)) return;
-
-        _currentPhaseStep += _phaseStepDelta;
-        switch (_phaseStepDelta)
+        if (Math.Abs(_currentPhaseStep - _targetPhaseStep) > 0.0001f)
         {
-            case > 0.0 when _currentPhaseStep > _targetPhaseStep:
-            case < 0.0 when _currentPhaseStep < _targetPhaseStep:
+            _currentPhaseStep += _phaseStepDelta;
+            if (_phaseStepDelta > 0.0 && _currentPhaseStep > _targetPhaseStep)
                 _currentPhaseStep = _targetPhaseStep;
-                break;
+            else if (_phaseStepDelta < 0.0 && _currentPhaseStep < _targetPhaseStep)
+                _currentPhaseStep = _targetPhaseStep;
         }
     }
 
@@ -249,7 +251,8 @@ public class Oscillator : AudioProvider
         }
         else
         {
-            var sample = _waveTable[(int)_phase];
+            int waveTableIndex = (int)_phase % _waveTable.Length;
+            var sample = _waveTable[waveTableIndex];
             for (int ch = 0; ch < _waveFormat.Channels; ch++)
             {
                 buffer[n + ch] = sample;

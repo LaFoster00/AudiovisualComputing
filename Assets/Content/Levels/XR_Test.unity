@@ -4350,7 +4350,7 @@ PrefabInstance:
         type: 3}
       propertyPath: socketTarget
       value: 
-      objectReference: {fileID: 1922446744}
+      objectReference: {fileID: 1459090938}
     - target: {fileID: 7144644485246985902, guid: f166d30f73bae6a4ea8b280b0ead4712,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -10943,7 +10943,7 @@ PrefabInstance:
         type: 3}
       propertyPath: socketTarget
       value: 
-      objectReference: {fileID: 1459090938}
+      objectReference: {fileID: 0}
     - target: {fileID: 7144644485246985902, guid: f166d30f73bae6a4ea8b280b0ead4712,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11960,18 +11960,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1915752075}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1922446744 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 830419929801378156, guid: ee35a8dbf2cc6f747b6695035563a95e,
-    type: 3}
-  m_PrefabInstance: {fileID: 1827071350677865517}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 698dbb957fdb1854a8defa8076d118e2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1952147011
 GameObject:
   m_ObjectHideFlags: 0
@@ -14370,6 +14358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalRotation.y
       value: -0.95105654
+      objectReference: {fileID: 0}
+    - target: {fileID: 4927582165312619602, guid: ee35a8dbf2cc6f747b6695035563a95e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4992860121103838272, guid: ee35a8dbf2cc6f747b6695035563a95e,
         type: 3}
