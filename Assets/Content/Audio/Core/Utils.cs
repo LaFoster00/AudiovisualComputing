@@ -3,6 +3,32 @@ using Unity.Mathematics;
 
 public static class Utils
 {
+    public static readonly int C4NoteNumber = 60;
+    
+    public static readonly float NoteOffsetDefault = 0.5f;
+    // The value needed to offset a frequency by 1 note using the NoteOffset function
+    public static readonly float TotalNotes = 128;
+    public static readonly float NoteOffsetFactor = (1 / TotalNotes);
+   
+
+    public static int GetNoteOffsetFromC4(this int midiNoteNumber)
+    {
+        return midiNoteNumber - C4NoteNumber;
+    }
+
+    // Midi note starting at C4(60) to note offset with NoteOffsetFactor scaling
+    public static float GetFrequencyOffsetFromMidiNote(this int midiNoteNumber)
+    {
+        return NoteOffsetDefault + midiNoteNumber.GetNoteOffsetFromC4() * NoteOffsetFactor;
+    }
+
+    // Frequency offset default = 0.5f, 0.05 per octave
+    public static float NoteOffset(this float frequencyOffset) => (frequencyOffset - NoteOffsetDefault) * TotalNotes;
+
+    // Note offset in 1.0f per note, note C4(0), note A4 (9) is assumed to be  (440hz)
+    public static float NoteOffsetFrequency(this float frequency, float noteOffset) =>
+        frequency * math.pow(2, (noteOffset - 9f) / 12f);
+    
     public static double HertzToMel(this double hertz)
     {
         return 2595 * math.log10(1 + hertz / 700.0);

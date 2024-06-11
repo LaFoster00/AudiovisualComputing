@@ -80,6 +80,12 @@ public class Oscillator : AudioProvider
     {
         _waveFormat = AudioManager.Instance.AudioFormat;
 
+        #region SetupBuffersAndHelpers
+
+        _frequencyOffsetSamples = new WorkingBuffer();
+
+        #endregion
+
         #region InitializeWaveTable
 
         waveType.onValueChanged.AddListener(OnWaveTypeChanged);
@@ -151,22 +157,24 @@ public class Oscillator : AudioProvider
 
     public override void Read(Span<float> buffer)
     {
-        
+        frequencyOffset.Read(_frequencyOffsetSamples);
+
         for (int n = 0; n < buffer.Length; n += _waveFormat.Channels)
         {
             ReadWave(buffer, n);
             ApplyEnvelope(buffer, n);
 
-            UpdateWaveTableIndex();
+            UpdateWaveTableIndex(_frequencyOffsetSamples, n);
         }
     }
-    
-    private void UpdateWaveTableIndex()
+
+    private void UpdateWaveTableIndex(Span<float> frequencyOffsetSamples, int sample)
     {
-        _currentPhaseStep = _waveTable.Length * ((frequency.CurrentValue) / _waveFormat.SampleRate);
+        _currentPhaseStep = _waveTable.Length *
+                            (frequency.CurrentValue.NoteOffsetFrequency(
+                                 frequencyOffsetSamples[sample].NoteOffset()) /
+                             _waveFormat.SampleRate);
         _phase = (_phase + _currentPhaseStep) % _waveTable.Length;
-        
-        
     }
 
     private void ApplyEnvelope(Span<float> buffer, int n)
@@ -189,7 +197,6 @@ public class Oscillator : AudioProvider
         }
     }
 
-    
 
     private void ReadWave(Span<float> buffer, int n)
     {
