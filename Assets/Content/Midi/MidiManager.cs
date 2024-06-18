@@ -1,7 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Melanchall.DryWetMidi.Multimedia;
+#if !UNITY_ANDROID
 using InputDevice = Melanchall.DryWetMidi.Multimedia.InputDevice;
+#endif
 
 public class MidiManager : Singleton<MidiManager>
 {
@@ -10,12 +12,15 @@ public class MidiManager : Singleton<MidiManager>
 
     private void OnEnable()
     {
+#if !UNITY_ANDROID
+        var midiDevices = InputDevice.GetAll();
         var midiDevices = InputDevice.GetAll();
         foreach (var device in midiDevices)
         {
             InputDevices[device.Name] = device;
             device.StartEventsListening();
         }
+#endif
 
         InputDevices["VirtualKeyboard"] = KeyboardInputDevice.Instance;
         InputDevices["VirtualKeyboard"].StartEventsListening();
@@ -30,6 +35,7 @@ public class MidiManager : Singleton<MidiManager>
         {
             (device.Value as IDisposable)?.Dispose();
         }
+
         InputDevices.Clear();
     }
 }

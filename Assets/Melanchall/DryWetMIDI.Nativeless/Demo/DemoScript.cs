@@ -9,12 +9,28 @@ using Melanchall.DryWetMidi.Multimedia;
 using Melanchall.DryWetMidi.Standards;
 using UnityEngine;
 
-#if !PLATFORM_ANDROID
+#if PLATFORM_ANDROID
 public class DemoScript : MonoBehaviour
 {
-    private const string OutputDeviceName = "Microsoft GS Wavetable Synth";
+	private sealed class LogOutputDevice : IOutputDevice
+	{
+		public event EventHandler<MidiEventSentEventArgs> EventSent;
 
-    private OutputDevice _outputDevice;
+		public void PrepareForEventsSending()
+		{
+		}
+
+		public void SendEvent(MidiEvent midiEvent)
+		{
+			Debug.Log($"Event sent: {midiEvent}");
+		}
+
+		public void Dispose()
+		{
+		}
+	}
+
+    private IOutputDevice _outputDevice;
     private Playback _playback;
 
     private void Start()
@@ -44,18 +60,9 @@ public class DemoScript : MonoBehaviour
 
     private void InitializeOutputDevice()
     {
-        Debug.Log($"Initializing output device [{OutputDeviceName}]...");
-
-        var allOutputDevices = OutputDevice.GetAll();
-        if (!allOutputDevices.Any(d => d.Name == OutputDeviceName))
-        {
-            var allDevicesList = string.Join(Environment.NewLine, allOutputDevices.Select(d => $"  {d.Name}"));
-            Debug.Log($"There is no [{OutputDeviceName}] device presented in the system. Here the list of all device:{Environment.NewLine}{allDevicesList}");
-            return;
-        }
-
-        _outputDevice = OutputDevice.GetByName(OutputDeviceName);
-        Debug.Log($"Output device [{OutputDeviceName}] initialized.");
+        Debug.Log($"Initializing output device...");
+        _outputDevice = new LogOutputDevice();
+        Debug.Log($"Output device initialized.");
     }
 
     private MidiFile CreateTestFile()

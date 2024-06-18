@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using Melanchall.DryWetMidi.Common;
 using Melanchall.DryWetMidi.Core;
@@ -9,7 +8,6 @@ using UnityEngine;
 public class MidiNoteReceiver : MonoBehaviour, IOutputDevice
 {
     public string midiDeviceName = "Keyboard";
-    private MidiDevice midiDevice;
 
     private SevenBitNumber? currentNote;
     private bool newNote;
