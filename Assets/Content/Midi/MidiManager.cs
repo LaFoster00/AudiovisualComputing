@@ -1,71 +1,35 @@
 using System;
 using System.Collections.Generic;
-using Minis;
-using UnityEngine;
-using UnityEngine.InputSystem;
+using Melanchall.DryWetMidi.Multimedia;
+using InputDevice = Melanchall.DryWetMidi.Multimedia.InputDevice;
 
-public class MidiManager : MonoBehaviour
+public class MidiManager : Singleton<MidiManager>
 {
     // Midi devices mapped to their product name
-    public Dictionary<string, MidiDevice> devices = new();
-
-    public delegate void MidiDeviceChanged(MidiDevice device);
-    public event MidiDeviceChanged OnDeviceAdded;
-    public event MidiDeviceChanged OnDeviceRemoved;
-
-    private static MidiManager _instance;
-    public static MidiManager Instance => _instance;
+    public readonly Dictionary<string, IInputDevice> InputDevices = new();
 
     private void OnEnable()
     {
-        if (_instance != this && _instance != null)
-            Destroy(this);
-            
-        _instance = this;
-        _instance.transform.SetParent(null);
-        DontDestroyOnLoad(_instance);
-        InputSystem.onDeviceChange += OnInputSystemOnDeviceChange;
+        var midiDevices = InputDevice.GetAll();
+        foreach (var device in midiDevices)
+        {
+            InputDevices[device.Name] = device;
+            device.StartEventsListening();
+        }
+
+        InputDevices["VirtualKeyboard"] = KeyboardInputDevice.Instance;
+        InputDevices["VirtualKeyboard"].StartEventsListening();
+
+        InputDevices["MidiKeyboard"] = MidiKeyboard.Instance;
+        InputDevices["MidiKeyboard"].StartEventsListening();
     }
 
     private void OnDisable()
     {
-        InputSystem.onDeviceChange -= OnInputSystemOnDeviceChange;
-    }
-
-    private void OnInputSystemOnDeviceChange(InputDevice device, InputDeviceChange change)
-    {
-        if (device is not MidiDevice midiDevice) return;
-
-        switch (change)
+        foreach (var device in InputDevices)
         {
-            case InputDeviceChange.Added:
-                devices.Add(device.description.product, midiDevice);
-                Debug.Log($"Midi device {device.description.product} connected.");
-                OnDeviceAdded?.Invoke(midiDevice);
-                break;
-            case InputDeviceChange.Disconnected:
-                devices.Remove(device.description.product);
-                Debug.Log($"Midi device {device.description.product} disconnected.");
-                OnDeviceRemoved?.Invoke(midiDevice);
-                break;
-            case InputDeviceChange.Removed:
-                break;
-            case InputDeviceChange.Reconnected:
-                break;
-            case InputDeviceChange.Enabled:
-                break;
-            case InputDeviceChange.Disabled:
-                break;
-            case InputDeviceChange.UsageChanged:
-                break;
-            case InputDeviceChange.ConfigurationChanged:
-                break;
-            case InputDeviceChange.SoftReset:
-                break;
-            case InputDeviceChange.HardReset:
-                break;
-            default:
-                throw new ArgumentOutOfRangeException(nameof(change), change, null);
+            (device.Value as IDisposable)?.Dispose();
         }
+        InputDevices.Clear();
     }
 }

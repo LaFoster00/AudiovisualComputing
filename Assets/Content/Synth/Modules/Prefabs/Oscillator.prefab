@@ -775,6 +775,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: InGate
       objectReference: {fileID: 0}
+    - target: {fileID: 2631773805724896293, guid: 7b84ace25d7171341aa975ef4c7d6e86,
+        type: 3}
+      propertyPath: defaultValue
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4389733305239793896, guid: 7b84ace25d7171341aa975ef4c7d6e86,
         type: 3}
       propertyPath: m_LocalPosition.x

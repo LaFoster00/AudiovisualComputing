@@ -1,4 +1,5 @@
 using System;
+using Audio.Core;
 using NaughtyAttributes;
 using NWaves.Signals.Builders;
 using UnityEngine;
@@ -184,10 +185,12 @@ public class Oscillator : AudioProvider
 
     private void ApplyEnvelope(Span<float> buffer, Span<float> gateBuffer, int n)
     {
+        // Check if the envelope should trigger
         if (gateBuffer[n] >= 0.5f && _previousGate <= 0.5f)
         {
             _adsrEnvelope.NoteOn();
         }
+        // Check if the envelope should turn off
         else if (_gateBuffer[n] <= 0.5f && _previousGate >= 0.5f)
         {
             _adsrEnvelope.NoteOff();

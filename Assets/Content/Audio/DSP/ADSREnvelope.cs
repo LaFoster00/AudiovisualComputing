@@ -8,8 +8,17 @@ public class ADSREnvelope
     public float Sustain { get; set; }
     public float Release { get; set; }
 
-    public enum EnvelopeStage { Idle, Attack, Decay, Sustain, Release }
+    public enum EnvelopeStage
+    {
+        Idle,
+        Attack,
+        Decay,
+        Sustain,
+        Release
+    }
+
     public EnvelopeStage CurrentStage = EnvelopeStage.Idle;
+    public bool released = false;
 
     private float _currentLevel = 0.0f;
     private float _attackIncrement;
@@ -31,6 +40,7 @@ public class ADSREnvelope
         _currentLevel = 0;
         _attackIncrement = 1.0f / (Attack * _sampleRate);
         _decayIncrement = (1.0f - Sustain) / (Decay * _sampleRate);
+        released = false;
     }
 
     public void NoteOff()
@@ -38,8 +48,18 @@ public class ADSREnvelope
         if (!_noteOn)
             return;
         _noteOn = false;
-        CurrentStage = EnvelopeStage.Release;
-        
+
+        if (CurrentStage != EnvelopeStage.Attack && CurrentStage != EnvelopeStage.Decay)
+        {
+            CurrentStage = EnvelopeStage.Release;
+            CalculateReleaseIncrement();
+        }
+
+        released = true;
+    }
+
+    private void CalculateReleaseIncrement()
+    {
         _releaseIncrement = (_currentLevel + 0.00001f) / (Release * _sampleRate);
     }
 
@@ -55,8 +75,17 @@ public class ADSREnvelope
                 if (_currentLevel >= 1.0f)
                 {
                     _currentLevel = 1.0f;
-                    CurrentStage = EnvelopeStage.Decay;
+                    if (released)
+                    {
+                        CurrentStage = EnvelopeStage.Release;
+                        CalculateReleaseIncrement();
+                    }
+                    else
+                    {
+                        CurrentStage = EnvelopeStage.Decay;
+                    }
                 }
+
                 break;
 
             case EnvelopeStage.Decay:
@@ -64,8 +93,17 @@ public class ADSREnvelope
                 if (_currentLevel <= Sustain)
                 {
                     _currentLevel = Sustain;
-                    CurrentStage = EnvelopeStage.Sustain;
+                    if (released)
+                    {
+                        CurrentStage = EnvelopeStage.Release;
+                        CalculateReleaseIncrement();
+                    }
+                    else
+                    {
+                        CurrentStage = EnvelopeStage.Sustain;
+                    }
                 }
+
                 break;
 
             case EnvelopeStage.Sustain:
@@ -79,8 +117,10 @@ public class ADSREnvelope
                     _currentLevel = 0.0f;
                     CurrentStage = EnvelopeStage.Idle;
                 }
+
                 break;
         }
+
         return _currentLevel;
     }
 }
