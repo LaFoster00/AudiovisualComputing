@@ -5,6 +5,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     private static T _instance;
     private static readonly object Lock = new object();
     private static bool _applicationIsQuitting = false;
+    protected static bool dontDestroyOnLoad = true;
 
     public static T Instance
     {
@@ -37,7 +38,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
                     _instance = singleton.AddComponent<T>();
                     singleton.name = "(singleton) " + typeof(T).ToString();
 
-                    if (!(Application.isEditor && !Application.isPlaying))
+                    if (!(Application.isEditor && !Application.isPlaying) && dontDestroyOnLoad)
                         DontDestroyOnLoad(singleton);
 
                     Debug.Log("[Singleton] An instance of " + typeof(T) +
@@ -57,6 +58,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private void OnDestroy()
     {
-        _applicationIsQuitting = true;
+        if (dontDestroyOnLoad)
+            _applicationIsQuitting = true;
+        else
+            _instance = null;
     }
 }

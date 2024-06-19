@@ -7,7 +7,7 @@ using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
-public class Plug : AudioProvider
+public class Plug : AudioProvider, IPersistentData
 {
     public enum PlugMode
     {
@@ -93,5 +93,18 @@ public class Plug : AudioProvider
         {
             SocketTarget.Read(buffer);
         }
+    }
+
+    private class SaveData
+    {
+        public int SocketTarget;
+    }
+
+    public object Serialize()
+    {
+        return new SaveData()
+        {
+            SocketTarget = socketTarget ? socketTarget.GetInstanceID() : int.MinValue,
+        };
     }
 }
