@@ -125,9 +125,8 @@ Shader "Custom/CableMesher"
                 float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));
 
                 float3 tangent = normalize(tangent0 + tangent1);
-                float angle = abs(dot(tangent0, tangent1));
 
-                float cableRadius = 0.01;
+                float cableRadius = 0.002;
 
                 float3 normals[12];
                 const float angleStep = UNITY_TWO_PI / 4;
@@ -179,6 +178,11 @@ Shader "Custom/CableMesher"
                     vertices[i] = UnityObjectToClipPos(mul(unity_WorldToObject, vertices[i]));
                 }
 
+                for (int i = 0; i < 12; ++i)
+                {
+                    normals[i] = UnityObjectToClipPos(normals[i]);
+                }
+
                 //// Triangulation
 
                 // The index of the first triangle on the bottom triangle row
@@ -207,9 +211,9 @@ Shader "Custom/CableMesher"
 
                     outputStream.RestartStrip();
 
-                    // First triangle
+                    // Second triangle
                     OUT.vertex = vertices[bottomIndex];
-                    OUT.normal = vertices[topIndex];
+                    OUT.normal = normals[bottomIndex];
                     OUT.color = float4(0, 1, 0, 1);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[repeat(topIndex + 1, 4, 8)];
@@ -253,7 +257,7 @@ Shader "Custom/CableMesher"
 
                     // First triangle
                     OUT.vertex = vertices[bottomIndex];
-                    OUT.normal = vertices[topIndex];
+                    OUT.normal = normals[bottomIndex];
                     OUT.color = float4(0, 1, 0, 1);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[repeat(topIndex + 1, 8, 12)];
@@ -272,7 +276,7 @@ Shader "Custom/CableMesher"
 
             float4 frag(g2f i) : SV_Target
             {
-                return float4(i.color.xyz, 1.0);
+                return float4(i.normal.xyz, 1.0);
             }
             ENDCG
         }

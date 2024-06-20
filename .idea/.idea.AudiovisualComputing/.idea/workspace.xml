@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMesher.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMesher.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
     </list>
@@ -382,7 +381,7 @@
       <workItem from="1718638311946" duration="6992000" />
       <workItem from="1718702554231" duration="19935000" />
       <workItem from="1718787834656" duration="22624000" />
-      <workItem from="1718882455744" duration="10527000" />
+      <workItem from="1718882455744" duration="11175000" />
     </task>
     <servers />
   </component>
