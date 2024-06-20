@@ -93,9 +93,10 @@ public class PhysicCable : MonoBehaviour
     void UpdateMesh()
     {
         // We use  pair of 3 vectors (triangle) to store the previous current and next position in the chain
-        Vector3[] vertices = new Vector3[TotalElements * 3];
+        Vector3[] vertices = new Vector3[(TotalElements) * 3];
 
-        vertices[0] = start.position;
+        // Marks the beginning of the cable
+        vertices[0] = start.position + start.forward * 0.01f;
         vertices[1] = start.position;
         vertices[2] = elements[0].position;
         for (int element = 0; element < elements.Count; element++)
@@ -116,7 +117,7 @@ public class PhysicCable : MonoBehaviour
 
         vertices[^3] = elements[^1].position;
         vertices[^2] = end.position;
-        vertices[^1] = end.position;
+        vertices[^1] = end.position + end.forward * 0.01f;
 
         // Transform the points into local space so that the frustrum culling works as expected
         // This need to be reversed in the shader by transforming the points back to world space

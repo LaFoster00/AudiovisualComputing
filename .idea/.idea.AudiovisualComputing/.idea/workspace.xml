@@ -6,18 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CableConnector.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CableConnector.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CablePoint.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Prefabs/CablePoint.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/CableConnector.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/CableConnector.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMesher.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMesher.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +19,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityCG.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityShaderUtilities.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityShaderVariables.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0a26430ee1d947a9914cfe4c16ad4c086000/1a/c8e8bee4/NativeHeaderAttribute.cs" root0="SKIP_HIGHLIGHTING" />
@@ -390,7 +382,7 @@
       <workItem from="1718638311946" duration="6992000" />
       <workItem from="1718702554231" duration="19935000" />
       <workItem from="1718787834656" duration="22624000" />
-      <workItem from="1718882455744" duration="2701000" />
+      <workItem from="1718882455744" duration="10527000" />
     </task>
     <servers />
   </component>
