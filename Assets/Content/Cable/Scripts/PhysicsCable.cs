@@ -5,6 +5,8 @@ using System.Linq;
 using System.Security;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Serialization;
+using JointType = UnityEngine.ConfigurableJoint;
 
 [ExecuteAlways]
 [RequireComponent(typeof(MeshFilter))]
@@ -18,7 +20,7 @@ public class PhysicCable : MonoBehaviour
     private float size = 0.3f;
 
     [Header("Bahaviour")] [SerializeField, Min(1f), OnValueChanged("UpdateSpring")]
-    private float springForce = 200;
+    private float distanceTolerance = 200;
 
     [SerializeField, Range(0, 1), OnValueChanged("UpdateSpring")]
     private float springDamper = 1;
@@ -29,6 +31,7 @@ public class PhysicCable : MonoBehaviour
     [SerializeField, Required] private Transform end;
 
     [SerializeField, ReadOnly] private List<Transform> elements = new();
+    private List<JointType> joints = new();
 
     private Mesh _mesh;
     private MeshFilter _meshFilter;
@@ -88,6 +91,7 @@ public class PhysicCable : MonoBehaviour
     private void Update()
     {
         UpdateMesh();
+        UpdateLimit();
     }
 
     void UpdateMesh()
@@ -128,7 +132,7 @@ public class PhysicCable : MonoBehaviour
         {
             indices[i] = i;
         }
-        
+
         _mesh.Clear();
         _mesh.vertices = vertices;
         _mesh.SetIndices(indices, MeshTopology.Triangles, 0);
@@ -152,6 +156,7 @@ public class PhysicCable : MonoBehaviour
         }
 
         elements.Clear();
+        joints.Clear();
 
         points = new List<Transform>(TotalElements);
         var direction = Vector3.Normalize(end.position - start.position);
@@ -161,18 +166,19 @@ public class PhysicCable : MonoBehaviour
         {
             var newElement = new GameObject("Cable_Element_" + i,
                 typeof(Rigidbody),
-                typeof(SpringJoint),
+                typeof(JointType),
                 typeof(SphereCollider),
                 typeof(Friction));
             newElement.transform.position = start.position + direction * (distance * (i + 1));
             var rigidbody = newElement.GetComponent<Rigidbody>();
             rigidbody.constraints |= RigidbodyConstraints.FreezeRotation;
+            joints.Add(newElement.GetComponent<JointType>());
 
             // Add two spring joints to the last element so that it can connect to its previous elements
             // and the end point
             if (i == numberOfPoints - 1)
             {
-                newElement.AddComponent<SpringJoint>();
+                joints.Add(newElement.AddComponent<JointType>());
             }
 
             elements.Add(newElement.transform);
@@ -188,29 +194,40 @@ public class PhysicCable : MonoBehaviour
         {
             var element = elements[index];
 
-            var springJoints = element.GetComponents<SpringJoint>();
-            foreach (var springJoint in springJoints)
+            SoftJointLimit limit = new SoftJointLimit
             {
-                springJoint.autoConfigureConnectedAnchor = false;
+                limit = distance
+            };
+            var joints = element.GetComponents<JointType>();
+            foreach (var joint in joints)
+            {
+                joint.autoConfigureConnectedAnchor = false;
+                joint.linearLimit = limit;
+                joint.xMotion = ConfigurableJointMotion.Limited;
+                joint.yMotion = ConfigurableJointMotion.Limited;
+                joint.zMotion = ConfigurableJointMotion.Limited;
+                /*
                 springJoint.spring = springForce;
                 springJoint.damper = 1;
+                springJoint.determineDistanceOnStart = false;
+                springJoint.distance = distance;
                 springJoint.minDistance = distance / 2;
                 springJoint.maxDistance = distance / 2;
-                springJoint.tolerance = 0;
+                springJoint.tolerance = 0;*/
             }
 
             if (index == 0)
             {
-                springJoints[0].connectedBody = start.gameObject.GetOrCreateComponent<Rigidbody>();
+                joints[0].connectedBody = start.gameObject.GetOrCreateComponent<Rigidbody>();
             }
             else
             {
-                springJoints[0].connectedBody = elements[index - 1].GetComponent<Rigidbody>();
+                joints[0].connectedBody = elements[index - 1].GetComponent<Rigidbody>();
             }
 
             if (index == elements.Count - 1)
             {
-                springJoints[1].connectedBody = end.gameObject.GetOrCreateComponent<Rigidbody>();
+                joints[1].connectedBody = end.gameObject.GetOrCreateComponent<Rigidbody>();
             }
 
 
@@ -219,6 +236,20 @@ public class PhysicCable : MonoBehaviour
             element.transform.SetParent(transform);
 
             element.GetComponent<Friction>().friction = springDamper;
+        }
+    }
+
+    private void UpdateLimit()
+    {
+        SoftJointLimit limit = new SoftJointLimit
+        {
+            limit = Math.Max(DistanceBetweenPoints, 0.05f),
+            bounciness = 0,
+            contactDistance = distanceTolerance
+        };
+        foreach (var joint in joints)
+        {
+            joint.linearLimit = limit;
         }
     }
 }

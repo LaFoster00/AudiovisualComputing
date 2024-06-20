@@ -8,8 +8,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/Plug.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +58,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/39c25c7743074133aa8a65861b64bb6020a00/ae/43a5ea33/DistanceJoint2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/0b/86415628/SphereColliderEditor.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/19/0a9010b9/Editor.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/1a/d03b63c8/GameObjectInspector.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/3a/6e30e8f3/InspectorElement.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/b9/aa96edc8/Collider3DEditorBase.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3d611f181d2047d0a4666e5262482490956800/ee/170eac59/ModuleManager.cs" root0="SKIP_HIGHLIGHTING" />
@@ -179,6 +179,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Audio/Testing/AudioTester.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Content/Cable/Scripts/DistanceJoint3D.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Cable/Scripts/Friction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/AudioParameterDialEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -391,7 +392,7 @@
       <workItem from="1718638311946" duration="6992000" />
       <workItem from="1718702554231" duration="19935000" />
       <workItem from="1718787834656" duration="22624000" />
-      <workItem from="1718882455744" duration="19956000" />
+      <workItem from="1718882455744" duration="23303000" />
     </task>
     <servers />
   </component>

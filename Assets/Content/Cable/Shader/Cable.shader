@@ -124,20 +124,9 @@ Shader "Custom/Cable"
                 float4 halfPos0 = (pos0 + pos1) / 2;
                 float4 halfPos1 = (pos1 + pos2) / 2;
 
-                #if false
-                OUT.vertex = UnityObjectToClipPos(mul(unity_WorldToObject, halfPos0));
-                outputStream.Append(OUT);
-                OUT.vertex = UnityObjectToClipPos(mul(unity_WorldToObject, pos1));
-                outputStream.Append(OUT);
-                //outputStream.Append(OUT);
-                OUT.vertex = UnityObjectToClipPos(mul(unity_WorldToObject, halfPos1));
-                outputStream.Append(OUT);
-                return;
-                #endif
-
                 const float3 lineDir0 = normalize(pos1.xyz - pos0.xyz);
                 float3 lineDir1 = normalize(pos2.xyz - pos1.xyz);
-                #define STABLE_TANGENT true
+                #define STABLE_TANGENT false
                 #if STABLE_TANGENT
 
                 // Bring the vectors slightly out of alignment so that the form a plane
@@ -157,8 +146,12 @@ Shader "Custom/Cable"
                 const float3 lineDir = normalize(lineDir0 + lineDir1);
 
                 float3 tangent0 = normalize(cross(lineDir0, float3(0, 1, 0)));
-
-                float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));;
+                if (abs(dot(lineDir0, float3(0, 1, 0))) >= 0.99f)
+                    tangent0 = normalize(cross(lineDir0, normalize(float3(1, 1, 1))));
+                
+                float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));
+                if (abs(dot(lineDir1, float3(0, 1, 0))) >= 0.99f)
+                    tangent1 = normalize(cross(lineDir1, normalize(float3(1, 1, 1))));
 
                 #endif
 
