@@ -1,13 +1,9 @@
-// Upgrade NOTE: replaced '_World2Object' with 'unity_WorldToObject'
-// Upgrade NOTE: replaced 'mul(UNITY_MATRIX_MVP,*)' with 'UnityObjectToClipPos(*)'
-
 Shader "Custom/CableMesher"
 {
     Properties
     {
         _BaseColor ("Base Color", Color) = (1,1,1,1)
-        _CableRadius ("Radius", Float) = 0.1
-        _CableSegments ("Segments", Int) = 8
+        _CableRadius ("Radius", Float) = 0.002
     }
     SubShader
     {
@@ -15,43 +11,50 @@ Shader "Custom/CableMesher"
         Tags
         {
             "RenderType"="Opaque"
-            "LightMode" = "UniversalForward"
+            "RenderPipeline" = "UniversalRenderPipeline"
         }
         Cull Back
 
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma geometry geom
             #pragma fragment frag
-            #include "UnityCG.cginc"
+            
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
 
             struct appdata
             {
                 float4 vertex : POSITION;
+                float2 uv : TEXCOORD0;
             };
 
             struct v2g
             {
+                float2 uv : TEXCOORD0;
                 float4 vertex : POSITION;
             };
 
             struct g2f
             {
+                float2 uv : TEXCOORD0;
                 float4 vertex : SV_POSITION;
-                float4 color : COLOR;
+                float3 color : COLOR;
                 float3 normal : NORMAL;
             };
 
             float4 _BaseColor;
             float _CableRadius;
-            int _CableSegments;
 
             v2g vert(appdata v)
             {
                 v2g o;
                 o.vertex = mul(unity_ObjectToWorld, v.vertex);
+                o.uv = v.uv;
                 return o;
             }
 
@@ -63,12 +66,14 @@ Shader "Custom/CableMesher"
                 float oc = 1.0 - c;
 
                 return float4x4(oc * axis.x * axis.x + c, oc * axis.x * axis.y - axis.z * s,
-                                 oc * axis.z * axis.x + axis.y * s, 0.0,
-                                 oc * axis.x * axis.y + axis.z * s, oc * axis.y * axis.y + c,
-                                 oc * axis.y * axis.z - axis.x * s, 0.0,
-                                 oc * axis.z * axis.x - axis.y * s, oc * axis.y * axis.z + axis.x * s,
-                                 oc * axis.z * axis.z + c, 0.0,
-                                 0.0, 0.0, 0.0, 1.0);
+                                                                    oc * axis.z * axis.x + axis.y * s, 0.0,
+                                                                    oc * axis.x * axis.y + axis.z * s,
+                                                                    oc * axis.y * axis.y + c,
+                                                                    oc * axis.y * axis.z - axis.x * s, 0.0,
+                                                                    oc * axis.z * axis.x - axis.y * s,
+                                                                    oc * axis.y * axis.z + axis.x * s,
+                                                                    oc * axis.z * axis.z + c, 0.0,
+                                                                    0.0, 0.0, 0.0, 1.0);
             }
 
             float3 rotateVector(float3 direction, float angle, float3 axis)
@@ -87,10 +92,8 @@ Shader "Custom/CableMesher"
             [maxvertexcount(48)]
             void geom(triangle v2g p[3], inout TriangleStream<g2f> outputStream)
             {
-                float4x4 vp = UNITY_MATRIX_VP;
-
                 g2f OUT;
-                OUT.color = float4(1, 1, 1, 0);
+                OUT.uv = p[0].uv;
 
                 float4x4 identity = float4x4(
                     1, 0, 0, 0,
@@ -126,21 +129,19 @@ Shader "Custom/CableMesher"
 
                 float3 tangent = normalize(tangent0 + tangent1);
 
-                float cableRadius = 0.002;
-
                 float3 normals[12];
-                const float angleStep = UNITY_TWO_PI / 4;
+                const float angleStep = TWO_PI / 4;
                 // Normals for vertices around line 1
-                for (int i = 0; i < 12; i++)
+                for (int normal = 0; normal < 12; normal++)
                 {
                     float3 direction;
                     float3 axis;
-                    if (i < 4)
+                    if (normal < 4)
                     {
                         direction = tangent0;
                         axis = lineDir0;
                     }
-                    else if (i < 8)
+                    else if (normal < 8)
                     {
                         direction = tangent;
                         axis = lineDir;
@@ -151,36 +152,36 @@ Shader "Custom/CableMesher"
                         axis = lineDir1;
                     }
 
-                    normals[i] = rotateVector(direction, angleStep * (i + 1), axis);
+                    normals[normal] = rotateVector(direction, angleStep * (normal + 1), axis);
                 }
 
                 float4 vertices[12];
-                for (int i = 0; i < 12; i++)
+                for (int vertex = 0; vertex < 12; vertex++)
                 {
                     float3 startPos;
-                    if (i < 4)
+                    if (vertex < 4)
                     {
-                        startPos = halfPos0;
+                        startPos = halfPos0.xyz;
                     }
-                    else if (i < 8)
+                    else if (vertex < 8)
                     {
-                        startPos = pos1;
+                        startPos = pos1.xyz;
                     }
                     else
                     {
-                        startPos = halfPos1;
+                        startPos = halfPos1.xyz;
                     }
-                    vertices[i] = float4(startPos + normals[i] * cableRadius, 1.0);
+                    vertices[vertex] = float4(startPos + normals[vertex] * _CableRadius, 1.0f);
                 }
 
-                for (int i = 0; i < 12; ++i)
+                for (int v = 0; v < 12; ++v)
                 {
-                    vertices[i] = UnityObjectToClipPos(mul(unity_WorldToObject, vertices[i]));
+                    vertices[v] = TransformObjectToHClip(mul(unity_WorldToObject, vertices[v]).xyz);
                 }
 
-                for (int i = 0; i < 12; ++i)
+                for (int n = 0; n < 12; ++n)
                 {
-                    normals[i] = UnityObjectToClipPos(normals[i]);
+                    normals[n] = TransformObjectToHClip(-normals[n]).xyz;
                 }
 
                 //// Triangulation
@@ -195,18 +196,18 @@ Shader "Custom/CableMesher"
                     // First triangle
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex++];
-                    OUT.color = float4(1, 0, 0, 1);
+                    OUT.color = float3(1, 0, 0);
                     bottomIndex = repeat(bottomIndex, 0, 4);
                     outputStream.Append(OUT);
 
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex];
-                    OUT.color = float4(0, 1, 0, 1);
+                    OUT.color = float3(0, 1, 0);
                     outputStream.Append(OUT);
 
                     OUT.vertex = vertices[topIndex];
                     OUT.normal = normals[topIndex];
-                    OUT.color = float4(0, 0, 1, 1);
+                    OUT.color = float3(0, 0, 1);
                     outputStream.Append(OUT);
 
                     outputStream.RestartStrip();
@@ -214,15 +215,15 @@ Shader "Custom/CableMesher"
                     // Second triangle
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex];
-                    OUT.color = float4(0, 1, 0, 1);
+                    OUT.color = float3(0, 1, 0);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[repeat(topIndex + 1, 4, 8)];
                     OUT.normal = normals[repeat(topIndex + 1, 4, 8)];
-                    OUT.color = float4(0, 1, 1, 1);
+                    OUT.color = float3(0, 1, 1);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[topIndex];
                     OUT.normal = normals[topIndex++];
-                    OUT.color = float4(0, 0, 1, 1);
+                    OUT.color = float3(0, 0, 1);
                     outputStream.Append(OUT);
                     topIndex = repeat(topIndex, 4, 8);
 
@@ -239,18 +240,18 @@ Shader "Custom/CableMesher"
                     // First triangle
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex++];
-                    OUT.color = float4(1, 0, 0, 1);
+                    OUT.color = float3(1, 0, 0);
                     bottomIndex = repeat(bottomIndex, 4, 8);
                     outputStream.Append(OUT);
 
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex];
-                    OUT.color = float4(0, 1, 0, 1);
+                    OUT.color = float3(0, 1, 0);
                     outputStream.Append(OUT);
 
                     OUT.vertex = vertices[topIndex];
                     OUT.normal = normals[topIndex];
-                    OUT.color = float4(0, 0, 1, 1);
+                    OUT.color = float3(0, 0, 1);
                     outputStream.Append(OUT);
 
                     outputStream.RestartStrip();
@@ -258,27 +259,28 @@ Shader "Custom/CableMesher"
                     // First triangle
                     OUT.vertex = vertices[bottomIndex];
                     OUT.normal = normals[bottomIndex];
-                    OUT.color = float4(0, 1, 0, 1);
+                    OUT.color = float3(0, 1, 0);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[repeat(topIndex + 1, 8, 12)];
                     OUT.normal = normals[repeat(topIndex + 1, 8, 12)];
-                    OUT.color = float4(0, 1, 1, 1);
+                    OUT.color = float3(0, 1, 1);
                     outputStream.Append(OUT);
                     OUT.vertex = vertices[topIndex];
                     OUT.normal = normals[topIndex++];
-                    OUT.color = float4(0, 0, 1, 1);
+                    OUT.color = float3(0, 0, 1);
                     outputStream.Append(OUT);
                     topIndex = repeat(topIndex, 8, 12);
 
                     outputStream.RestartStrip();
                 }
+                
             }
 
             float4 frag(g2f i) : SV_Target
             {
                 return float4(i.normal.xyz, 1.0);
             }
-            ENDCG
+            ENDHLSL
         }
     }
     FallBack "Diffuse"
