@@ -135,15 +135,34 @@ Shader "Custom/Cable"
                 return;
                 #endif
 
-                float3 lineDir0 = normalize(pos1.xyz - pos0.xyz);
+                const float3 lineDir0 = normalize(pos1.xyz - pos0.xyz);
                 float3 lineDir1 = normalize(pos2.xyz - pos1.xyz);
-                float3 lineDir = normalize(lineDir0 + lineDir1);
+                #define STABLE_TANGENT true
+                #if STABLE_TANGENT
+
+                // Bring the vectors slightly out of alignment so that the form a plane
+                if (dot(lineDir0, lineDir1) >= 0.999f || dot(lineDir0, lineDir1) <= 0.001f)
+                {
+                    lineDir1 = normalize(lineDir1 + float3(0, 0.000001, 0));
+                }
+                const float3 lineDir = normalize(lineDir0 + lineDir1);
+                const float3 planeNormal = normalize(cross(lineDir0, lineDir1));
+
+                const float3 tangent0 = normalize(cross(planeNormal, lineDir0));
+
+                const float3 tangent1 = normalize(cross(planeNormal, lineDir1));
+                
+                #else
+
+                const float3 lineDir = normalize(lineDir0 + lineDir1);
 
                 float3 tangent0 = normalize(cross(lineDir0, float3(0, 1, 0)));
 
-                float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));
+                float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));;
 
-                float3 tangent = normalize(tangent0 + tangent1);
+                #endif
+
+                const float3 tangent = normalize(tangent0 + tangent1);
 
                 float3 normals[12];
                 const float angleStep = TWO_PI / 4;

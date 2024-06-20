@@ -128,7 +128,7 @@ public class PhysicCable : MonoBehaviour
         {
             indices[i] = i;
         }
-
+        
         _mesh.Clear();
         _mesh.vertices = vertices;
         _mesh.SetIndices(indices, MeshTopology.Triangles, 0);
@@ -165,6 +165,8 @@ public class PhysicCable : MonoBehaviour
                 typeof(SphereCollider),
                 typeof(Friction));
             newElement.transform.position = start.position + direction * (distance * (i + 1));
+            var rigidbody = newElement.GetComponent<Rigidbody>();
+            rigidbody.constraints |= RigidbodyConstraints.FreezeRotation;
 
             // Add two spring joints to the last element so that it can connect to its previous elements
             // and the end point
@@ -192,8 +194,8 @@ public class PhysicCable : MonoBehaviour
                 springJoint.autoConfigureConnectedAnchor = false;
                 springJoint.spring = springForce;
                 springJoint.damper = 1;
-                springJoint.minDistance = distance;
-                springJoint.maxDistance = distance;
+                springJoint.minDistance = distance / 2;
+                springJoint.maxDistance = distance / 2;
                 springJoint.tolerance = 0;
             }
 
