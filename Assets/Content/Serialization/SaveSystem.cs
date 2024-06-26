@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Content.Serialization;
 using ToolBox.Serialization.OdinSerializer;
 using Unity.Serialization.Json;
 using UnityEngine;
@@ -36,6 +37,7 @@ public struct SerializableGameObject
     public int id;
     public int parentId;
     public SerializableTransform transform;
+    public string prefab;
     public List<SerializableComponent> components;
 }
 
@@ -55,7 +57,9 @@ public struct SaveData
 public static class SaveSystem
 {
     public static string CurrentSave;
-    
+
+    private static Dictionary<int, GameObject> _gameObjectReferences = new();
+
     public static void NewGame()
     {
     }
@@ -68,14 +72,28 @@ public static class SaveSystem
         List<SerializableGameObject> serializedGameObjects = new();
         foreach (var o in serializableGameObjects)
         {
-            var persistentComponents = o.GetComponents<MonoBehaviour>().OfType<IPersistentData>();
+            var persistentPrefabs = o.GetComponents<MonoBehaviour>().OfType<IPersistentPrefab>().ToArray();
+            List<SerializableComponent> serializedComponents;
+            string prefab = null;
+            if (persistentPrefabs.Length == 0)
+            {
+                var persistentComponents = o.GetComponents<MonoBehaviour>().OfType<IPersistentData>();
 
-            List<SerializableComponent> serializedComponents = persistentComponents.Select(persistentComponent =>
-                new SerializableComponent()
-                {
-                    type = persistentComponent.GetType().AssemblyQualifiedName!,
-                    data = persistentComponent.Serialize()
-                }).ToList();
+                 serializedComponents = persistentComponents.Select(persistentComponent =>
+                    new SerializableComponent()
+                    {
+                        type = persistentComponent.GetType().AssemblyQualifiedName!,
+                        data = persistentComponent.Serialize()
+                    }).ToList();
+            }
+            else
+            {
+                serializedComponents = new List<SerializableComponent>();
+                if (persistentPrefabs.Length > 1)
+                    throw new ArgumentException($"There can only be one persistent prefab on an object({o.name}).");
+
+                prefab = persistentPrefabs[0].GetPrefab();
+            }
 
             SerializableGameObject serializableGameObject = new SerializableGameObject()
             {
@@ -83,6 +101,7 @@ public static class SaveSystem
                 transform = new SerializableTransform(o.transform),
                 id = o.transform.GetInstanceID(),
                 parentId = o.transform.GetComponentInParent<Transform>()?.GetInstanceID() ?? -1,
+                prefab = prefab,
                 components = serializedComponents
             };
 
@@ -99,5 +118,13 @@ public static class SaveSystem
     public static void LoadGame()
     {
         var saveData = JsonSerialization.FromJson<SaveData>(CurrentSave);
+
+        Type componentType = Type.GetType(saveData.GameObjects[0].components[0].type);
+    }
+
+    public static GameObject Dereference(int saveDataTargetProvider)
+    {
+        _gameObjectReferences.TryGetValue(saveDataTargetProvider, out var gameObject);
+        return gameObject;
     }
 }

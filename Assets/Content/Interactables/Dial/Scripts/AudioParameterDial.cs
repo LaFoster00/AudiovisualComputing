@@ -6,7 +6,7 @@ using UnityEngine;
 
 
 
-public class AudioParameterDial : MonoBehaviour, IDialUser, IPersistentData
+public class AudioParameterDial : MonoBehaviourGuid, IDialUser, IPersistentData
 {
     public AudioProvider targetProvider;
     public AudioParameter targetParameter;
@@ -32,5 +32,12 @@ public class AudioParameterDial : MonoBehaviour, IDialUser, IPersistentData
             TargetParameterName = targetParameterName
         };
         return data;
+    }
+
+    public void Deserialize(object Data)
+    {
+        SaveData saveData = (SaveData)Data;
+        targetProvider = SaveSystem.Dereference(saveData.TargetProvider)?.GetComponent<AudioProvider>();
+        targetParameterName = saveData.TargetParameterName;
     }
 }

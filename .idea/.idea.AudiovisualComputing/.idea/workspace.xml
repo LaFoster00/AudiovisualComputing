@@ -6,9 +6,18 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/IPersistentData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/IPersistentData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/IPersistentPrefab.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/IPersistentPrefab.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/SaveSystem.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/SaveSystem.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/SerializationReferableMonoBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/MonoBehaviourGuid.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/SerializationReferableMonoBehaviour.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/MonoBehaviourGuid.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Serialization/SerializedReferenceID.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Serialization/SerializedReferenceID.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,6 +194,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/AudioParameterDial.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/EulerRotator.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/AudioCableSerializer.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Misc/Singleton.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Serialization/SaveSystem.cs" root0="FORCE_HIGHLIGHTING" />
@@ -348,10 +358,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="13072">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="31180">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="13072" />
+      <option name="pid" value="31180" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -392,7 +402,8 @@
       <workItem from="1718638311946" duration="6992000" />
       <workItem from="1718702554231" duration="19935000" />
       <workItem from="1718787834656" duration="22624000" />
-      <workItem from="1718882455744" duration="23303000" />
+      <workItem from="1718882455744" duration="27071000" />
+      <workItem from="1719418556390" duration="4207000" />
     </task>
     <servers />
   </component>
@@ -422,6 +433,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Content/Serialization/SaveSystem.cs</url>
+          <line>121</line>
+          <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Serialization\SaveSystem.cs" initialLine="102" containingFunctionPresentation="Method 'LoadGame'">
+            <startOffsets>
+              <option value="3643" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3721" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

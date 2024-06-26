@@ -1,7 +1,7 @@
 namespace Content.Serialization
 {
-    public interface IPersistentPrefab
+    public interface IPersistentPrefab : IPersistentData
     {
-        public int GetPrefab();
+        public string GetPrefab();
     }
 }

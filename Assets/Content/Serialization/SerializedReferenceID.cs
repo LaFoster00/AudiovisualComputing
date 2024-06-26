@@ -8,17 +8,17 @@ using UnityEngine.Serialization;
 [ExecuteAlways]
 public class SerializedReferenceID : MonoBehaviour
 {
-    [SerializeField, ReadOnly] private string goid;
+    [SerializeField, ReadOnly] private string guid;
 
-    public string GOID => goid;
+    public string GUID => guid;
     
     private static Dictionary<string, MonoBehaviour> _goidToReference = new();
 
     private void Awake()
     {
-        // Only generate new GOID if there isn't already on stored for this object
-        if (goid == null || goid == Guid.Empty.ToString() || goid.Equals(""))
-            goid = Guid.NewGuid().ToString();
+        // Only generate new guid if there isn't already on stored for this object
+        if (guid == null || guid == Guid.Empty.ToString() || guid.Equals(""))
+            guid = Guid.NewGuid().ToString();
 
         AddReference(this);
     }
@@ -39,12 +39,12 @@ public class SerializedReferenceID : MonoBehaviour
 
     private static void AddReference(SerializedReferenceID gameObject)
     {
-        _goidToReference.TryAdd(gameObject.GOID, gameObject);
+        _goidToReference.TryAdd(gameObject.GUID, gameObject);
     }
 
     private static void RemoveReference(SerializedReferenceID gameObject)
     {
-        _goidToReference.Remove(gameObject.GOID);
+        _goidToReference.Remove(gameObject.GUID);
     }
 
     public static MonoBehaviour GetGameObject(string goid)

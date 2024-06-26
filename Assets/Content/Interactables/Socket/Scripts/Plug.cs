@@ -1,13 +1,14 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.Serialization;
 using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(XRGrabInteractable))]
-public class Plug : AudioProvider, IPersistentData
+public class Plug : AudioProvider
 {
     public enum PlugMode
     {
@@ -74,12 +75,22 @@ public class Plug : AudioProvider, IPersistentData
         plugMode = PlugMode.Undefined;
     }
 
+    public Socket GetSocketTarget()
+    {
+        return socketTarget;
+    }
+
+    public void SetSocketTarget([NotNull] Socket value)
+    {
+        SocketTarget = value;
+        transform.GetComponent<Rigidbody>().MovePosition(SocketTarget.transform.position);
+    }
 
     private void OnEnable()
     {
         if (SocketTarget)
         {
-            transform.GetComponent<Rigidbody>().MovePosition(SocketTarget.transform.position);
+            SetSocketTarget(SocketTarget);
         }
     }
 
@@ -95,16 +106,4 @@ public class Plug : AudioProvider, IPersistentData
         }
     }
 
-    private class SaveData
-    {
-        public int SocketTarget;
-    }
-
-    public object Serialize()
-    {
-        return new SaveData()
-        {
-            SocketTarget = socketTarget ? socketTarget.GetInstanceID() : int.MinValue,
-        };
-    }
 }
