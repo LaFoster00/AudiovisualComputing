@@ -26,7 +26,7 @@ public class ChannelSend : MonoBehaviour
         Send(targetBuffer);
     }
 
-    protected void Send(Span<float> targetBuffer)
+    private void Send(Span<float> targetBuffer)
     {
         for (var sample = 0; sample < targetBuffer.Length; sample++)
         {

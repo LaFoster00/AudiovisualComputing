@@ -18,7 +18,7 @@ public class SerializedReferenceID : MonoBehaviour
     {
         // Only generate new guid if there isn't already on stored for this object
         if (guid == null || guid == Guid.Empty.ToString() || guid.Equals(""))
-            guid = Guid.NewGuid().ToString();
+            GenerateNewGuid();
 
         AddReference(this);
     }
@@ -26,6 +26,11 @@ public class SerializedReferenceID : MonoBehaviour
     private void OnDestroy()
     {
         RemoveReference(this);
+    }
+
+    private void GenerateNewGuid()
+    {
+        guid = Guid.NewGuid().ToString();
     }
 
     [Button("Update Reference Manager")]
@@ -39,6 +44,8 @@ public class SerializedReferenceID : MonoBehaviour
 
     private static void AddReference(SerializedReferenceID gameObject)
     {
+        if (_goidToReference.ContainsKey(gameObject.guid))
+            gameObject.GenerateNewGuid();
         _goidToReference.TryAdd(gameObject.GUID, gameObject);
     }
 
