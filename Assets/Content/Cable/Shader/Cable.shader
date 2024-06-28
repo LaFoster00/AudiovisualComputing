@@ -27,17 +27,24 @@ Shader "Custom/Cable"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityInput.hlsl"
+
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ DOTS_INSTANCING_ON
 
             struct appdata
             {
                 float4 vertex : POSITION;
                 float4 texcoord1 : TEXCOORD1;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2g
             {
                 float4 vertex : POSITION;
                 float4 texcoord1 : TEXCOORD1;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             struct g2f
@@ -48,6 +55,8 @@ Shader "Custom/Cable"
                 float3 normalWS : TEXCOORD2;
                 float3 viewDir : TEXCOORD3;
                 DECLARE_LIGHTMAP_OR_SH(lightmapUV, vertexSH, 4);
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             float4 _BaseColor;
@@ -87,30 +96,41 @@ Shader "Custom/Cable"
             v2g vert(appdata v)
             {
                 v2g o;
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
                 o.vertex = float4(TransformObjectToWorld(v.vertex.xyz), 1.0);
-                //o.positionWS = TransformObjectToWorld(v.vertex.xyz);
-                //o.normalWS = TransformObjectToWorldNormal(v.normal.xyz);
-                //o.viewDir = normalize(_WorldSpaceCameraPos - o.positionWS);
                 o.texcoord1 = v.texcoord1;
                 return o;
             }
 
-            g2f SetupVert(float4 positionWS, float2 uv, float3 normalWS, float4 texcoord1)
+            g2f SetupVert(v2g p0, float4 positionWS, float2 uv, float3 normalWS, float4 texcoord1)
             {
                 g2f Out;
+                
+                UNITY_TRANSFER_INSTANCE_ID(p0, Out);
+                UNITY_TRANSFER_VERTEX_OUTPUT_STEREO(p0, Out)
+
                 Out.vertex = TransformObjectToHClip(mul(unity_WorldToObject, positionWS).xyz);
                 Out.uv = uv;
                 Out.positionWS = positionWS;
                 Out.normalWS = normalWS;
                 Out.viewDir = normalize(_WorldSpaceCameraPos - positionWS);
+
                 OUTPUT_LIGHTMAP_UV(texcoord1, unity_LightmapST, Out.lightmapUV);
                 OUTPUT_SH(Out.normalWS, Out.vertexSH);
+
                 return Out;
             }
 
-            [maxvertexcount(48)]
-            void geom(triangle v2g p[3], inout TriangleStream<g2f> outputStream)
+            float3 ViewDir(float3 positionWS)
             {
+                return normalize(_WorldSpaceCameraPos - positionWS);
+            }
+
+            [maxvertexcount(48)]
+            void geom(triangle v2g p[3], inout LineStream<g2f> outputStream)
+            {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(p[0]);
                 float4x4 identity = float4x4(
                     1, 0, 0, 0,
                     0, 1, 0, 0,
@@ -126,34 +146,16 @@ Shader "Custom/Cable"
 
                 const float3 lineDir0 = normalize(pos1.xyz - pos0.xyz);
                 float3 lineDir1 = normalize(pos2.xyz - pos1.xyz);
-                #define STABLE_TANGENT false
-                #if STABLE_TANGENT
-
-                // Bring the vectors slightly out of alignment so that the form a plane
-                if (dot(lineDir0, lineDir1) >= 0.999f || dot(lineDir0, lineDir1) <= 0.001f)
-                {
-                    lineDir1 = normalize(lineDir1 + float3(0, 0.000001, 0));
-                }
-                const float3 lineDir = normalize(lineDir0 + lineDir1);
-                const float3 planeNormal = normalize(cross(lineDir0, lineDir1));
-
-                const float3 tangent0 = normalize(cross(planeNormal, lineDir0));
-
-                const float3 tangent1 = normalize(cross(planeNormal, lineDir1));
-                
-                #else
 
                 const float3 lineDir = normalize(lineDir0 + lineDir1);
 
-                float3 tangent0 = normalize(cross(lineDir0, float3(0, 1, 0)));
+                float3 tangent0 = ViewDir(halfPos0);
                 if (abs(dot(lineDir0, float3(0, 1, 0))) >= 0.99f)
                     tangent0 = normalize(cross(lineDir0, normalize(float3(1, 1, 1))));
-                
-                float3 tangent1 = normalize(cross(lineDir1, float3(0, 1, 0)));
+
+                float3 tangent1 = ViewDir(halfPos1);;
                 if (abs(dot(lineDir1, float3(0, 1, 0))) >= 0.99f)
                     tangent1 = normalize(cross(lineDir1, normalize(float3(1, 1, 1))));
-
-                #endif
 
                 const float3 tangent = normalize(tangent0 + tangent1);
 
@@ -213,50 +215,50 @@ Shader "Custom/Cable"
                 {
                     // First triangle
                     outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[bottomIndex],
+                                  0,
+                                  normals[bottomIndex],
+                                  p[1].texcoord1));
                     bottomIndex = repeat(bottomIndex + 1, 0, 4);
 
                     outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[bottomIndex],
+                                  0,
+                                  normals[bottomIndex],
+                                  p[1].texcoord1));
 
                     outputStream.Append(
-                        SetupVert(
-                            vertices[topIndex],
-                            0,
-                            normals[topIndex],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[topIndex],
+                                  0,
+                                  normals[topIndex],
+                                  p[1].texcoord1));
 
                     outputStream.RestartStrip();
 
                     // Second triangle
                     outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[bottomIndex],
+                                  0,
+                                  normals[bottomIndex],
+                                  p[1].texcoord1));
 
                     outputStream.Append(
-                        SetupVert(
-                            vertices[repeat(topIndex + 1, 4, 8)],
-                            0,
-                            normals[repeat(topIndex + 1, 4, 8)],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[repeat(topIndex + 1, 4, 8)],
+                                  0,
+                                  normals[repeat(topIndex + 1, 4, 8)],
+                                  p[1].texcoord1));
 
                     outputStream.Append(
-                        SetupVert(
-                            vertices[topIndex],
-                            0,
-                            normals[topIndex],
-                            p[1].texcoord1));
+                        SetupVert(p[0],
+                                  vertices[topIndex],
+                                  0,
+                                  normals[topIndex],
+                                  p[1].texcoord1));
                     topIndex = repeat(topIndex + 1, 4, 8);
 
                     outputStream.RestartStrip();
@@ -270,51 +272,51 @@ Shader "Custom/Cable"
                 for (int s2 = 0; s2 < 4; ++s2)
                 {
                     // First triangle
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                    g2f vert = SetupVert(p[0],
+                                         vertices[bottomIndex],
+                                         0,
+                                         normals[bottomIndex],
+                                         p[1].texcoord1);
+                    outputStream.Append(vert);
                     bottomIndex = repeat(bottomIndex + 1, 4, 8);
 
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                    vert = SetupVert(p[0],
+                                     vertices[bottomIndex],
+                                     0,
+                                     normals[bottomIndex],
+                                     p[1].texcoord1);
+                    outputStream.Append(vert);
 
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[topIndex],
-                            0,
-                            normals[topIndex],
-                            p[1].texcoord1));
+                    vert = SetupVert(p[0],
+                                     vertices[topIndex],
+                                     0,
+                                     normals[topIndex],
+                                     p[1].texcoord1);
+                    outputStream.Append(vert);
 
                     outputStream.RestartStrip();
 
                     // First triangle
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[bottomIndex],
-                            0,
-                            normals[bottomIndex],
-                            p[1].texcoord1));
+                    vert = SetupVert(p[0],
+                                     vertices[bottomIndex],
+                                     0,
+                                     normals[bottomIndex],
+                                     p[1].texcoord1);
+                    outputStream.Append(vert);
 
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[repeat(topIndex + 1, 8, 12)],
-                            0,
-                            normals[repeat(topIndex + 1, 8, 12)],
-                            p[1].texcoord1));
+                    vert = SetupVert(p[0],
+                                     vertices[repeat(topIndex + 1, 8, 12)],
+                                     0,
+                                     normals[repeat(topIndex + 1, 8, 12)],
+                                     p[1].texcoord1);
+                    outputStream.Append(vert);
 
-                    outputStream.Append(
-                        SetupVert(
-                            vertices[topIndex],
-                            0,
-                            normals[topIndex],
-                            p[1].texcoord1));
+                    vert = SetupVert(p[0],
+                                     vertices[topIndex],
+                                     0,
+                                     normals[topIndex],
+                                     p[1].texcoord1);
+                    outputStream.Append(vert);
                     topIndex = repeat(topIndex + 1, 8, 12);
 
                     outputStream.RestartStrip();
@@ -323,6 +325,7 @@ Shader "Custom/Cable"
 
             half4 frag(g2f i) : SV_Target
             {
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 InputData inputData = (InputData)0;
                 inputData.positionWS = i.positionWS;
                 inputData.normalWS = normalize(i.normalWS);
