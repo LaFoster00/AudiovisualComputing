@@ -15,6 +15,7 @@ public class ModulePickerSlot : XRSocketInteractor
     {
         base.OnDisable();
         SetModule(null);
+        settingModule = true;
     }
 
     public void SetModule(GameObject prefab)

@@ -57,7 +57,8 @@ MonoBehaviour:
   - {fileID: 1927120467320398646, guid: 398b7a76b2e62154aa645d637cdb4000, type: 3}
   - {fileID: 5596708888798471196, guid: cab0bb4c85766fc4d910f4059c082efc, type: 3}
   cableSpawn: {fileID: 2542766592465157621}
-  cablePrefab: {fileID: 0}
+  cablePrefab: {fileID: 4801683939624513149, guid: f166d30f73bae6a4ea8b280b0ead4712,
+    type: 3}
   content: {fileID: 4028059365274731743}
 --- !u!1 &392740083449804510
 GameObject:

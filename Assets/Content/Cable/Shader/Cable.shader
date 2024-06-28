@@ -106,7 +106,7 @@ Shader "Custom/Cable"
             g2f SetupVert(v2g p0, float4 positionWS, float2 uv, float3 normalWS, float4 texcoord1)
             {
                 g2f Out;
-                
+
                 UNITY_TRANSFER_INSTANCE_ID(p0, Out);
                 UNITY_TRANSFER_VERTEX_OUTPUT_STEREO(p0, Out)
 
@@ -127,8 +127,16 @@ Shader "Custom/Cable"
                 return normalize(_WorldSpaceCameraPos - positionWS);
             }
 
+            void FlipIfOppositeDirection(inout float3 target, in float3 base)
+            {
+                if (dot(target, base) < 0)
+                {
+                    target = -target;
+                }
+            }
+
             [maxvertexcount(48)]
-            void geom(triangle v2g p[3], inout LineStream<g2f> outputStream)
+            void geom(triangle v2g p[3], inout TriangleStream<g2f> outputStream)
             {
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(p[0]);
                 float4x4 identity = float4x4(
@@ -157,6 +165,8 @@ Shader "Custom/Cable"
                 if (abs(dot(lineDir1, float3(0, 1, 0))) >= 0.99f)
                     tangent1 = normalize(cross(lineDir1, normalize(float3(1, 1, 1))));
 
+                FlipIfOppositeDirection(tangent0, tangent1);
+
                 const float3 tangent = normalize(tangent0 + tangent1);
 
                 float3 normals[12];
@@ -182,7 +192,8 @@ Shader "Custom/Cable"
                         axis = lineDir1;
                     }
 
-                    normals[normal] = rotateVector(direction, angleStep * (normal + 1), axis);
+                    float angle = angleStep * (normal % 4);
+                    normals[normal] = normalize(cos(angle) * direction + sin(angle) * cross(axis, direction));
                 }
 
                 float4 vertices[12];

@@ -7,8 +7,7 @@
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/RightHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/RightHand.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,6 +172,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e46e9bb88b78469fbd4d3d1c372264d61fe00/c5/b1b7b132/SpringJoint.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/e46e9bb88b78469fbd4d3d1c372264d61fe00/f3/47cfb4b4/RigidbodyConstraints.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f178471da6cb4e6b9dbad166e9b46bdde000/17/e42002cc/WaveOutEvent.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/f1e29a71158e46cdb750140a667aea01175e00/4f/06013f05/Transform.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/fef112fd0f15457e8e58500118cb5cea177e00/03/3886d285/Slider.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/ff0066d0832b45c491908c2264292b6c2e00/6a/26911e30/Mixer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3ea01e77be99618395f448b16bd7cc2bd4248bd9e5d8474964b2d97f39c5d74/System.cs" root0="SKIP_HIGHLIGHTING" />
@@ -412,7 +412,7 @@
       <workItem from="1718882455744" duration="27071000" />
       <workItem from="1719418556390" duration="4311000" />
       <workItem from="1719489722069" duration="10974000" />
-      <workItem from="1719577613383" duration="10363000" />
+      <workItem from="1719577613383" duration="11739000" />
     </task>
     <servers />
   </component>
@@ -468,6 +468,19 @@
             </endOffsets>
           </properties>
           <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Assets/Content/Synth/ModulePicker/ModulePicker.cs</url>
+          <line>44</line>
+          <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Synth\ModulePicker\ModulePicker.cs" initialLine="44" containingFunctionPresentation="Method 'AddCable'">
+            <startOffsets>
+              <option value="1288" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1355" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
