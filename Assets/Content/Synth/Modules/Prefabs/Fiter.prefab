@@ -1245,8 +1245,8 @@ MonoBehaviour:
   parameterName: Frequency
   minValue: 20
   maxValue: 20000
-  currentValue: 199.86497
-  currentNormalizedValue: 0.009002251
+  currentValue: 404.98233
+  currentNormalizedValue: 0.019268384
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1285,8 +1285,8 @@ MonoBehaviour:
   parameterName: Gain
   minValue: -12
   maxValue: 12
-  currentValue: 0
-  currentNormalizedValue: 0
+  currentValue: -0.0030004978
+  currentNormalizedValue: 0.49987498
   onValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1302,7 +1302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1a5253505d2434bbe9913e778be043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guid: 66ca2069-d8bb-47b7-8f1d-18c828abf537
+  guid: 9d2a89ac-d186-44c4-9c97-7a93ac107527
 --- !u!54 &638517127284110753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1636,8 +1636,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter: {fileID: 2776740892110637853}
-  targetParameterName: FilterType
+  targetParameter: {fileID: 9126226278925055000}
+  targetParameterName: Q
 --- !u!114 &1457473913809219547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1650,7 +1650,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1a5253505d2434bbe9913e778be043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guid: 4786f720-a363-4ec3-aa84-ca50a7e936f1
+  guid: 63180e15-d8c2-43e7-893b-85486e544939
 --- !u!1001 &2247236903074986549
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1717,12 +1717,12 @@ PrefabInstance:
     - target: {fileID: 3492398842866044541, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.9996065
+      value: 0.5929214
       objectReference: {fileID: 0}
     - target: {fileID: 3492398842866044541, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.028050946
+      value: -0.80526036
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
@@ -1731,13 +1731,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
+      propertyPath: knobType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
+        type: 3}
       propertyPath: currentStep
-      value: 249
+      value: 510
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0.25
+      value: 0.12742743
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1771,8 +1776,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter: {fileID: 2776740892110637853}
-  targetParameterName: FilterType
+  targetParameter: {fileID: 2836927889985110866}
+  targetParameterName: Frequency
 --- !u!114 &5222626463343604022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1785,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1a5253505d2434bbe9913e778be043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guid: c4b97174-8906-480b-8f4b-0d464b2a64f9
+  guid: 38d26aa2-3ceb-4431-bbad-34ccd79b2c4b
 --- !u!4 &1877162112974443540 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 370085656367935009, guid: df1acf9b206cd6b4999f6cc71c217274,
@@ -1858,12 +1863,12 @@ PrefabInstance:
     - target: {fileID: 3492398842866044541, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: -0.30893406
+      value: 0.99999994
       objectReference: {fileID: 0}
     - target: {fileID: 3492398842866044541, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.9510835
+      value: -0.000314253
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
@@ -1878,12 +1883,12 @@ PrefabInstance:
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: currentStep
-      value: 0
+      value: 1999
       objectReference: {fileID: 0}
     - target: {fileID: 7911694742721084996, guid: df1acf9b206cd6b4999f6cc71c217274,
         type: 3}
       propertyPath: startPosition
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1923,8 +1928,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetProvider: {fileID: 7000866115780753172}
-  targetParameter: {fileID: 2776740892110637853}
-  targetParameterName: FilterType
+  targetParameter: {fileID: 8570758857304965850}
+  targetParameterName: Gain
 --- !u!114 &6204275865966416337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1937,7 +1942,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1a5253505d2434bbe9913e778be043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guid: 222bfd62-40ac-49ce-b80c-ce926e34bf17
+  guid: d3b60174-ea39-4ad0-8b90-9762edf84147
 --- !u!1001 &4595180213883768729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1954,7 +1959,7 @@ PrefabInstance:
     - target: {fileID: 2134126422243088435, guid: d748ab10d770e7f4084b1edf73fcdb3f,
         type: 3}
       propertyPath: guid
-      value: 911579a0-c3d5-4862-a3df-b903ffb90c28
+      value: a24bb4be-8157-42ca-9c47-bd96d8a35ac3
       objectReference: {fileID: 0}
     - target: {fileID: 2327380599742083777, guid: d748ab10d770e7f4084b1edf73fcdb3f,
         type: 3}
@@ -2172,7 +2177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e1a5253505d2434bbe9913e778be043, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  guid: 6754b423-5171-4ddc-badf-08905778b480
+  guid: 23604458-114f-4071-a54f-9fed535ed541
 --- !u!1001 &6990233716653655452
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2184,7 +2189,7 @@ PrefabInstance:
     - target: {fileID: 88387340930963994, guid: 7b84ace25d7171341aa975ef4c7d6e86,
         type: 3}
       propertyPath: guid
-      value: a07ef14e-6062-4796-bf09-dc6b7c988bed
+      value: f576bb61-66fb-4eff-9a66-9c74881f6ebb
       objectReference: {fileID: 0}
     - target: {fileID: 726841227161175436, guid: 7b84ace25d7171341aa975ef4c7d6e86,
         type: 3}

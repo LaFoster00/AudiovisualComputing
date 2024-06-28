@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -30,7 +31,7 @@ public class ChannelSend : MonoBehaviour
     {
         for (var sample = 0; sample < targetBuffer.Length; sample++)
         {
-            targetBuffer[sample] += (float)(gain * _workingBuffer[sample]);
+            targetBuffer[sample] += math.min((float)(gain * _workingBuffer[sample]), 1.0f);
         }
     }
 }
