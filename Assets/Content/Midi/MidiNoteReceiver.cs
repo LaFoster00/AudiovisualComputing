@@ -53,7 +53,7 @@ public class MidiNoteReceiver : MonoBehaviour, IOutputDevice
         }
     }
 
-    private void OnDataRead()
+    private void OnDataRead(int samples)
     {
         gate.MoveNext();
     }

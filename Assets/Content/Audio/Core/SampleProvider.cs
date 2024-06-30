@@ -19,7 +19,7 @@ public class AudioFormat
 [RequireComponent(typeof(AudioSource))]
 public class SampleProvider : MonoBehaviour
 {
-    public event Action OnDataRead;
+    public event Action<int> OnDataRead;
     
     [NonSerialized]
     public AudioFormat AudioFormat;
@@ -102,7 +102,7 @@ public class SampleProvider : MonoBehaviour
         
         CurrentDataLength = data.Length;
         
-        OnDataRead?.Invoke();
+        OnDataRead?.Invoke(data.Length);
         
         for (int i = 0; i < CurrentDataLength; i++)
         {

@@ -3,10 +3,53 @@ using Unity.Mathematics;
 
 public class ADSREnvelope
 {
-    public float Attack { get; set; }
-    public float Decay { get; set; }
-    public float Sustain { get; set; }
-    public float Release { get; set; }
+    private float _attack;
+
+    public float Attack
+    {
+        get => _attack;
+        set
+        {
+            _attack = value;
+            RecalculateIncrements();
+        }
+    }
+
+    private float _decay;
+
+    public float Decay
+    {
+        get => _decay;
+        set
+        {
+            _decay = value;
+            RecalculateIncrements();
+        }
+    }
+
+    private float _sustain;
+
+    public float Sustain
+    {
+        get => _sustain;
+        set
+        {
+            _sustain = value;
+            RecalculateIncrements();
+        }
+    }
+
+    private float _release;
+
+    public float Release
+    {
+        get => _release;
+        set
+        {
+            _release = value;
+            RecalculateIncrements();
+        }
+    }
 
     public enum EnvelopeStage
     {
@@ -17,16 +60,15 @@ public class ADSREnvelope
         Release
     }
 
-    public EnvelopeStage CurrentStage = EnvelopeStage.Idle;
-    public bool released = false;
+    public EnvelopeStage CurrentStage { get; private set; } = EnvelopeStage.Idle;
+
+    private readonly float _sampleRate;
 
     private float _currentLevel = 0.0f;
+
     private float _attackIncrement;
     private float _decayIncrement;
     private float _releaseIncrement;
-    private float _sampleRate;
-
-    private bool _noteOn = false;
 
     public ADSREnvelope(float sampleRate)
     {
@@ -35,32 +77,20 @@ public class ADSREnvelope
 
     public void NoteOn()
     {
-        _noteOn = true;
         CurrentStage = EnvelopeStage.Attack;
         _currentLevel = 0;
-        _attackIncrement = 1.0f / (Attack * _sampleRate);
-        _decayIncrement = (1.0f - Sustain) / (Decay * _sampleRate);
-        released = false;
     }
 
     public void NoteOff()
     {
-        if (!_noteOn)
-            return;
-        _noteOn = false;
-
-        if (CurrentStage != EnvelopeStage.Attack && CurrentStage != EnvelopeStage.Decay)
-        {
-            CurrentStage = EnvelopeStage.Release;
-            CalculateReleaseIncrement();
-        }
-
-        released = true;
+        CurrentStage = EnvelopeStage.Release;
     }
 
-    private void CalculateReleaseIncrement()
+    private void RecalculateIncrements()
     {
-        _releaseIncrement = (_currentLevel + 0.00001f) / (Release * _sampleRate);
+        _releaseIncrement = (Sustain + 0.00001f) / (Release * _sampleRate);
+        _decayIncrement = (1.0f - Sustain) / (Decay * _sampleRate);
+        _attackIncrement = 1.0f / (Attack * _sampleRate);
     }
 
     public float NextSample()
@@ -75,15 +105,7 @@ public class ADSREnvelope
                 if (_currentLevel >= 1.0f)
                 {
                     _currentLevel = 1.0f;
-                    if (released)
-                    {
-                        CurrentStage = EnvelopeStage.Release;
-                        CalculateReleaseIncrement();
-                    }
-                    else
-                    {
-                        CurrentStage = EnvelopeStage.Decay;
-                    }
+                    CurrentStage = EnvelopeStage.Decay;
                 }
 
                 break;
@@ -93,15 +115,7 @@ public class ADSREnvelope
                 if (_currentLevel <= Sustain)
                 {
                     _currentLevel = Sustain;
-                    if (released)
-                    {
-                        CurrentStage = EnvelopeStage.Release;
-                        CalculateReleaseIncrement();
-                    }
-                    else
-                    {
-                        CurrentStage = EnvelopeStage.Sustain;
-                    }
+                    CurrentStage = EnvelopeStage.Sustain;
                 }
 
                 break;
