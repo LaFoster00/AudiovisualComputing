@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioSettings.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/MidiNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/MidiNote.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll_Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll_Slot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll.shader" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -422,7 +415,7 @@
       <workItem from="1719489722069" duration="10974000" />
       <workItem from="1719577613383" duration="12151000" />
       <workItem from="1719765939328" duration="6433000" />
-      <workItem from="1719832178545" duration="10581000" />
+      <workItem from="1719832178545" duration="10915000" />
     </task>
     <servers />
   </component>

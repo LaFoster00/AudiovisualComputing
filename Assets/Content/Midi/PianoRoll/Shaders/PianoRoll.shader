@@ -5,13 +5,13 @@ Shader "Unlit/PianoRoll"
         BgColor ("Background Color", Color) = (0.2, 0.2, 0.2)
         LineColor ("Line Color", Color) = (1, 1, 1, 1)
         TimeLineColor ("Time Line Color", Color) = (0, 1, 0, 1)
-        
+
         CellHeight ("Cell Height", Float) = 0.1
         CellWidth ("Cell Width", Float) = 0.1
         LineWidth ("Line Width", Float) = 0.2
         PositionX ("Position X", Float) = 0
         PositionY ("Position Y", Float) = 0
-        
+
         Time ("Time (Beat position of Marker)", Float) = 0
 
         NumberOfNotes ("Number of Lines", Integer) = 128
@@ -54,7 +54,7 @@ Shader "Unlit/PianoRoll"
             float4 BgColor;
             float4 LineColor;
             float4 TimeLineColor;
-            
+
             float CellHeight;
             float CellWidth;
             float LineWidth;
@@ -121,15 +121,15 @@ Shader "Unlit/PianoRoll"
 
                 const float2 tiledCoordinate = (frac(i.uv) - 0.5) * 2;
 
-                float VerticalLineWidth = CellHeight / CellWidth;
+                const float2 actualLineWidth = float2(GetVerticalLineWidth(i.uv)/CellWidth, LineWidth / CellHeight);
                 float2 gridLine = smoothstep(
-                    1 - float2(GetVerticalLineWidth(i.uv), LineWidth) / float2(CellWidth, CellHeight), 1,
+                    1 - actualLineWidth, 1 - actualLineWidth * 0.5,
                     abs(tiledCoordinate));
                 const float isLine = max(gridLine.x, gridLine.y);
-                
+
                 float4 gridColor = lerp(BgColor, LineColor * NotInsideActiveGrid(cellCoordinate) ? 0.1 : 1, isLine);
 
-                const float isTimeLine = (1-smoothstep(0.05, 0.1, abs(i.uv.x - Time)));
+                const float isTimeLine = (1 - smoothstep(0.05, 0.1, abs(i.uv.x - Time)));
                 return lerp(gridColor, TimeLineColor, isTimeLine);
             }
             ENDCG
