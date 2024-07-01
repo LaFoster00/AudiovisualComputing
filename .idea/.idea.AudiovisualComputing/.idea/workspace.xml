@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/DSP/ADSREnvelope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/DSP/ADSREnvelope.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioSettings.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioSettings.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/MidiNoteReceiver.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/MidiNoteReceiver.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/MidiNote.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/MidiNote.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll_Slot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/PianoRoll_Slot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,7 @@
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityCG.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityShaderUtilities.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.32f1/Editor/Data/CGIncludes/UnityShaderVariables.cginc" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://C:/Program Files/Unity/Hub/Editor/2022.3.35f1/Editor/Data/CGIncludes/UnityShaderUtilities.cginc" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0a26430ee1d947a9914cfe4c16ad4c086000/1a/c8e8bee4/NativeHeaderAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/0a26430ee1d947a9914cfe4c16ad4c086000/50/34928635/NativeClassAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/1d2537a43b824735beb02a38d368857ad7200/a8/ed0f46be/IMidiOutput.cs" root0="SKIP_HIGHLIGHTING" />
@@ -324,7 +328,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;XThreadsFramesViewSplitterKey&quot;: &quot;0.39821428&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;serialization&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;pinao-roll&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -369,10 +373,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="3788">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="3788" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -417,7 +421,8 @@
       <workItem from="1719418556390" duration="4311000" />
       <workItem from="1719489722069" duration="10974000" />
       <workItem from="1719577613383" duration="12151000" />
-      <workItem from="1719765939328" duration="6141000" />
+      <workItem from="1719765939328" duration="6433000" />
+      <workItem from="1719832178545" duration="10581000" />
     </task>
     <servers />
   </component>

@@ -8,7 +8,7 @@ namespace Content.Midi.PianoRoll
     public class MidiNote
     {
         // Length in beats
-        public int duration;
+        public uint duration;
         
         public NoteName note;
 

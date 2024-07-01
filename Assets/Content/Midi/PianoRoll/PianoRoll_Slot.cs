@@ -23,4 +23,14 @@ public class PianoRoll_Slot : MonoBehaviour
     public Transform noteObject;
 
     internal PianoRoll Owner;
+
+    public void NotePlayingAnimation()
+    {
+        transform.localScale += new Vector3(1f, 1f, 1f);
+    }
+
+    public void NoteStoppingAnimation()
+    {
+        //transform.localScale -= new Vector3(1f, 1f, 1f);
+    }
 }
