@@ -87,9 +87,10 @@ Material:
     m_Floats:
     - CellHeight: 0.1
     - CellWidth: 0.1
+    - CursorTime: 0
     - LineWidth: 0.01
-    - PositionX: -3.78
-    - PositionY: -3.86
+    - PositionX: -0.5
+    - PositionY: -0.5
     - Time: 2.55
     - _AlphaClip: 0
     - _AlphaToMask: 0

@@ -12,7 +12,7 @@ Shader "Unlit/PianoRoll"
         PositionX ("Position X", Float) = 0
         PositionY ("Position Y", Float) = 0
 
-        Time ("Time (Beat position of Marker)", Float) = 0
+        CursorTime ("Time (Beat position of Marker)", Float) = 0
 
         NumberOfNotes ("Number of Lines", Integer) = 128
         NumberOfBars ("Number of Bars", Integer) = 4
@@ -25,30 +25,41 @@ Shader "Unlit/PianoRoll"
         Tags
         {
             "RenderType"="Opaque"
+            "RenderPipeline" = "UniversalRenderPipeline"
         }
         LOD 100
 
         Pass
         {
-            CGPROGRAM
+            HLSLPROGRAM
             #pragma vertex vert
             #pragma fragment frag
+            
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
+            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
+            #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityInput.hlsl"
+
+            
             // make fog work
             #pragma multi_compile_fog
-
-            #include "UnityCG.cginc"
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ DOTS_INSTANCING_ON
 
             struct appdata
             {
                 float4 vertex : POSITION;
                 float2 uv : TEXCOORD0;
+                UNITY_VERTEX_INPUT_INSTANCE_ID
             };
 
             struct v2f
             {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                UNITY_FOG_COORDS(1)
+                UNITY_VERTEX_INPUT_INSTANCE_ID
+                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             float4 BgColor;
@@ -61,7 +72,7 @@ Shader "Unlit/PianoRoll"
             float PositionX;
             float PositionY;
 
-            float Time;
+            float CursorTime;
 
             int NumberOfNotes;
             int NumberOfBars;
@@ -79,8 +90,9 @@ Shader "Unlit/PianoRoll"
             v2f vert(appdata v)
             {
                 v2f o;
-                o.vertex = UnityObjectToClipPos(v.vertex);
-                UNITY_TRANSFER_FOG(o, o.vertex);
+                UNITY_SETUP_INSTANCE_ID(v);
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                o.vertex = TransformObjectToHClip(v.vertex.xyz);
                 v.uv = float2(1 - v.uv.x, v.uv.y);
                 o.uv = v.uv * 10 * ObjectScale().xy * (1 / float2(CellWidth, CellHeight));
                 o.uv += float2(PositionX, PositionY);
@@ -109,19 +121,14 @@ Shader "Unlit/PianoRoll"
                     cellCoordinate < int2(0, 0));
             }
 
-            fixed4 frag(v2f i) : SV_Target
+            half4 frag(v2f i) : SV_Target
             {
-                // sample the texture
-                // apply fog
-                UNITY_APPLY_FOG(i.fogCoord, col);
-
-                //return fixed4(i.uv, 0, 1);
+                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 const int2 cellCoordinate = CellCoordinate(i.uv);
-                //return fixed4(cellCoordinate, 0, 1);
 
                 const float2 tiledCoordinate = (frac(i.uv) - 0.5) * 2;
 
-                const float2 actualLineWidth = float2(GetVerticalLineWidth(i.uv)/CellWidth, LineWidth / CellHeight);
+                const float2 actualLineWidth = float2(GetVerticalLineWidth(i.uv)/CellWidth, LineWidth * 0.5 / CellHeight);
                 float2 gridLine = smoothstep(
                     1 - actualLineWidth, 1 - actualLineWidth * 0.5,
                     abs(tiledCoordinate));
@@ -129,10 +136,10 @@ Shader "Unlit/PianoRoll"
 
                 float4 gridColor = lerp(BgColor, LineColor * NotInsideActiveGrid(cellCoordinate) ? 0.1 : 1, isLine);
 
-                const float isTimeLine = (1 - smoothstep(0.05, 0.1, abs(i.uv.x - Time)));
+                const float isTimeLine = (1 - smoothstep(0.05, 0.1, abs(i.uv.x - CursorTime)));
                 return lerp(gridColor, TimeLineColor, isTimeLine);
             }
-            ENDCG
+            ENDHLSL
         }
     }
 }
