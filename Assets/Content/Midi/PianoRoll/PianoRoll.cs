@@ -2,17 +2,21 @@ using System;
 using Audio.Core;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Multimedia;
+using NaughtyAttributes;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.UI;
 using UnityEngine.XR.Interaction.Toolkit;
 using AudioSettings = Audio.Core.AudioSettings;
 
-public class PianoRoll : XRBaseInteractable, IInputDevice, IOutputDevice
+public class PianoRoll : MonoBehaviour, IInputDevice, IOutputDevice
 {
     public bool IsListeningForEvents { get; private set; }
     public event EventHandler<MidiEventReceivedEventArgs> EventReceived;
     public event EventHandler<MidiEventSentEventArgs> EventSent;
 
+
+    [SerializeField, Required] private Image pianoRollScreeen;
     [SerializeField] private int measures = 1;
 
     private Vector3 grabPoint;
@@ -20,9 +24,9 @@ public class PianoRoll : XRBaseInteractable, IInputDevice, IOutputDevice
     private XRRayInteractor currentInteractor;
 
     private Material pianoRollMat;
-    
+
     private Vector2 _shaderPosition;
-    
+
     private float _beat;
 
     private float _beatIncreasePerSample;
@@ -43,17 +47,16 @@ public class PianoRoll : XRBaseInteractable, IInputDevice, IOutputDevice
     private static readonly int CursorTime = Shader.PropertyToID("CursorTime");
     private static readonly int NumberOfBars = Shader.PropertyToID("NumberOfBars");
 
-    protected override void OnEnable()
+    protected void OnEnable()
     {
-        base.OnEnable();
         AudioManager.Instance.SampleProvider.OnDataRead += SampleProviderOnOnDataRead;
-        
+
+        pianoRollMat = pianoRollScreeen.material;
+
         // Multiply by 4 since we have 16 beats per 4 / 4 measure
-        _beatIncreasePerSample = 
-            (float)AudioSettings.Instance.Tempo * 4 / 60 / AudioManager.Instance.SampleProvider.AudioFormat.SampleRate; 
-        selectMode = InteractableSelectMode.Single;
-        pianoRollMat = GetComponent<MeshRenderer>().material;
-        
+        _beatIncreasePerSample =
+            (float)AudioSettings.Instance.Tempo * 4 / 60 / AudioManager.Instance.SampleProvider.AudioFormat.SampleRate;
+
         shaderPosition = Vector2.zero;
         pianoRollMat.SetInt(NumberOfBars, measures);
     }
@@ -63,75 +66,10 @@ public class PianoRoll : XRBaseInteractable, IInputDevice, IOutputDevice
         var samplesPerChannel = samples / AudioManager.Instance.SampleProvider.AudioFormat.Channels;
         _beat += samplesPerChannel * _beatIncreasePerSample;
         _beat %= measures * AudioSettings.Instance.BeatsPerMeasure;
-        Debug.Log(_beat);
+        //Debug.Log(_beat);
     }
 
     #region Interactable
-
-    protected override void OnSelectEntered(SelectEnterEventArgs args)
-    {
-        base.OnSelectEntered(args);
-        if (args.interactorObject is XRRayInteractor rayInteractor)
-        {
-            currentInteractor = rayInteractor;
-            StoreGrabPoint(rayInteractor);
-        }
-    }
-
-    protected override void OnSelectExited(SelectExitEventArgs args)
-    {
-        base.OnSelectExited(args);
-        currentInteractor = null;
-    }
-
-    private void StoreGrabPoint(XRRayInteractor interactor)
-    {
-        if (interactor.TryGetCurrentRaycast(
-                out RaycastHit? hit,
-                out int raycastHitIndex,
-                out RaycastResult? uiRaycastHit,
-                out int uiRaycastHitIndex,
-                out bool isUIHitClosest))
-        {
-            if (hit.HasValue && hit.Value.collider.gameObject == gameObject)
-            {
-                grabPoint = hit.Value.point;
-                grabPointInSurfaceSpace = transform.InverseTransformPoint(grabPoint);
-            }
-        }
-    }
-
-    public override void ProcessInteractable(XRInteractionUpdateOrder.UpdatePhase updatePhase)
-    {
-        base.ProcessInteractable(updatePhase);
-
-        if (updatePhase == XRInteractionUpdateOrder.UpdatePhase.Dynamic && isSelected)
-        {
-            UpdateSurfacePosition();
-        }
-    }
-
-    private void UpdateSurfacePosition()
-    {
-        if (currentInteractor != null)
-        {
-            if (currentInteractor.TryGetCurrentRaycast(
-                    out RaycastHit? hit,
-                    out int raycastHitIndex,
-                    out RaycastResult? uiRaycastHit,
-                    out int uiRaycastHitIndex,
-                    out bool isUIHitClosest))
-            {
-                if (hit.HasValue && hit.Value.collider.gameObject == gameObject)
-                {
-                    Vector3 newGrabPoint = transform.InverseTransformPoint(hit.Value.point);
-                    Vector3 surfaceSpaceOffset = grabPointInSurfaceSpace - newGrabPoint;
-                    grabPointInSurfaceSpace = newGrabPoint;
-                    shaderPosition += new Vector2(surfaceSpaceOffset.x, -surfaceSpaceOffset.z);
-                }
-            }
-        }
-    }
 
     #endregion
 

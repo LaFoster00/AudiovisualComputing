@@ -1,4 +1,4 @@
-Shader "Unlit/PianoRoll"
+Shader "Custom/PianoRoll"
 {
     Properties
     {
@@ -37,8 +37,6 @@ Shader "Unlit/PianoRoll"
             
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
-            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
-            #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityInput.hlsl"
 
             
@@ -58,7 +56,6 @@ Shader "Unlit/PianoRoll"
             {
                 float4 vertex : SV_POSITION;
                 float2 uv : TEXCOORD0;
-                UNITY_VERTEX_INPUT_INSTANCE_ID
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
@@ -123,7 +120,6 @@ Shader "Unlit/PianoRoll"
 
             half4 frag(v2f i) : SV_Target
             {
-                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
                 const int2 cellCoordinate = CellCoordinate(i.uv);
 
                 const float2 tiledCoordinate = (frac(i.uv) - 0.5) * 2;

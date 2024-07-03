@@ -23,14 +23,18 @@ Shader "Custom/Cable"
             #pragma geometry geom
             #pragma fragment frag
 
+            #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
+            #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
+
+            #pragma multi_compile_instancing
+            #pragma multi_compile _ DOTS_INSTANCING_ON
+
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/CommonMaterial.hlsl"
             #include "Packages/com.unity.render-pipelines.core/ShaderLibrary/BSDF.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/UnityInput.hlsl"
 
-            #pragma multi_compile_instancing
-            #pragma multi_compile _ DOTS_INSTANCING_ON
 
             struct appdata
             {
@@ -44,7 +48,6 @@ Shader "Custom/Cable"
                 float4 vertex : POSITION;
                 float4 texcoord1 : TEXCOORD1;
                 UNITY_VERTEX_INPUT_INSTANCE_ID
-                UNITY_VERTEX_OUTPUT_STEREO
             };
 
             struct g2f
@@ -59,8 +62,12 @@ Shader "Custom/Cable"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            float4 _BaseColor;
-            float _Smoothness, _Metallic, _CableRadius;
+            UNITY_INSTANCING_BUFFER_START(Props)
+                UNITY_DEFINE_INSTANCED_PROP(float4, _BaseColor)
+                UNITY_DEFINE_INSTANCED_PROP(float, _Smoothness)
+                UNITY_DEFINE_INSTANCED_PROP(float, _Metallic)
+                UNITY_DEFINE_INSTANCED_PROP(float, _CableRadius)
+            UNITY_INSTANCING_BUFFER_END(Props)
 
             float4x4 rotationMatrix(float3 axis, float angle)
             {
@@ -97,7 +104,7 @@ Shader "Custom/Cable"
             {
                 v2g o;
                 UNITY_SETUP_INSTANCE_ID(v);
-                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(o);
+                UNITY_TRANSFER_INSTANCE_ID(v, o);
                 o.vertex = float4(TransformObjectToWorld(v.vertex.xyz), 1.0);
                 o.texcoord1 = v.texcoord1;
                 return o;
@@ -107,8 +114,9 @@ Shader "Custom/Cable"
             {
                 g2f Out;
 
+                UNITY_SETUP_INSTANCE_ID(p0);
                 UNITY_TRANSFER_INSTANCE_ID(p0, Out);
-                UNITY_TRANSFER_VERTEX_OUTPUT_STEREO(p0, Out)
+                UNITY_INITIALIZE_VERTEX_OUTPUT_STEREO(Out);
 
                 Out.vertex = TransformObjectToHClip(mul(unity_WorldToObject, positionWS).xyz);
                 Out.uv = uv;
@@ -138,7 +146,6 @@ Shader "Custom/Cable"
             [maxvertexcount(48)]
             void geom(triangle v2g p[3], inout TriangleStream<g2f> outputStream)
             {
-                UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(p[0]);
                 float4x4 identity = float4x4(
                     1, 0, 0, 0,
                     0, 1, 0, 0,
@@ -212,7 +219,8 @@ Shader "Custom/Cable"
                     {
                         startPos = halfPos1.xyz;
                     }
-                    vertices[vertex] = float4(startPos + normals[vertex] * _CableRadius, 1.0f);
+                    vertices[vertex] = float4(
+                        startPos + normals[vertex] * UNITY_ACCESS_INSTANCED_PROP(Props, _CableRadius), 1.0f);
                 }
 
                 //// Triangulation
@@ -336,18 +344,24 @@ Shader "Custom/Cable"
 
             half4 frag(g2f i) : SV_Target
             {
+                UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
+                
                 InputData inputData = (InputData)0;
                 inputData.positionWS = i.positionWS;
                 inputData.normalWS = normalize(i.normalWS);
-                inputData.viewDirectionWS = i.viewDir;
+                inputData.viewDirectionWS = normalize(i.viewDir);
                 inputData.bakedGI = SAMPLE_GI(i.lightmapUV, i.vertexSH, inputData.normalWS);
+                inputData.shadowCoord = TransformWorldToShadowCoord(inputData.positionWS);
+                inputData.fogCoord = 0; // If you're not using fog, set to 0 
+                inputData.normalizedScreenSpaceUV = GetNormalizedScreenSpaceUV(i.vertex);
+                inputData.shadowMask = SAMPLE_SHADOWMASK(i.lightmapUV);
 
                 SurfaceData surfaceData;
-                surfaceData.albedo = _BaseColor;
+                surfaceData.albedo = UNITY_ACCESS_INSTANCED_PROP(Props, _BaseColor);
                 surfaceData.specular = 0;
-                surfaceData.metallic = _Metallic;
-                surfaceData.smoothness = _Smoothness;
+                surfaceData.metallic = UNITY_ACCESS_INSTANCED_PROP(Props, _Metallic);
+                surfaceData.smoothness = UNITY_ACCESS_INSTANCED_PROP(Props, _Smoothness);
                 surfaceData.normalTS = 0;
                 surfaceData.emission = 0;
                 surfaceData.occlusion = 1;
