@@ -166,7 +166,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 8
+    m_Bits: 0
   m_AttachTransform: {fileID: 0}
   m_KeepSelectedTargetValid: 1
   m_DisableVisualsWhenBlockedInGroup: 1
@@ -829,6 +829,7 @@ MonoBehaviour:
   teleportCancel: {fileID: 737890489006591557, guid: c348712bda248c246b8c49b3db54643f,
     type: 3}
   teleportationProvider: {fileID: 0}
+  uiInteractor: {fileID: 5298707715365675532}
 --- !u!1 &8714756655575490030
 GameObject:
   m_ObjectHideFlags: 0

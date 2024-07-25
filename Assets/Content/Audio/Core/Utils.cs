@@ -166,11 +166,11 @@ namespace Audio.Core
             }
 
             // Scale linear value to a range suitable for logarithmic transformation
-            double minLog = Math.Log10(1); // log(1) = 0
-            double maxLog = Math.Log10(logBase); // log(10) = 1 for base 10
+            double minLog = System.Math.Log10(1); // log(1) = 0
+            double maxLog = System.Math.Log10(logBase); // log(10) = 1 for base 10
 
             // Apply logarithmic transformation
-            double logValue = minLog + (Math.Log10(1 + linearValue * (logBase - 1)) - minLog) / (maxLog - minLog);
+            double logValue = minLog + (System.Math.Log10(1 + linearValue * (logBase - 1)) - minLog) / (maxLog - minLog);
 
             // Normalize to the range 0 to 1
             return (logValue - minLog) / (maxLog - minLog);
@@ -191,11 +191,11 @@ namespace Audio.Core
             }
 
             // Scale log value to a range suitable for exponential transformation
-            double minLog = Math.Log10(1); // log(1) = 0
-            double maxLog = Math.Log10(logBase); // log(10) = 1 for base 10
+            double minLog = System.Math.Log10(1); // log(1) = 0
+            double maxLog = System.Math.Log10(logBase); // log(10) = 1 for base 10
 
             // Apply exponential transformation
-            double linearValue = (Math.Pow(10, logValue * (maxLog - minLog) + minLog) - 1) / (logBase - 1);
+            double linearValue = (System.Math.Pow(10, logValue * (maxLog - minLog) + minLog) - 1) / (logBase - 1);
 
             // Normalize to the range 0 to 1
             return linearValue;

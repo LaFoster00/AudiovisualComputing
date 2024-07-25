@@ -84,12 +84,12 @@ Material:
     - Aspect: 2
     - CellHeight: 0.1
     - CellWidth: 0.1
-    - CursorTime: 1.6632875
+    - CursorTime: 9.203911
     - LineWidth: 0.01
-    - NumberOfBars: 4
+    - NumberOfBars: 1
     - NumberOfNotes: 128
-    - PositionX: -0.5
-    - PositionY: -0.5
+    - PositionX: 0
+    - PositionY: 0
     - StepsPerBar: 16
     - _AlphaClip: 0
     - _AlphaToMask: 0

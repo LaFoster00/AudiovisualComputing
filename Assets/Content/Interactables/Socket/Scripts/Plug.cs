@@ -24,6 +24,13 @@ public class Plug : AudioProvider
     // Do not access directly. Use property instead.
     [SerializeField] private Socket socketTarget;
 
+    private MeshRenderer _meshRenderer;
+    private Material _material;
+
+    private float _currentLevel;
+
+    public override bool CanProvideAudio => socketTarget && otherPlug.socketTarget;
+
     private Socket SocketTarget
     {
         get => socketTarget;
@@ -33,9 +40,9 @@ public class Plug : AudioProvider
             {
                 socketTarget.Target = null;
             }
-            
+
             socketTarget = value;
-            
+
             if (plugMode == PlugMode.Target && socketTarget)
             {
                 socketTarget.Target = this;
@@ -45,6 +52,7 @@ public class Plug : AudioProvider
 
     public UnityEvent<Socket> onPlugInserted;
     public UnityEvent<Socket> onPlugRemoved;
+    private static readonly int BaseColor = Shader.PropertyToID("_BaseColor");
 
     public void OnPluggedIn(Socket socket)
     {
@@ -71,6 +79,9 @@ public class Plug : AudioProvider
     {
         onPlugRemoved?.Invoke(socket);
         SocketTarget = null;
+        
+        if (plugMode == PlugMode.Source)
+            _material.SetColor(BaseColor, new Color(0, 0, 0));
 
         plugMode = PlugMode.Undefined;
     }
@@ -92,6 +103,17 @@ public class Plug : AudioProvider
         {
             SetSocketTarget(SocketTarget);
         }
+
+        if (otherPlug._material != null)
+        {
+            _meshRenderer = otherPlug._meshRenderer;
+            _material = otherPlug._material;
+        }
+        else
+        {
+            _meshRenderer = transform.parent.GetComponent<MeshRenderer>();
+            _material = _meshRenderer.material;
+        }
     }
 
     public override void Read(Span<float> buffer)
@@ -104,6 +126,17 @@ public class Plug : AudioProvider
         {
             SocketTarget.Read(buffer);
         }
+
+        _currentLevel = (buffer[^1] + buffer[^2]) / 2.0f;
     }
 
+    private void Update()
+    {
+        if (plugMode != PlugMode.Source) return;
+        
+        var color = _currentLevel < 0.0f
+            ? new Color(-_currentLevel, 0, -_currentLevel)
+            : new Color(0, _currentLevel, 0);
+        _material.SetColor(BaseColor, color);
+    }
 }

@@ -36,6 +36,8 @@ public class BiQuadFilterModule : AudioProvider
 
     private readonly float _nextAfter05 = 0.4999f;
 
+    public override bool CanProvideAudio => true;
+    
     private void OnEnable()
     {
         _channelFilters = new BiQuadFilter[AudioManager.Instance.AudioFormat.Channels];
@@ -74,7 +76,7 @@ public class BiQuadFilterModule : AudioProvider
 
     private void OnFilterTypeChanged(AudioParameter arg0)
     {
-        switch ((BiQuadFilterType)Math.Round(filterType.CurrentValue))
+        switch ((BiQuadFilterType)System.Math.Round(filterType.CurrentValue))
         {
             case BiQuadFilterType.LowPass:
                 SetFilter<LowPassFilter>(frequency.CurrentNormalizedValue * _nextAfter05, q.CurrentValue);

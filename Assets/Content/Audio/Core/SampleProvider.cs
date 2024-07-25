@@ -20,26 +20,25 @@ public class AudioFormat
 public class SampleProvider : MonoBehaviour
 {
     public event Action<int> OnDataRead;
-    
-    [NonSerialized]
-    public AudioFormat AudioFormat;
-    
-    [SerializeField] private List<ChannelSend> sends = new();
-    
-    [ShowNonSerializedField]
-    private int _bufferLength;
 
-    [ShowNativeProperty]
-    public int CurrentDataLength { get; private set; }
-    
+    [NonSerialized] public AudioFormat AudioFormat;
+
+    [SerializeField] private List<ChannelSend> sends = new();
+
+    [ShowNonSerializedField] private int _bufferLength;
+
+    [ShowNativeProperty] public int CurrentDataLength { get; private set; }
+
     private float[] _samples;
+
     // Should be used when generating data independent from the main audio buffer 
-    private List<float[]> _freeWorkingBuffers;
-    
+    private Queue<float[]> _freeWorkingBuffers;
+
     public float[] GetFreeWorkingBuffer()
     {
-        var buffer = _freeWorkingBuffers.LastOrDefault();
-        return buffer ?? new float[_bufferLength];
+        return _freeWorkingBuffers.Count > 0
+            ? _freeWorkingBuffers.Dequeue()
+            : new float[_bufferLength];
     }
 
     public void ReturnWorkingBuffer(float[] buffer)
@@ -48,9 +47,10 @@ public class SampleProvider : MonoBehaviour
         {
             return;
         }
-        _freeWorkingBuffers.Add(buffer);
-    } 
-    
+
+        _freeWorkingBuffers.Enqueue(buffer);
+    }
+
     private void Awake()
     {
         AudioFormat = new AudioFormat
@@ -72,10 +72,10 @@ public class SampleProvider : MonoBehaviour
         AudioSettings.GetDSPBufferSize(out _bufferLength, out int numBuffers);
         _bufferLength *= numBuffers;
         _samples = new float[_bufferLength];
-        _freeWorkingBuffers = new List<float[]>(32);
-        for (int i = 0; i < _freeWorkingBuffers.Count; i++)
+        _freeWorkingBuffers = new Queue<float[]>(32);
+        for (int i = 0; i < 32; i++)
         {
-            _freeWorkingBuffers[i] = new float[_bufferLength];
+            _freeWorkingBuffers.Enqueue(new float[_bufferLength]);
         }
     }
 
@@ -99,11 +99,11 @@ public class SampleProvider : MonoBehaviour
     {
         if (!AudioManager.Instance)
             return;
-        
+
         CurrentDataLength = data.Length;
-        
+
         OnDataRead?.Invoke(data.Length);
-        
+
         for (int i = 0; i < CurrentDataLength; i++)
         {
             _samples[i] = 0;
@@ -111,7 +111,7 @@ public class SampleProvider : MonoBehaviour
 
         foreach (var send in sends)
         {
-            send.Read(_samples.AsSpan(0,  CurrentDataLength));
+            send.Read(_samples.AsSpan(0, CurrentDataLength));
         }
 
         for (var sample = 0; sample < CurrentDataLength; sample++)

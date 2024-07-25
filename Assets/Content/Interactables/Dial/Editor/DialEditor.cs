@@ -75,7 +75,7 @@ public class DialEditor : Editor
                             minValue.floatValue,
                             maxValue.floatValue)
                         .Map(minValue.floatValue, maxValue.floatValue, 0f, 1f);
-                    if (Math.Abs(_startPosition.floatValue - newStartPosition) > 0.00001f ||
+                    if (System.Math.Abs(_startPosition.floatValue - newStartPosition) > 0.00001f ||
                         float.IsNaN(_startPosition.floatValue))
                     {
                         _startPosition.floatValue = newStartPosition;

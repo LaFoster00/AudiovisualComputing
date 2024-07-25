@@ -1,7 +1,5 @@
+
 using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
 using Audio.Core;
 using NaughtyAttributes;
 using Unity.Mathematics;
@@ -131,5 +129,5 @@ public class Dial : XRBaseInteractable
         };
     }
 
-    private int ActualSteps => Math.Max(steps - 1, 0);
+    private int ActualSteps => math.max(steps - 1, 0);
 }

@@ -6,4 +6,5 @@ using UnityEngine;
 public abstract class AudioProvider : MonoBehaviourGuid, IAudioProvider
 {
     public abstract void Read(Span<float> buffer);
+    public abstract bool CanProvideAudio { get; }
 }

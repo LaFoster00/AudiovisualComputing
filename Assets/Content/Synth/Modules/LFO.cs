@@ -1,28 +1,16 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using Audio.Core;
 using NaughtyAttributes;
 using NWaves.Signals.Builders;
 using UnityEngine;
 
-public enum WaveType
-{
-    Sin,
-    Saw,
-    Square,
-    PinkNoise
-}
-
-public class Oscillator : AudioProvider
+public class LFO : AudioProvider
 {
     [Header("Wave Settings")] public AudioParameter waveType;
     public AudioParameter frequency;
     public AudioProvider frequencyOffset;
-
-    [Header("Shaping")] public AudioProvider gate;
-    public AudioParameter attack;
-    public AudioParameter decay;
-    public AudioParameter sustain;
-    public AudioParameter release;
 
     private float[] _waveTable;
     private PinkNoiseBuilder _pinkNoise;
@@ -34,8 +22,6 @@ public class Oscillator : AudioProvider
     private AudioFormat _waveFormat;
 
     private WorkingBuffer _frequencyOffsetSamples;
-    private WorkingBuffer _gateBuffer;
-    private float _previousGate;
     
     public override bool CanProvideAudio => true;
     
@@ -53,32 +39,8 @@ public class Oscillator : AudioProvider
             existingAudioParameters,
             ref frequency,
             "Frequency",
-            20,
-            20000);
-        this.PopulateAudioParameter(
-            existingAudioParameters,
-            ref attack,
-            "Attack",
-            0.001f,
-            2);
-        this.PopulateAudioParameter(
-            existingAudioParameters,
-            ref decay,
-            "Decay",
-            0.001f,
-            4);
-        this.PopulateAudioParameter(
-            existingAudioParameters,
-            ref sustain,
-            "Sustain",
-            0.001f,
-            1);
-        this.PopulateAudioParameter(
-            existingAudioParameters,
-            ref release,
-            "Release",
-            0.001f,
-            4);
+            0.1f,
+            20f);
     }
 
     private void OnEnable()
@@ -88,7 +50,6 @@ public class Oscillator : AudioProvider
         #region SetupBuffersAndHelpers
 
         _frequencyOffsetSamples = new WorkingBuffer();
-        _gateBuffer = new WorkingBuffer();
 
         #endregion
 
@@ -101,21 +62,13 @@ public class Oscillator : AudioProvider
         OnWaveTypeChanged(null);
 
         #endregion
-
-        #region InitializeEnvelope
-
-        attack.onValueChanged.AddListener(OnEnvelopeChanged);
-        decay.onValueChanged.AddListener(OnEnvelopeChanged);
-        sustain.onValueChanged.AddListener(OnEnvelopeChanged);
-        release.onValueChanged.AddListener(OnEnvelopeChanged);
-
-        _adsrEnvelope = new ADSREnvelope(
-            _waveFormat.SampleRate);
-        OnEnvelopeChanged(null);
-
-        #endregion
     }
-
+    
+    private void OnDisable()
+    {
+        waveType.onValueChanged.RemoveListener(OnWaveTypeChanged);
+    }
+    
     private void OnWaveTypeChanged(AudioParameter arg0)
     {
         switch ((WaveType)waveType.CurrentValue)
@@ -148,33 +101,17 @@ public class Oscillator : AudioProvider
         }
     }
 
-    private void OnEnvelopeChanged(AudioParameter parameter)
-    {
-        _adsrEnvelope.Attack = attack.CurrentValue;
-        _adsrEnvelope.Decay = decay.CurrentValue;
-        _adsrEnvelope.Sustain = sustain.CurrentValue;
-        _adsrEnvelope.Release = release.CurrentValue;
-    }
-
-    private void OnDisable()
-    {
-        waveType.onValueChanged.RemoveListener(OnWaveTypeChanged);
-    }
-
     public override void Read(Span<float> buffer)
     {
         frequencyOffset.Read(_frequencyOffsetSamples);
-        gate.Read(_gateBuffer);
         
         for (int n = 0; n < buffer.Length; n += _waveFormat.Channels)
         {
             ReadWave(buffer, n);
-            ApplyEnvelope(buffer, _gateBuffer, n);
-
             UpdateWaveTableIndex(_frequencyOffsetSamples, n);
         }
     }
-
+    
     private void UpdateWaveTableIndex(Span<float> frequencyOffsetSamples, int sample)
     {
         _currentPhaseStep = _waveTable.Length *
@@ -183,31 +120,7 @@ public class Oscillator : AudioProvider
                              _waveFormat.SampleRate);
         _phase = (_phase + _currentPhaseStep) % _waveTable.Length;
     }
-
-    private void ApplyEnvelope(Span<float> buffer, Span<float> gateBuffer, int n)
-    {
-        switch (gateBuffer[n])
-        {
-            // Check if the envelope should trigger
-            case >= 0.5f when _previousGate <= 0.5f:
-                _adsrEnvelope.NoteOn();
-                break;
-            // Check if the envelope should turn off
-            case <= 0.5f when _previousGate >= 0.5f:
-                _adsrEnvelope.NoteOff();
-                break;
-        }
-
-        _previousGate = gateBuffer[n];
-
-        var envelopeSample = _adsrEnvelope.NextSample();
-        for (int ch = 0; ch < _waveFormat.Channels; ch++)
-        {
-            buffer[n + ch] *= envelopeSample;
-        }
-    }
-
-
+    
     private void ReadWave(Span<float> buffer, int n)
     {
         switch ((WaveType)waveType.CurrentValue)

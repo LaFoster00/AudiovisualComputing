@@ -62,13 +62,14 @@ public class ADSREnvelope
 
     public EnvelopeStage CurrentStage { get; private set; } = EnvelopeStage.Idle;
 
+    private bool _noteOn;
+
     private readonly float _sampleRate;
 
     private float _currentLevel = 0.0f;
 
     private float _attackIncrement;
     private float _decayIncrement;
-    private float _releaseIncrement;
 
     public ADSREnvelope(float sampleRate)
     {
@@ -79,16 +80,18 @@ public class ADSREnvelope
     {
         CurrentStage = EnvelopeStage.Attack;
         _currentLevel = 0;
+        _noteOn = true;
     }
 
     public void NoteOff()
     {
-        CurrentStage = EnvelopeStage.Release;
+        if (CurrentStage == EnvelopeStage.Attack)
+            CurrentStage = EnvelopeStage.Decay;
+        _noteOn = false;
     }
 
     private void RecalculateIncrements()
     {
-        _releaseIncrement = (Sustain + 0.00001f) / (Release * _sampleRate);
         _decayIncrement = (1.0f - Sustain) / (Decay * _sampleRate);
         _attackIncrement = 1.0f / (Attack * _sampleRate);
     }
@@ -121,12 +124,14 @@ public class ADSREnvelope
                 break;
 
             case EnvelopeStage.Sustain:
+                if (_noteOn == false)
+                    CurrentStage = EnvelopeStage.Release;
                 _currentLevel = Sustain;
                 break;
 
             case EnvelopeStage.Release:
-                _currentLevel -= _releaseIncrement;
-                if (_currentLevel <= 0.0f)
+                _currentLevel *= math.exp(-1.0f / (Release * _sampleRate));
+                if (_currentLevel < 0.0001f)
                 {
                     _currentLevel = 0.0f;
                     CurrentStage = EnvelopeStage.Idle;

@@ -5,7 +5,9 @@ public class MidiToGate : AudioProvider
 {
     [SerializeField]
     private MidiNoteReceiver noteReceiver;
-
+    
+    public override bool CanProvideAudio => true;
+    
     public override void Read(Span<float> buffer)
     {
         var gateCurrent = noteReceiver.GetCurrentGate();

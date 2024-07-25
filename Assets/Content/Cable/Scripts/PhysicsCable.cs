@@ -246,7 +246,7 @@ namespace Cable
         {
             SoftJointLimit limit = new SoftJointLimit
             {
-                limit = Math.Max(DistanceBetweenPoints, 0.05f),
+                limit = System.Math.Max(DistanceBetweenPoints, 0.05f),
                 bounciness = 0,
                 contactDistance = distanceTolerance
             };

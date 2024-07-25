@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Remoting.Messaging;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -17,11 +18,17 @@ public class ChannelSend : MonoBehaviour
 
     private void OnEnable()
     {
-        _workingBuffer = new WorkingBuffer();
+        
     }
 
     public void Read(Span<float> targetBuffer)
     {
+        if (_workingBuffer == null)
+        {
+            _workingBuffer = new WorkingBuffer();
+            return;
+        }
+
         _workingBuffer.Clear();
         target.Read(_workingBuffer);
         Send(targetBuffer);

@@ -12,14 +12,16 @@ public enum SocketDirection
 [RequireComponent(typeof(XRSocketInteractor))]
 public class Socket : AudioProvider
 {
-    [SerializeField, ShowIf("IsSocketInput")]
+    [SerializeField, ShowIf("IsOutputSocket")]
     private AudioProvider _target = null;
 
     [SerializeField, HideIf("HasTarget")] private float defaultValue = 0;
 
     [SerializeField] private SocketDirection _direction = SocketDirection.Input;
     
-    private bool IsSocketInput()
+    public override bool CanProvideAudio => true;
+    
+    private bool IsOutputSocket()
     {
         return _direction == SocketDirection.Output;
     }
@@ -75,7 +77,8 @@ public class Socket : AudioProvider
     
     public override void Read(Span<float> buffer)
     {
-        if (Target != null) 
+        
+        if (Target && Target.CanProvideAudio) 
             Target.Read(buffer);
         else
             for (int i = 0; i < buffer.Length; i++)

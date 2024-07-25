@@ -11,6 +11,8 @@ public class MidiToFrequencyOffset : AudioProvider
 
     private float lastNoteOffset;
     
+    public override bool CanProvideAudio => true;
+    
     public override void Read(Span<float> buffer)
     {
         var currentNote = noteReceiver.GetCurrentNote();

@@ -38,10 +38,12 @@ public class CustomRayVisual : MonoBehaviour
             if (isUIHitClosest && uiRaycastHit.HasValue)
             {
                 endPosition = uiRaycastHit.Value.worldPosition;
+                lineRenderer.enabled = true;
             }
             else if (raycastHit.HasValue)
             {
                 endPosition = raycastHit.Value.point;
+                lineRenderer.enabled = false;
             }
         }
 
