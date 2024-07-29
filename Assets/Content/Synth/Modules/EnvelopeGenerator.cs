@@ -53,6 +53,7 @@ public class EnvelopeGenerator : AudioProvider
     private void OnEnable()
     {
         _waveFormat = AudioManager.Instance.AudioFormat;
+        _gateBuffer = new WorkingBuffer();
         
         attack.onValueChanged.AddListener(OnEnvelopeChanged);
         decay.onValueChanged.AddListener(OnEnvelopeChanged);
@@ -72,6 +73,11 @@ public class EnvelopeGenerator : AudioProvider
         _adsrEnvelope.Decay = decay.CurrentValue;
         _adsrEnvelope.Sustain = sustain.CurrentValue;
         _adsrEnvelope.Release = release.CurrentValue;
+    }
+
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        gate.Preprocess(numSamples, frame);
     }
 
     public override void Read(Span<float> buffer)
@@ -97,7 +103,7 @@ public class EnvelopeGenerator : AudioProvider
             var envelopeSample = _adsrEnvelope.NextSample();
             for (int ch = 0; ch < _waveFormat.Channels; ch++)
             {
-                buffer[n + ch] *= envelopeSample;
+                buffer[n + ch] = envelopeSample;
             }
         }
     }

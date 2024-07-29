@@ -5,41 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="72be9cea-f768-4931-aee3-30bf00007579" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SignalMath.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/indexLayout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.AudiovisualComputing/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/settings.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/AudioProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/ChannelSend.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/IAudioProvider.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/SampleProvider.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/Core/Utils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/Core/Utils.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Audio/DSP/ADSREnvelope.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Audio/DSP/ADSREnvelope.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Scripts/PhysicsCable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMat.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/CableMat.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Editor/DialEditor.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Dial/Scripts/Dial.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Cable/Shader/Cable.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Prefabs/AudioCable.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Plug.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Interactables/Socket/Scripts/Socket.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Levels/XR_Test.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll_UI.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll_UI.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Misc/CustomLineVisual.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Misc/CustomLineVisual.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/LeftHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/LeftHand.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/RightHand.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/RightHand.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/XR Origin (XR Rig).prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/PlayerRig/Prefabs/XR Origin (XR Rig).prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/PlayerRig/Scripts/TeleportationManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/PlayerRig/Scripts/TeleportationManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/ModulePicker/Prefabs/ModulePicker.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/ModulePicker/Prefabs/ModulePicker.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll_UI.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Midi/PianoRoll/Shaders/PianoRoll_UI.shader" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/BiQuadFilterModule.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SignalMath.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/EnvelopeGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/EnvelopeGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/LFO.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/LFO.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToFrequencyOffset.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToFrequencyOffset.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToGate.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToGate.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Oscillator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Oscillator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Gain.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Gain.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextInfoDebugTool.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Fiter.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/Prefabs/Fiter.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SignalMath.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Content/Synth/Modules/SignalMath.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/XR/Settings/OculusSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/XR/Settings/OculusSettings.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectVersion.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/GraphicsSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +44,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2d8783c7af0442318483a199a473c55b175e00/80/e5d31871/Object.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5b7c48e912014c9591b05a527c3446a54ee00/d0/014c5a14/PinkNoiseBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Audio/AudioManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Audio/Core/AudioParameter.cs" root0="FORCE_HIGHLIGHTING" />
@@ -72,7 +67,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Content/Serialization/SerializedReferenceID.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/ModulePicker/ModulePicker.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/ModulePicker/ModuleTrash.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/Gain.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/LFO.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/MidiToFrequencyOffset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Content/Synth/Modules/PickableModule.cs" root0="FORCE_HIGHLIGHTING" />
@@ -124,6 +118,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Runtime/Volume/Volume.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Runtime/XR/XRPass.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ShaderLibrary/API/D3D11.hlsl" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ShaderLibrary/Common.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ShaderLibrary/CommonMaterial.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ShaderLibrary/SpaceTransforms.hlsl" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.core@14.0.11/ShaderLibrary/UnityInstancing.hlsl" root0="SKIP_HIGHLIGHTING" />
@@ -159,6 +154,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Culling/Clipping.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Graphic.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/GraphicRaycaster.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/GraphicRegistry.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Layout/CanvasScaler.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/RectMask2D.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ugui@1.0.0/Runtime/UI/Core/Text.cs" root0="SKIP_HIGHLIGHTING" />
@@ -262,10 +258,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="27076">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="21696">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="27076" />
+      <option name="pid" value="21696" />
       <option name="projectPathOnTarget" />
       <option name="selectedOptions">
         <list />
@@ -315,7 +311,9 @@
       <workItem from="1720003404857" duration="9573000" />
       <workItem from="1721831201639" duration="622000" />
       <workItem from="1721831875533" duration="98000" />
-      <workItem from="1721903881864" duration="12746000" />
+      <workItem from="1721903881864" duration="13448000" />
+      <workItem from="1722269992232" duration="2034000" />
+      <workItem from="1722275726288" duration="8734000" />
     </task>
     <servers />
   </component>
@@ -324,10 +322,22 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
     <option name="unityProject" value="true" />
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <ignored-roots>
       <path value="$PROJECT_DIR$/.." />
@@ -354,19 +364,6 @@
           <line>24</line>
           <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Synth\Rack\RackLine.cs" containingFunctionPresentation="Method 'CreateSocketLine'" />
           <option name="timeStamp" value="16" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="DotNet Breakpoints">
-          <url>file://$PROJECT_DIR$/Assets/Content/Synth/Modules/EnvelopeGenerator.cs</url>
-          <line>77</line>
-          <properties documentPath="E:\Git\AudiovisualComputing\Assets\Content\Synth\Modules\EnvelopeGenerator.cs" initialLine="77" containingFunctionPresentation="Method 'Read'">
-            <startOffsets>
-              <option value="2182" />
-            </startOffsets>
-            <endOffsets>
-              <option value="2183" />
-            </endOffsets>
-          </properties>
-          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

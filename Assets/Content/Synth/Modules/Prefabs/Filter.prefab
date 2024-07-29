@@ -1169,7 +1169,7 @@ GameObject:
   - component: {fileID: 7151878074163669961}
   - component: {fileID: 1975998092008271165}
   m_Layer: 0
-  m_Name: Fiter
+  m_Name: Filter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

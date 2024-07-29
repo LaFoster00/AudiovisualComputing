@@ -116,6 +116,14 @@ public class Plug : AudioProvider
         }
     }
 
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        if (plugMode == PlugMode.Target)
+            otherPlug.Preprocess(numSamples, frame);
+        else
+            SocketTarget.Preprocess(numSamples, frame);
+    }
+
     public override void Read(Span<float> buffer)
     {
         if (plugMode == PlugMode.Target)

@@ -23,11 +23,13 @@ Shader "Custom/Cable"
             #pragma geometry geom
             #pragma fragment frag
 
+            #pragma target 4.5
+            #pragma require geometry
+
             #pragma multi_compile _ _ADDITIONAL_LIGHTS_VERTEX _ADDITIONAL_LIGHTS
             #pragma multi_compile _ _ADDITIONAL_LIGHT_SHADOWS
 
             #pragma multi_compile_instancing
-            #pragma multi_compile _ DOTS_INSTANCING_ON
 
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Core.hlsl"
             #include "Packages/com.unity.render-pipelines.universal/ShaderLibrary/Lighting.hlsl"
@@ -62,12 +64,10 @@ Shader "Custom/Cable"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
-            UNITY_INSTANCING_BUFFER_START(Props)
-                UNITY_DEFINE_INSTANCED_PROP(float4, _BaseColor)
-                UNITY_DEFINE_INSTANCED_PROP(float, _Smoothness)
-                UNITY_DEFINE_INSTANCED_PROP(float, _Metallic)
-                UNITY_DEFINE_INSTANCED_PROP(float, _CableRadius)
-            UNITY_INSTANCING_BUFFER_END(Props)
+            float4 _BaseColor;
+            float _Smoothness;
+            float _Metallic;
+            float _CableRadius;
 
             float4x4 rotationMatrix(float3 axis, float angle)
             {
@@ -120,9 +120,9 @@ Shader "Custom/Cable"
 
                 Out.vertex = TransformObjectToHClip(mul(unity_WorldToObject, positionWS).xyz);
                 Out.uv = uv;
-                Out.positionWS = positionWS;
+                Out.positionWS = positionWS.xyz;
                 Out.normalWS = normalWS;
-                Out.viewDir = normalize(_WorldSpaceCameraPos - positionWS);
+                Out.viewDir = normalize(_WorldSpaceCameraPos - positionWS.xyz);
 
                 OUTPUT_LIGHTMAP_UV(texcoord1, unity_LightmapST, Out.lightmapUV);
                 OUTPUT_SH(Out.normalWS, Out.vertexSH);
@@ -164,11 +164,11 @@ Shader "Custom/Cable"
 
                 const float3 lineDir = normalize(lineDir0 + lineDir1);
 
-                float3 tangent0 = ViewDir(halfPos0);
+                float3 tangent0 = ViewDir(halfPos0.xyz);
                 if (abs(dot(lineDir0, float3(0, 1, 0))) >= 0.99f)
                     tangent0 = normalize(cross(lineDir0, normalize(float3(1, 1, 1))));
 
-                float3 tangent1 = ViewDir(halfPos1);;
+                float3 tangent1 = ViewDir(halfPos1.xyz);
                 if (abs(dot(lineDir1, float3(0, 1, 0))) >= 0.99f)
                     tangent1 = normalize(cross(lineDir1, normalize(float3(1, 1, 1))));
 
@@ -179,7 +179,7 @@ Shader "Custom/Cable"
                 float3 normals[12];
                 const float angleStep = TWO_PI / 4;
                 // Normals for vertices around line 1
-                for (int normal = 0; normal < 12; normal++)
+                for (uint normal = 0; normal < 12; normal++)
                 {
                     float3 direction;
                     float3 axis;
@@ -220,7 +220,7 @@ Shader "Custom/Cable"
                         startPos = halfPos1.xyz;
                     }
                     vertices[vertex] = float4(
-                        startPos + normals[vertex] * UNITY_ACCESS_INSTANCED_PROP(Props, _CableRadius), 1.0f);
+                        startPos + normals[vertex] * _CableRadius, 1.0f);
                 }
 
                 //// Triangulation
@@ -346,7 +346,7 @@ Shader "Custom/Cable"
             {
                 UNITY_SETUP_INSTANCE_ID(i);
                 UNITY_SETUP_STEREO_EYE_INDEX_POST_VERTEX(i);
-                
+
                 InputData inputData = (InputData)0;
                 inputData.positionWS = i.positionWS;
                 inputData.normalWS = normalize(i.normalWS);
@@ -358,10 +358,10 @@ Shader "Custom/Cable"
                 inputData.shadowMask = SAMPLE_SHADOWMASK(i.lightmapUV);
 
                 SurfaceData surfaceData;
-                surfaceData.albedo = UNITY_ACCESS_INSTANCED_PROP(Props, _BaseColor);
+                surfaceData.albedo = _BaseColor.xyz;
                 surfaceData.specular = 0;
-                surfaceData.metallic = UNITY_ACCESS_INSTANCED_PROP(Props, _Metallic);
-                surfaceData.smoothness = UNITY_ACCESS_INSTANCED_PROP(Props, _Smoothness);
+                surfaceData.metallic = _Metallic;
+                surfaceData.smoothness = _Smoothness;
                 surfaceData.normalTS = 0;
                 surfaceData.emission = 0;
                 surfaceData.occlusion = 1;

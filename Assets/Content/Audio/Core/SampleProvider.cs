@@ -29,6 +29,7 @@ public class SampleProvider : MonoBehaviour
 
     [ShowNativeProperty] public int CurrentDataLength { get; private set; }
 
+    private ulong _frame;
     private float[] _samples;
 
     // Should be used when generating data independent from the main audio buffer 
@@ -109,11 +110,20 @@ public class SampleProvider : MonoBehaviour
             _samples[i] = 0;
         }
 
+        // First of all run the preprocessing step used to cache data that can be reused
+        ++_frame;
+        foreach (var send in sends)
+        {
+            send.Preprocess((uint)CurrentDataLength, _frame);
+        }
+
+        // Read back the actual samples
         foreach (var send in sends)
         {
             send.Read(_samples.AsSpan(0, CurrentDataLength));
         }
 
+        
         for (var sample = 0; sample < CurrentDataLength; sample++)
         {
             data[sample] = _samples[sample];

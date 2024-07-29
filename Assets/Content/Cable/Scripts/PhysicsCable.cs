@@ -10,10 +10,10 @@ using JointType = UnityEngine.ConfigurableJoint;
 
 namespace Cable
 {
-    
     [ExecuteAlways]
     [RequireComponent(typeof(MeshFilter))]
     [RequireComponent(typeof(MeshRenderer))]
+    [RequireComponent(typeof(LineRenderer))]
     public class PhysicCable : MonoBehaviourGuid
     {
         [Header("Look")] [SerializeField, Min(1), OnValueChanged("UpdatePoints")]
@@ -36,9 +36,13 @@ namespace Cable
         [SerializeField, ReadOnly] private List<Transform> elements = new();
         private List<JointType> joints = new();
 
+        [SerializeField, Required] private Material lineMaterial;
+
         private Mesh _mesh;
         private MeshFilter _meshFilter;
         private MeshRenderer _meshRenderer;
+        private LineRenderer _lineRenderer;
+        private bool _fallback;
 
         private List<Transform> points;
         private byte connections;
@@ -80,9 +84,24 @@ namespace Cable
         {
             _meshFilter = GetComponent<MeshFilter>();
             _meshRenderer = GetComponent<MeshRenderer>();
+            _lineRenderer = GetComponent<LineRenderer>();
+            _lineRenderer.enabled = false;
 
             _mesh = new Mesh();
             _meshFilter.mesh = _mesh;
+            if (!_meshRenderer.sharedMaterial.shader.isSupported)
+            {
+                _fallback = true;
+                _meshRenderer.enabled = false;
+                _lineRenderer.material = lineMaterial;
+                _lineRenderer.enabled = true;
+            }
+            else
+            {
+                _fallback = false;
+                _meshRenderer.enabled = true;
+                _lineRenderer.enabled = false;
+            }
 
             UpdatePoints();
         }
@@ -93,7 +112,10 @@ namespace Cable
 
         private void Update()
         {
-            UpdateMesh();
+            if (!_fallback)
+                UpdateMesh();
+            else
+                UpdateLine();
             UpdateLimit();
         }
 
@@ -142,6 +164,32 @@ namespace Cable
             var bounds = _mesh.bounds;
             bounds.size += new Vector3(0.1f, 0.1f, 0.1f);
             _mesh.bounds = bounds;
+
+            _lineRenderer.positionCount = 0;
+        }
+
+        private void UpdateLine()
+        {
+            // We use  pair of 3 vectors (triangle) to store the previous current and next position in the chain
+            Vector3[] vertices = new Vector3[TotalElements + 2];
+
+            // Marks the beginning of the cable
+            vertices[0] = start.position + start.forward * 0.01f;
+            vertices[1] = start.position;
+            for (int element = 0; element < elements.Count; element++)
+            {
+                vertices[2 + element] = elements[element].position;
+            }
+
+            vertices[^2] = end.position;
+            vertices[^1] = end.position + end.forward * 0.01f;
+
+            _lineRenderer.positionCount = vertices.Length;
+            _lineRenderer.SetPositions(vertices);
+
+            _mesh.Clear();
+            _mesh.vertices = new[] { Vector3.zero };
+            _mesh.SetIndices(new[] { 0, 0, 0 }, MeshTopology.Triangles, 0);
         }
 
         [Button("Update Points")]

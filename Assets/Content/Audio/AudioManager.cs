@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using UnityEditor;
 using UnityEngine;
 
 [RequireComponent(typeof(SampleProvider))]
@@ -24,6 +25,7 @@ public class AudioManager : MonoBehaviour
         {
             Instance = this;
         }
+        
     }
 
     // Update is called once per frame

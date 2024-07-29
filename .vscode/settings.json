@@ -56,5 +56,6 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "AudiovisualComputing.sln"
+    "dotnet.defaultSolution": "AudiovisualComputing.sln",
+    "dotnet.preferCSharpExtension": true
 }

@@ -47,6 +47,14 @@ public class SignalMath : AudioProvider
         _normalizeBuffer = new WorkingBuffer();
     }
 
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        source.Preprocess(numSamples, frame);
+        normalizeSource.Preprocess(numSamples, frame);
+        mulOffset.Preprocess(numSamples, frame);
+        addOffset.Preprocess(numSamples, frame);
+    }
+
     public override void Read(Span<float> buffer)
     {
         source.Read(buffer);

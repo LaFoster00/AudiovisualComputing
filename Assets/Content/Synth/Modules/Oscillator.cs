@@ -161,6 +161,12 @@ public class Oscillator : AudioProvider
         waveType.onValueChanged.RemoveListener(OnWaveTypeChanged);
     }
 
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        frequencyOffset.Preprocess(numSamples, frame);
+        gate.Preprocess(numSamples, frame);
+    }
+
     public override void Read(Span<float> buffer)
     {
         frequencyOffset.Read(_frequencyOffsetSamples);

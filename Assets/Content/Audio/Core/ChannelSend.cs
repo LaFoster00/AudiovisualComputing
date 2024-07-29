@@ -21,6 +21,11 @@ public class ChannelSend : MonoBehaviour
         
     }
 
+    public void Preprocess(uint numSamples, ulong frame)
+    {
+        target.Preprocess(numSamples, frame);
+    }
+    
     public void Read(Span<float> targetBuffer)
     {
         if (_workingBuffer == null)

@@ -75,6 +75,12 @@ public class Socket : AudioProvider
         }
     }
     
+
+    protected override void Preprocess_Impl(uint numSamples, ulong frame){
+        if (Target && Target.CanProvideAudio)
+            Target.Preprocess(numSamples, frame);
+    }
+    
     public override void Read(Span<float> buffer)
     {
         

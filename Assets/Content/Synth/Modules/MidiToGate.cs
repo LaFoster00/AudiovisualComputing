@@ -7,10 +7,17 @@ public class MidiToGate : AudioProvider
     private MidiNoteReceiver noteReceiver;
     
     public override bool CanProvideAudio => true;
-    
+
+    private bool gateCurrent;
+
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        gateCurrent = noteReceiver.GetCurrentGate();
+    }
+
     public override void Read(Span<float> buffer)
     {
-        var gateCurrent = noteReceiver.GetCurrentGate();
+        
 
         for (var i = 0; i < buffer.Length; i++)
         {

@@ -2,6 +2,7 @@ Shader "Custom/PianoRoll_UI"
 {
     Properties
     {
+        _MainTex("Main Tex (Unused)", 2D) = "black" {}
         _Color ("Tint", Color) = (1,1,1,1)
         
         Aspect ("Aspect Ratio", float) = 1
@@ -85,6 +86,8 @@ Shader "Custom/PianoRoll_UI"
                 UNITY_VERTEX_OUTPUT_STEREO
             };
 
+            sampler2D _MainTex;
+            
             fixed4 _Color;
             float4 _ClipRect;
 

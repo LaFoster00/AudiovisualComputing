@@ -141,6 +141,11 @@ public class BiQuadFilterModule : AudioProvider
         }
     }
 
+    protected override void Preprocess_Impl(uint numSamples, ulong frame)
+    {
+        target.Preprocess(numSamples, frame);
+    }
+
     public override void Read(Span<float> buffer)
     {
         target.Read(buffer);
