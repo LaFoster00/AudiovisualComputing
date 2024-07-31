@@ -14,7 +14,6 @@ public class MidiManager : Singleton<MidiManager>
     {
 #if !UNITY_ANDROID
         var midiDevices = InputDevice.GetAll();
-        var midiDevices = InputDevice.GetAll();
         foreach (var device in midiDevices)
         {
             InputDevices[device.Name] = device;
